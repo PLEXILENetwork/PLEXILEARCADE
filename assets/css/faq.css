@@ -34,7 +34,7 @@ body{
       gap: 25px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
       position: absolute;
-      bottom: 20px;
+      bottom: 25px;
       left: 50%;
       transform: translateX(-50%);
       pointer-events: auto;
@@ -60,7 +60,7 @@ body{
 
     .settings-fab {
       position: absolute;
-      bottom: 12px;
+      bottom: 17px;
       left: 50%;
       transform: translateX(-50%);
       width: 66px;
