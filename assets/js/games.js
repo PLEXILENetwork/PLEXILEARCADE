@@ -2,30 +2,34 @@ const games = [
     {
         title: "Roblox",
         category: "Multiplayer",
-        image: "https://raw.githubusercontent.com/willoo0/v6/refs/heads/main/public/images/games-images/roblox.png",
+        image: "/assets/games/roblox/game.png",
+        background: "/assets/games/roblox/game.gif",
         slug: "roblox",
-        iframe: "/404.html"
+        iframe: "/assets/games/roblox/game.html"
     },
     {
         title: "Bacon May Die",
         category: "Action",
-        image: "https://raw.githubusercontent.com/willoo0/v6/refs/heads/main/public/images/games-images/baconmaydie.png",
+        image: "/assets/games/baconmaydie/game.png",
+        background: "/assets/games/baconmaydie/game.gif",
         slug: "baconmaydie",
-        iframe: "https://example.com/baconmaydie"
+        iframe: "/assets/games/baconmaydie/game.html"
     },
     {
         title: "Basketball Stars",
         category: "Sports",
-        image: "https://raw.githubusercontent.com/willoo0/v6/refs/heads/main/public/images/games-images/basketballstars.png",
+        image: "/assets/games/basketballstars/game.png",
+        background: "/assets/games/basketballstars/game.gif",
         slug: "basketballstars",
-        iframe: "https://mathtestprep.pages.dev/games/basketballstars/gamescode"
+        iframe: "/assets/games/basketballstars/game.html"
     },
     {
         title: "Bitlife",
         category: "Strategy",
-        image: "https://raw.githubusercontent.com/willoo0/v6/refs/heads/main/public/images/games-images/bl.png",
+        image: "/assets/games/bitlife/game.png",
+        background: "/assets/games/bitlife/game.gif",
         slug: "bitlife",
-        iframe: "https://example.com/bitlife"
+        iframe: "/assets/games/bitlife/game.html"
     }
 ];
 

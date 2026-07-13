@@ -26,15 +26,43 @@
   </a>
 </div>
 
-<div class="game-container">
+<div class="background">
+    <img id="background">
+    <div class="background-overlay"></div>
+</div>
+
+<div class="loader" id="loader">
+    <img id="gameImage" class="thumbnail">
+    <h1 id="gameTitle"></h1>
+
+    <p class="loading-text">Loading game...</p>
+
+    <div class="loading-bar">
+        <div class="loading-fill"></div>
+    </div>
+</div>
+
+<div class="game-container" id="gameContainer" style="display:none;">
     <iframe id="gameFrame" allowfullscreen></iframe>
 
-    <button id="fullscreenBtn" class="fullscreen-btn" aria-label="Fullscreen">
-        <i class='bx bx-fullscreen'></i>
+    <button class="fullscreen-btn" id="fullscreenBtn">
+        <i class="bx bx-fullscreen"></i>
     </button>
 </div>
 
+<div class="game-container" id="gameContainer" style="display:none;">
+
+    <iframe id="gameFrame" allowfullscreen></iframe>
+
+    <button class="fullscreen-btn" id="fullscreenBtn">
+        <i class='bx bx-fullscreen'></i>
+    </button>
+
 </div>
+
+</div>
+
+<script src="/assets/js/highlight.js"></script>
 <script src="/assets/js/games.js"></script>
 <script src="/assets/js/iframe.js"></script>
 <script src="/assets/js/fullscreen.js"></script>

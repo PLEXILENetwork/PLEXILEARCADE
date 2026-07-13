@@ -1,17 +1,15 @@
-const frame = document.getElementById("gameFrame");
+const container = document.getElementById("gameContainer");
 const btn = document.getElementById("fullscreenBtn");
 
 btn.addEventListener("click", async () => {
     try {
         if (!document.fullscreenElement) {
-            await frame.requestFullscreen();
-            btn.innerHTML = "<i class='bx bx-exit-fullscreen'></i>";
+            await container.requestFullscreen();
         } else {
             await document.exitFullscreen();
-            btn.innerHTML = "<i class='bx bx-fullscreen'></i>";
         }
     } catch (err) {
-        console.error(err);
+        console.error("Fullscreen failed:", err);
     }
 });
 
