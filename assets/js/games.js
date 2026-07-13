@@ -30,6 +30,14 @@ const games = [
         background: "/assets/games/bitlife/game.gif",
         slug: "bitlife",
         iframe: "/assets/games/bitlife/game.html"
+    },
+    {
+        title: "Super Liquid Soccer",
+        category: "Sports",
+        image: "/assets/games/superliquidsoccer/game.png",
+        background: "/assets/games/superliquidsoccer/game.gif",
+        slug: "superliquidsoccer",
+        iframe: "/assets/games/superliquidsoccer/game.html"
     }
 ];
 
