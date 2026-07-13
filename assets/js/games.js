@@ -4,7 +4,7 @@ const games = [
         category: "Multiplayer",
         image: "https://raw.githubusercontent.com/willoo0/v6/refs/heads/main/public/images/games-images/roblox.png",
         slug: "roblox",
-        iframe: "https://example.com/roblox"
+        iframe: "/404.html"
     },
     {
         title: "Bacon May Die",
@@ -18,7 +18,7 @@ const games = [
         category: "Sports",
         image: "https://raw.githubusercontent.com/willoo0/v6/refs/heads/main/public/images/games-images/basketballstars.png",
         slug: "basketballstars",
-        iframe: "https://example.com/basketballstars"
+        iframe: "https://mathtestprep.pages.dev/games/basketballstars/gamescode"
     },
     {
         title: "Bitlife",

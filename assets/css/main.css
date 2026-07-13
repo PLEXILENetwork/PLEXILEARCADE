@@ -10,7 +10,6 @@
       color: #fff;
       display: flex;
       height: 100vh;
-      
     }
 
     .bottom-nav-container {
@@ -60,7 +59,7 @@
 
     .settings-fab {
       position: absolute;
-      bottom: 17px;
+      bottom: 16px;
       left: 50%;
       transform: translateX(-50%);
       width: 66px;

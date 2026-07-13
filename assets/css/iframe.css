@@ -1,0 +1,59 @@
+body{
+    margin:0;
+    background:#111111;
+    font-family:'Outfit',sans-serif;
+    padding-top: 31px;
+    padding-bottom: 80px;
+      
+}
+
+.game-container{
+    position: relative;
+    width: min(96vw, 1350px);
+    height: min(83vh, 900px);
+    margin: 0 auto;
+    border: 1px solid #333333;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #1C1C1C;
+}
+
+#gameFrame{
+    width:100%;
+    height:100%;
+    border:none;
+    display:block;
+}
+
+.fullscreen-btn{
+    position:absolute;
+    top:16px;
+    right:16px;
+    width:46px;
+    height:46px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:none;
+    border-radius:14px;
+    background:rgba(20,20,20,.35);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,.12);
+    color:#fff;
+    cursor:pointer;
+    transition:.25s;
+    z-index:10;
+}
+
+.fullscreen-btn i{
+    font-size:24px;
+}
+
+.fullscreen-btn:hover{
+    background:rgba(41, 40, 40, 0.35);
+}
+
+.fullscreen-btn:active{
+    transform:scale(.95);
+}
