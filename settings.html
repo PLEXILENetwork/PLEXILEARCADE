@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PLEXILE ARCADE - Settings</title>
+  <link rel="icon" type="image/png" href="/assets/images/logo.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/assets/css/settings.css">
+
+</head>
+<body>
+
+<div class="main">
+<div class="page-header">
+<h1>Manage Your Settings ⚙️</h1>
+<p>Customize your experience by adjusting your pages, appearance, and other preferences.</p>
+</div>
+
+<div class="settings-page">
+
+    <div class="settings-section">
+        <h2>Appearance</h2>
+
+        <div class="setting-card">
+            <div>
+                <h3>Theme</h3>
+                <p>Customize the appearance of PLEXILE ARCADE.</p>
+            </div>
+
+            <select>
+                <option>Dark</option>
+                <option>Light</option>
+            </select>
+        </div>
+
+        <div class="setting-card">
+            <div>
+                <h3>Accent Color</h3>
+                <p>Choose the primary color used throughout the site.</p>
+            </div>
+
+            <button>Coming Soon</button>
+        </div>
+    </div>
+
+    <div class="settings-section">
+        <h2>Games</h2>
+
+        <div class="setting-card">
+            <div>
+                <h3>Game Card Size</h3>
+                <p>Adjust how large game cards appear.</p>
+            </div>
+
+            <input type="range">
+        </div>
+    </div>
+
+    <div class="settings-section">
+        <h2>Privacy</h2>
+
+        <div class="setting-card">
+            <div>
+                <h3>Advertisements</h3>
+                <p>Choose if you want to see advertisements during your experience.</p>
+            </div>
+
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        
+        <div class="setting-card">
+            <div>
+                <h3>Analytics</h3>
+                <p>Help improve PLEXILE ARCADE by sharing anonymous usage data.</p>
+            </div>
+
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+<script>
+document.addEventListener("keydown", e=>{
+    if(e.key==="Escape"){
+        parent.closeSettings();
+    }
+});
+</script>
+
+</body>
+</html>
+<script src="/assets/js/settings.js"></script>
+<script src="/assets/js/highlight.js"></script>
+<script src="/assets/js/search.js"></script>
+
+</body>
+</html>

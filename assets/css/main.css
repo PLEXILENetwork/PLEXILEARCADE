@@ -235,7 +235,7 @@
 
 
     ::-webkit-scrollbar{
-      width:8px;
+      width:3px;
     }
 
     ::-webkit-scrollbar-track{
@@ -243,6 +243,41 @@
     }
 
     ::-webkit-scrollbar-thumb{
-      background: #C93131;
+      background: #695d5d;
       border-radius:999px;
     }
+
+    .settings-overlay{
+    position:fixed;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(10px);
+    opacity:0;
+    visibility:hidden;
+    transition:.15s;
+    z-index:99999;
+}
+
+.settings-overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.settings-overlay iframe{
+    width:min(1300px,95vw);
+    height:min(760px,92vh);
+    border:#333333 1px solid;
+    border-radius:30px;
+    overflow:hidden;
+    background:#111;
+    transform:scale(.96);
+    transition:transform .15s;
+    box-shadow:0 25px 80px rgba(0,0,0,.6);
+}
+
+.settings-overlay.active iframe{
+    transform:scale(.98);
+}

@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PLEXILE ARCADE</title>
+  <link rel="icon" type="image/png" href="/assets/images/logo.png"/>
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -20,9 +21,17 @@
     <a href="/apps.html" class="nav-btn"><i class="bx bx-grid-alt"></i></a>
     <a href="/faq.html" class="nav-btn"><i class="bx bx-help-circle"></i></a>
   </div>
-  <a href="/settings.html" class="settings-fab">
-    <i class="bx bx-cog"></i>
-  </a>
+    <button class="settings-fab" id="settingsBtn" type="button">
+      <i class="bx bx-cog"></i>
+    </button>
+</div>
+
+<div class="settings-overlay" id="settingsOverlay">
+    <iframe
+        id="settingsFrame"
+        src="/settings.html"
+        loading="lazy">
+    </iframe>
 </div>
 
 <div class="main">
@@ -54,6 +63,7 @@
 
 </div>
 
+<script src="/assets/js/settings.js"></script>
 <script src="/assets/js/highlight.js"></script>
 <script src="/assets/js/games.js"></script>
 <script src="/assets/js/search.js"></script>

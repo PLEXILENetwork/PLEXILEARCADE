@@ -60,7 +60,7 @@ body{
 
     .settings-fab {
       position: absolute;
-      bottom: 17px;
+      bottom: 16px;
       left: 50%;
       transform: translateX(-50%);
       width: 66px;
@@ -248,15 +248,50 @@ body{
     background:#b42b2b;
 }
 
-::-webkit-scrollbar{
-    width:8px;
+    ::-webkit-scrollbar{
+      width:3px;
+    }
+
+    ::-webkit-scrollbar-track{
+     background:#111;
+    }
+
+    ::-webkit-scrollbar-thumb{
+      background: #695d5d;
+      border-radius:999px;
+    }
+
+    .settings-overlay{
+    position:fixed;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(10px);
+    opacity:0;
+    visibility:hidden;
+    transition:.15s;
+    z-index:99999;
 }
 
-::-webkit-scrollbar-track{
+.settings-overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.settings-overlay iframe{
+    width:min(1300px,95vw);
+    height:min(760px,92vh);
+    border:#333333 1px solid;
+    border-radius:30px;
+    overflow:hidden;
     background:#111;
+    transform:scale(.96);
+    transition:transform .15s;
+    box-shadow:0 25px 80px rgba(0,0,0,.6);
 }
 
-::-webkit-scrollbar-thumb{
-    background:#C93131;
-    border-radius:999px;
+.settings-overlay.active iframe{
+    transform:scale(.98);
 }
