@@ -392,7 +392,7 @@ function spawnObject(src) {
 
 
     const size =
-    40 + Math.random() * 50;
+    40 + Math.random() * 120;
 
 
 

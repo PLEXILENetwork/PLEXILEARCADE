@@ -137,9 +137,9 @@ body{
     border-radius:16px;
     padding:24px;
     display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap: 12px;
     transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
 
@@ -153,15 +153,26 @@ body{
     max-width:500px;
 }
 
-.setting-card button,
+.setting-card button {
+    background:#111;
+    color:#fff;
+    border:1px solid #333;
+    border-radius:10px;
+    padding:11px 17px;
+    font-family:inherit;
+    transition:background .15s ease;
+
+}
+
 .setting-card select{
     background:#111;
     color:#fff;
     border:1px solid #333;
     border-radius:10px;
-    padding:12px 18px;
+    padding:11px 17px;
     font-family:inherit;
     transition:background .15s ease;
+
 }
 
 .setting-card button:hover,
