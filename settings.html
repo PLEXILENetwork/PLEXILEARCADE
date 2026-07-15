@@ -9,9 +9,12 @@
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="/assets/css/settings.css">
+  <link rel="stylesheet" href="/assets/css/backgroundeffects.css">
 
 </head>
 <body>
+
+<div id="bg-effects"></div>
 
 <div class="main">
 <div class="page-header">
@@ -26,38 +29,60 @@
 
         <div class="setting-card">
             <div>
-                <h3>Theme</h3>
-                <p>Customize the appearance of PLEXILE ARCADE.</p>
+                <h3>Background Effects</h3>
+                <p>Customize the background across pages with different effects.</p>
             </div>
 
-            <select>
-                <option>Dark</option>
-                <option>Light</option>
-            </select>
-        </div>
-
-        <div class="setting-card">
-            <div>
-                <h3>Accent Color</h3>
-                <p>Choose the primary color used throughout the site.</p>
-            </div>
-
-            <button>Coming Soon</button>
-        </div>
-    </div>
+    <select id="effects">
+        <option value="default">None</option>
+        <option value="squares">Squares</option>
+        <option value="eggs">Eggs</option>
+        <option value="mystery">?????</option>
+    </select>
+   </div>
+  </div>
 
     <div class="settings-section">
-        <h2>Games</h2>
+        <h2>Miscellaneous</h2>
 
-        <div class="setting-card">
-            <div>
-                <h3>Game Card Size</h3>
-                <p>Adjust how large game cards appear.</p>
-            </div>
-
-            <input type="range">
-        </div>
+<div class="setting-card">
+    <div>
+        <h3>Auto Cloak</h3>
+        <p>Automatically cloak PLEXILE ARCADE in an about:blank window.</p>
     </div>
+
+    <select id="autoCloakSelect">
+       <option value="on">On</option>
+       <option value="off">Off</option>
+   </select> 
+</div>
+
+  <div class="setting-card">
+     <div>
+        <h3>Panic Key</h3>
+        <p>Press & hold ctrl + ] to close all pages.</p>
+     </div>
+
+      <select id="panicToggle">
+         <option value="off" selected>Off</option>
+         <option value="on">On</option>
+      </select>
+     </div>
+
+     <div class="setting-card">
+    <div>
+        <h3>Save File</h3>
+        <p>Import or export your cookies across multiple devices or links.</p>
+    </div>
+
+    <div class="button-group">
+        <button class="setting-btn primary" onclick="exportCookies()">Export</button>
+        <button class="setting-btn" onclick="importCookies()">Import</button>
+    </div>
+
+    <input type="file" id="cookieFile" accept=".json" hidden>
+    </div>
+  </div>
 
     <div class="settings-section">
         <h2>Privacy</h2>
@@ -68,40 +93,39 @@
                 <p>Choose if you want to see advertisements during your experience.</p>
             </div>
 
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-        </div>
+        <select id="adsToggle">
+           <option value="on">On</option>
+           <option value="off">Off</option>
+        </select>
+      </div>
 
         
-        <div class="setting-card">
-            <div>
-                <h3>Analytics</h3>
-                <p>Help improve PLEXILE ARCADE by sharing anonymous usage data.</p>
-            </div>
+     <div class="setting-card">
+       <div>
+           <h3>Analytics</h3>
+           <p>Help improve PLEXILE ARCADE by sharing anonymous usage data.</p>
+       </div>
 
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-        </div>
+       <select id="analyticsToggle">
+          <option value="on">On</option>
+          <option value="off">Off</option>
+       </select>
+     </div>
     </div>
 
 </div>
 
 </div>
 
-<script>
-document.addEventListener("keydown", e=>{
-    if(e.key==="Escape"){
-        parent.closeSettings();
-    }
-});
-</script>
+<!--Settings-->
+<script src="/assets/js/settings/backgroundeffects.js"></script>
+<script src="/assets/js/settings/analytics.js"></script>
+<script src="/assets/js/settings/ads.js"></script>
+<script src="/assets/js/settings/panickey.js"></script>
+<script src="/assets/js/settings/savefile.js"></script>
+<script src="/assets/js/settings/autocloak.js"></script>
+<script src="/assets/js/settings/refresh.js"></script>
 
-</body>
-</html>
 <script src="/assets/js/settings.js"></script>
 <script src="/assets/js/highlight.js"></script>
 <script src="/assets/js/search.js"></script>

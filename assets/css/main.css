@@ -1,4 +1,4 @@
-    * {
+* {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -117,7 +117,8 @@
    .games-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1.5rem;
+      column-gap: 1.8rem;
+      row-gap: 2rem;
     }
 
      @media (max-width: 1024px) {
@@ -280,4 +281,13 @@
 
 .settings-overlay.active iframe{
     transform:scale(.98);
+}
+
+:focus {
+  outline: none; 
+  box-shadow: none; 
+}
+
+:focus-visible {
+  outline: 3px solid #C93131; 
 }

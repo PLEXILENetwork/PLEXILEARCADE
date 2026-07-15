@@ -140,6 +140,7 @@ body{
     justify-content:space-between;
     align-items:center;
     gap:20px;
+    transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
 
 .setting-card h3{
@@ -160,6 +161,12 @@ body{
     border-radius:10px;
     padding:12px 18px;
     font-family:inherit;
+    transition:background .15s ease;
+}
+
+.setting-card button:hover,
+.setting-card select:hover{
+    background:#161616;
 }
 
 @media(max-width:768px){
@@ -167,4 +174,13 @@ body{
         flex-direction:column;
         align-items:flex-start;
     }
+}
+
+:focus {
+  outline: none; 
+  box-shadow: none; 
+}
+
+:focus-visible {
+  outline: 3px solid #C93131; 
 }

@@ -38,6 +38,30 @@ const games = [
         background: "/assets/games/superliquidsoccer/game.gif",
         slug: "superliquidsoccer",
         iframe: "/assets/games/superliquidsoccer/game.html"
+    },
+    {
+        title: "Plants Vs Zombies",
+        category: "Strategy",
+        image: "/assets/games/plantsvszombies/game.png",
+        background: "/assets/games/plantsvszombies/game.gif",
+        slug: "plantsvszombies",
+        iframe: "/assets/games/plantsvszombies/game.html"
+    },
+    {
+        title: "FNAF 1",
+        category: "Horror",
+        image: "/assets/games/fnaf1/game.png",
+        background: "/assets/games/fnaf1/game.gif",
+        slug: "fnaf1",
+        iframe: "/assets/games/fnaf1/game.html"
+    },
+    {
+        title: "The Worlds Hardest Game",
+        category: "Puzzle",
+        image: "/assets/games/theworldshardestgame/game.png",
+        background: "/assets/games/theworldshardestgame/game.gif",
+        slug: "theworldshardestgame",
+        iframe: "/assets/games/theworldshardestgame/game.html"
     }
 ];
 

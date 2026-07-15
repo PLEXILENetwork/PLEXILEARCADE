@@ -295,3 +295,12 @@ body{
 .settings-overlay.active iframe{
     transform:scale(.98);
 }
+
+:focus {
+  outline: none; 
+  box-shadow: none; 
+}
+
+:focus-visible {
+  outline: 3px solid #C93131; 
+}

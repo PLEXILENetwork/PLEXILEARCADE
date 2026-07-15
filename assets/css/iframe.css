@@ -135,3 +135,12 @@
 .fullscreen-btn:active{
     transform:scale(.95);
 }
+
+:focus {
+  outline: none; 
+  box-shadow: none; 
+}
+
+:focus-visible {
+  outline: 3px solid #C93131; 
+}
