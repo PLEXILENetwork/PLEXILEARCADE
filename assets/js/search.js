@@ -1,17 +1,15 @@
-// ===========
-// MAIN
-// ===========
-
-
 const filterButtons = document.querySelectorAll(".filter-btn");
 const gameCards = document.querySelectorAll(".game-card");
 const searchInput = document.querySelector(".search-bar input");
+const noGameResults = document.getElementById("no-game-results");
 
 if (filterButtons.length && gameCards.length && searchInput) {
 
     function updateGames() {
         const activeFilter = document.querySelector(".filter-btn.active").textContent.toLowerCase();
         const searchText = searchInput.value.toLowerCase().trim();
+
+        let visibleGames = 0;
 
         gameCards.forEach(card => {
             const title = card.querySelector("h3").textContent.toLowerCase();
@@ -23,9 +21,18 @@ if (filterButtons.length && gameCards.length && searchInput) {
             const matchesSearch =
                 title.includes(searchText);
 
-            card.style.display =
-                matchesFilter && matchesSearch ? "" : "none";
+            const showCard = matchesFilter && matchesSearch;
+
+            card.style.display = showCard ? "" : "none";
+
+            if (showCard) {
+                visibleGames++;
+            }
         });
+
+        if (noGameResults) {
+            noGameResults.style.display = visibleGames === 0 ? "block" : "none";
+        }
     }
 
     filterButtons.forEach(btn => {
@@ -48,44 +55,59 @@ if (filterButtons.length && gameCards.length && searchInput) {
     });
 }
 
-// ===========
-// FAQ
-// ===========
 
 const items = document.querySelectorAll(".item");
 
-if (items.length) {
+items.forEach(item => {
+    const btn = item.querySelector(".question");
 
-    items.forEach(item => {
-        const btn = item.querySelector(".question");
-
-        btn.addEventListener("click", () => {
-
-            if (item.classList.contains("active")) {
-                item.classList.remove("active");
-                return;
-            }
-
+    btn.addEventListener("click", () => {
+        if (item.classList.contains("active")) {
+            item.classList.remove("active");
+        } else {
             items.forEach(i => i.classList.remove("active"));
             item.classList.add("active");
-
-        });
+        }
     });
+});
 
-    const search = document.getElementById("search");
+const search = document.getElementById("search");
+const noResults = document.getElementById("no-results");
 
-    if (search) {
+if (search) {
+    search.addEventListener("input", () => {
 
-        search.addEventListener("input", () => {
+        const value = search.value.toLowerCase();
+        let totalMatches = 0;
 
-            const value = search.value.toLowerCase();
+        document.querySelectorAll(".faq-title").forEach(title => {
 
-            items.forEach(item => {
-                const text = item.innerText.toLowerCase();
-                item.style.display = text.includes(value) ? "block" : "none";
-            });
+            let hasVisibleItems = false;
+            let next = title.nextElementSibling;
 
+            while (next && !next.classList.contains("faq-title")) {
+
+                if (next.classList.contains("item")) {
+
+                    const match = next.innerText.toLowerCase().includes(value);
+
+                    next.style.display = match ? "block" : "none";
+
+                    if (match) {
+                        hasVisibleItems = true;
+                        totalMatches++;
+                    }
+                }
+
+                next = next.nextElementSibling;
+            }
+
+            title.style.display = hasVisibleItems ? "block" : "none";
         });
 
-    }
+        if (noResults) {
+            noResults.style.display = totalMatches === 0 && value !== "" ? "block" : "none";
+        }
+
+    });
 }
