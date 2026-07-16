@@ -5,7 +5,8 @@
 </p>
 
 <p align="center">
-  Play instantly. No downloads. No sign up.
+  <img src="https://img.shields.io/github/stars/knwzero/PLEXILEARCADE?style=for-the-badge&color=C93131" alt="Stars">
+  <img src="https://img.shields.io/github/issues/knwzero/PLEXILEARCADE?style=for-the-badge&color=C93131" alt="Issues">
 </p>
 
 ---
