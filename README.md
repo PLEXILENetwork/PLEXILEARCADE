@@ -1,12 +1,14 @@
 <p align="center">
   <kbd>
-    <img src="./assets/images/banner.png" alt="PLEXILE ARCADE" style="border-radius: 25%; width: 500px; height: auto;">
+    <img src="./assets/images/banner.png" alt="PLEXILE ARCADE" style="border-radius: 25%; width: 480px; height: auto;">
   </kbd>
 </p>
 
 <p align="center">
   Play instantly. No downloads. No sign up.
 </p>
+
+---
 
 
 ## 🎮 About
