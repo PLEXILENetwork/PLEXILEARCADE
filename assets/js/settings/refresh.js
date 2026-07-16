@@ -3,7 +3,8 @@
     "autoCloakSelect",
     "panicToggle",
     "adsToggle",
-    "analyticsToggle"
+    "analyticsToggle",
+    "cookieFile"
 ];
 
 settingsElements.forEach(id => {

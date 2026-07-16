@@ -18,35 +18,74 @@
 
 
 
-.bg-square {
-
+.wave-container{
     position: absolute;
-
-
-    background: rgba(201, 49, 49, 0.06);
-
-
-    border: 1px solid rgba(201, 49, 49, 0.15);
-
-
-    border-radius: 24px;
-
-
-    backdrop-filter: blur(8px);
-
-    -webkit-backdrop-filter: blur(8px);
-
-
-    pointer-events: none;
-
-
-    will-change: transform;
-
-
-    transform-origin: center;
-
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 22vh;
+    overflow: hidden;
 }
 
+.wave{
+    position: absolute;
+    bottom: 0;
+    left: -20%;
+    width: 140%;
+    height: 100%;
+    opacity: 0.75;
+}
+
+.wave1{
+    animation: waveMove1 2s ease-in-out infinite alternate;
+}
+
+.wave2{
+    animation: waveMove2 4s ease-in-out infinite alternate;
+}
+
+.wave3{
+    animation: waveMove3 6s ease-in-out infinite alternate;
+}
+
+.wave1 path{
+    fill: #c9313169;
+}
+
+.wave2 path{
+    fill: rgba(201, 49, 49, 0.08);
+}
+
+.wave3 path{
+    fill: rgba(201, 49, 49, 0.15);
+}
+
+@keyframes waveMove1{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-6%);
+    }
+}
+
+@keyframes waveMove2{
+    from{
+        transform: translateX(-3%);
+    }
+    to{
+        transform: translateX(5%);
+    }
+}
+
+@keyframes waveMove3{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-4%);
+    }
+}
 
 
 .effect-object {

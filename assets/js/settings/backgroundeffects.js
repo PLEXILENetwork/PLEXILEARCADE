@@ -114,9 +114,9 @@ function loadEffect(effect) {
     switch(effect) {
 
 
-        case "squares":
+        case "waves":
 
-            createSquares();
+            createWaves();
 
             break;
 
@@ -142,101 +142,26 @@ function loadEffect(effect) {
 }
 
 
+function createWaves() {
+    container.innerHTML = `
+        <div class="wave-container">
+            <svg class="wave wave1" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="rgba(201,49,49,.18)"
+                    d="M0,224L80,234.7C160,245,320,267,480,277.3C640,288,800,288,960,272C1120,256,1280,224,1360,208L1440,192V320H0Z"/>
+            </svg>
 
-function createSquares() {
+            <svg class="wave wave2" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="rgba(201,49,49,.35)"
+                    d="M0,256L80,240C160,224,320,192,480,186.7C640,181,800,203,960,224C1120,245,1280,267,1360,277.3L1440,288V320H0Z"/>
+            </svg>
 
-
-    for(let i = 0; i < 7; i++) {
-
-
-        const square = document.createElement("div");
-
-        square.className = "bg-square";
-
-
-
-        const size = 90 + Math.random() * 140;
-
-
-        square.style.width = size + "px";
-
-        square.style.height = size + "px";
-
-
-
-        squares.push({
-
-            el: square,
-
-
-            x:
-            window.innerWidth / 2 +
-            (Math.random() - 0.5) * 850,
-
-
-            y:
-            window.innerHeight / 2 +
-            (Math.random() - 0.5) * 300,
-
-
-            offset: Math.random() * 5000,
-
-
-            speed:
-            0.0005 +
-            Math.random() * 0.0007,
-
-
-            rotate:
-            Math.random() * 25 - 12
-
-        });
-
-
-
-        container.appendChild(square);
-
-    }
-
-
-    animateSquares();
-
+            <svg class="wave wave3" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="#C93131"
+                    d="M0,288L80,282.7C160,277,320,267,480,250.7C640,235,800,213,960,208C1120,203,1280,213,1360,218.7L1440,224V320H0Z"/>
+            </svg>
+        </div>
+    `;
 }
-
-
-
-function animateSquares(time = 0) {
-
-
-    squares.forEach(square => {
-
-
-        const movement =
-        time * square.speed +
-        square.offset;
-
-
-
-        square.el.style.transform =
-
-        `
-        translate(
-            ${square.x + Math.sin(movement) * 50}px,
-            ${square.y + Math.cos(movement * 1.2) * 40}px
-        )
-        rotate(${square.rotate}deg)
-        `;
-
-
-    });
-
-
-
-    animationId =
-    requestAnimationFrame(animateSquares);
-
-}
-
 
 
 function startRain(image) {

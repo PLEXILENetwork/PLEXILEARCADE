@@ -1,10 +1,12 @@
 function exportCookies() {
-    const cookies = document.cookie;
-
     const file = new Blob(
         [JSON.stringify({
-            cookies: cookies,
-            expires: "1 year"
+            localStorage: Object.fromEntries(
+                Array.from({ length: localStorage.length }, (_, i) => {
+                    const key = localStorage.key(i);
+                    return [key, localStorage.getItem(key)];
+                })
+            )
         }, null, 2)],
         { type: "application/json" }
     );
@@ -17,7 +19,6 @@ function exportCookies() {
     URL.revokeObjectURL(link.href);
 }
 
-
 function importCookies() {
     const input = document.getElementById("cookieFile");
 
@@ -25,23 +26,25 @@ function importCookies() {
 
     input.onchange = () => {
         const file = input.files[0];
+        if (!file) return;
 
         const reader = new FileReader();
 
         reader.onload = () => {
-            const data = JSON.parse(reader.result);
+            try {
+                const data = JSON.parse(reader.result);
 
-            if (!data.cookies) {
-                alert("Invalid cookie file.");
-                return;
+                if (!data.localStorage) {
+                    return;
+                }
+
+                Object.entries(data.localStorage).forEach(([key, value]) => {
+                    localStorage.setItem(key, value);
+                });
+
+                location.reload();
+            } catch {
             }
-
-            data.cookies.split("; ").forEach(cookie => {
-                document.cookie = cookie + "; path=/; max-age=31536000; SameSite=Lax";
-            });
-
-            alert("Cookies imported!");
-            location.reload();
         };
 
         reader.readAsText(file);
