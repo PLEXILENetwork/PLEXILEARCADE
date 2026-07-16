@@ -1,6 +1,6 @@
 <p align="center">
   <kbd>
-    <img src="./assets/images/logo.png" alt="PLEXILE ARCADE" style="border-radius: 5%; width: 200px; height: auto;">
+    <img src="./assets/images/logo.png" alt="PLEXILE ARCADE" style="border-radius: 25%; width: 150px; height: auto;">
   </kbd>
 </p>
 
@@ -31,10 +31,20 @@ Play instantly, no downloads, no sign up. Dive into games with action, puzzles, 
 Deploy PLEXILE ARCADE using your preferred hosting platform.
 
 > [!IMPORTANT]
-> Due to the size of PLEXILE ARCADE's game library and assets, hosting may require additional storage and bandwidth.
+> Due to the size of our game library, hosting may require additional storage and bandwidth.
 
 ### Installation
 
 ```bash
 git clone https://github.com/PLEXILENetwork/PLEXILEARCADE.git
+```
+
+```bash
 cd PLEXILEARCADE
+```
+
+---
+
+## License
+
+PLEXILE ARCADE is protected by copyright using the [Apache License 2.0](./LICENSE)
