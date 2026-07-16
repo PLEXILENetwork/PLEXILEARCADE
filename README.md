@@ -1,10 +1,8 @@
 <p align="center">
   <kbd>
-    <img src="https://i.ibb.co/xWCLfBW/image-removebg-preview.png" alt="PLEXILE ARCADE" style="border-radius: 25%; width: 300px; height: auto;">
+    <img src="https://i.ibb.co/xWCLfBW/image-removebg-preview.png" alt="PLEXILE ARCADE" style="border-radius: 25%; width: 400px; height: auto;">
   </kbd>
 </p>
-
-<h1 align="center">PLEXILE ARCADE</h1>
 
 <p align="center">
   Play instantly. No downloads. No sign up.
