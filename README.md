@@ -19,11 +19,11 @@ Play instantly, no downloads, no sign up. Dive into games with action, puzzles, 
 
 ## ✨ Features
 
-- 🎮 Hundreds of browser games across multiple genres
-- 📱 Built-in apps and interactive tools
-- ⚙️ Personalized settings and customization options
-- 🚀 Smooth performance with fast loading times
-- 🎨 Sleek, modern gaming interface
+- Hundreds of browser games across multiple genres
+- Built-in apps and interactive tools
+- Personalized settings and customization options
+- Smooth performance with fast loading times
+- Sleek, modern gaming interface
 
 
 ## 🚀 Setup
