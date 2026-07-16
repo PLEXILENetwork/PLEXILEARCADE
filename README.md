@@ -1,11 +1,7 @@
 <p align="center">
   <kbd>
-    <img src="./assets/images/banner.png" alt="PLEXILE ARCADE" style="border-radius: 25%; width: 450px; height: auto;">
+    <img src="./assets/images/banner.png" alt="PLEXILE ARCADE" style="border-radius: 25%; width: 800px; height: auto;">
   </kbd>
-</p>
-
-<p align="center">
-  Play instantly. No downloads. No sign up.
 </p>
 
 ---
