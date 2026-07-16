@@ -8,7 +8,6 @@
   Play instantly. No downloads. No sign up.
 </p>
 
----
 
 ## 🎮 About
 
