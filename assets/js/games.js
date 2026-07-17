@@ -153,7 +153,7 @@ const games = [
     },
     {
         title: "Boxing Random",
-        category: "Multiplayer",
+        category: "Sports",
         image: "/assets/games/boxingrandom/game.png",
         background: "/assets/games/boxingrandom/game.gif",
         slug: "boxingrandom",
@@ -398,6 +398,406 @@ const games = [
         background: "/assets/games/hanger2/game.gif",
         slug: "hanger2",
         iframe: "/assets/games/hanger2/game.html"
+    },
+    {
+        title: "Hobo",
+        category: "Action",
+        image: "/assets/games/hobo/game.png",
+        background: "/assets/games/hobo/game.gif",
+        slug: "hobo",
+        iframe: "/assets/games/hobo/game.html"
+    },
+    {
+        title: "Hobo 2",
+        category: "Action",
+        image: "/assets/games/hobo2/game.png",
+        background: "/assets/games/hobo2/game.gif",
+        slug: "hobo2",
+        iframe: "/assets/games/hobo2/game.html"
+    },
+    {
+        title: "Hobo 3",
+        category: "Action",
+        image: "/assets/games/hobo3/game.png",
+        background: "/assets/games/hobo3/game.gif",
+        slug: "hobo3",
+        iframe: "/assets/games/hobo3/game.html"
+    },
+    {
+        title: "Hobo 4",
+        category: "Action",
+        image: "/assets/games/hobo4/game.png",
+        background: "/assets/games/hobo4/game.gif",
+        slug: "hobo4",
+        iframe: "/assets/games/hobo4/game.html"
+    },
+    {
+        title: "Hobo 5",
+        category: "Action",
+        image: "/assets/games/hobo5/game.png",
+        background: "/assets/games/hobo5/game.gif",
+        slug: "hobo5",
+        iframe: "/assets/games/hobo5/game.html"
+    },
+    {
+        title: "Hobo 6",
+        category: "Action",
+        image: "/assets/games/hobo6/game.png",
+        background: "/assets/games/hobo6/game.gif",
+        slug: "hobo6",
+        iframe: "/assets/games/hobo6/game.html"
+    },
+    {
+        title: "Hobo 7",
+        category: "Action",
+        image: "/assets/games/hobo7/game.png",
+        background: "/assets/games/hobo7/game.gif",
+        slug: "hobo7",
+        iframe: "/assets/games/hobo7/game.html"
+    },
+    {
+        title: "Hole.io",
+        category: "Multiplayer",
+        image: "/assets/games/hole.io/game.png",
+        background: "/assets/games/hole.io/game.gif",
+        slug: "hole.io",
+        iframe: "/assets/games/hole.io/game.html"
+    },
+    {
+        title: "Idle Breakout",
+        category: "Strategy",
+        image: "/assets/games/idlebreakout/game.png",
+        background: "/assets/games/idlebreakout/game.gif",
+        slug: "idlebreakout",
+        iframe: "/assets/games/idlebreakout/game.html"
+    },
+    {
+        title: "Infiltrating The Airship",
+        category: "Strategy",
+        image: "/assets/games/infiltratingtheairship/game.png",
+        background: "/assets/games/infiltratingtheairship/game.gif",
+        slug: "infiltratingtheairship",
+        iframe: "/assets/games/infiltratingtheairship/game.html"
+    },
+    {
+        title: "Infinite Craft",
+        category: "Puzzle",
+        image: "/assets/games/infinitecraft/game.png",
+        background: "/assets/games/infinitecraft/game.gif",
+        slug: "infinitecraft",
+        iframe: "/assets/games/infinitecraft/game.html"
+    },
+    {
+        title: "Jacksmith",
+        category: "Action",
+        image: "/assets/games/jacksmith/game.png",
+        background: "/assets/games/jacksmith/game.gif",
+        slug: "jacksmith",
+        iframe: "/assets/games/jacksmith/game.html"
+    },
+    {
+        title: "Jelly Truck",
+        category: "Puzzle",
+        image: "/assets/games/jellytruck/game.png",
+        background: "/assets/games/jellytruck/game.gif",
+        slug: "jellytruck",
+        iframe: "/assets/games/jellytruck/game.html"
+    },
+    {
+        title: "Just One Boss",
+        category: "Action",
+        image: "/assets/games/justoneboss/game.png",
+        background: "/assets/games/justoneboss/game.gif",
+        slug: "justoneboss",
+        iframe: "/assets/games/justoneboss/game.html"
+    },
+    {
+        title: "Learn To Fly 3",
+        category: "Action",
+        image: "/assets/games/learntofly3/game.png",
+        background: "/assets/games/learntofly3/game.gif",
+        slug: "learntofly3",
+        iframe: "/assets/games/learntofly3/game.html"
+    },
+    {
+        title: "Moto X3M",
+        category: "Action",
+        image: "/assets/games/motox3m/game.png",
+        background: "/assets/games/motox3m/game.gif",
+        slug: "motox3m",
+        iframe: "/assets/games/motox3m/game.html"
+    },
+    {
+        title: "Murder",
+        category: "Puzzle",
+        image: "/assets/games/murder/game.png",
+        background: "/assets/games/murder/game.gif",
+        slug: "murder",
+        iframe: "/assets/games/murder/game.html"
+    },
+    {
+        title: "My Rusty Submarine",
+        category: "Strategy",
+        image: "/assets/games/myrustysubmarine/game.png",
+        background: "/assets/games/myrustysubmarine/game.gif",
+        slug: "myrustysubmarine",
+        iframe: "/assets/games/myrustysubmarine/game.html"
+    },
+    {
+        title: "Ninja Vs Evil Corp",
+        category: "Action",
+        image: "/assets/games/ninjavsevilcorp/game.png",
+        background: "/assets/games/ninjavsevilcorp/game.gif",
+        slug: "ninjavsevilcorp",
+        iframe: "/assets/games/ninjavsevilcorp/game.html"
+    },
+    {
+        title: "Noob Steve Parkour",
+        category: "Strategy",
+        image: "/assets/games/noobsteveparkour/game.png",
+        background: "/assets/games/noobsteveparkour/game.gif",
+        slug: "noobsteveparkour",
+        iframe: "/assets/games/noobsteveparkour/game.html"
+    },
+    {
+        title: "Papa Louie 2",
+        category: "Action",
+        image: "/assets/games/papalouie2/game.png",
+        background: "/assets/games/papalouie2/game.gif",
+        slug: "papalouie2",
+        iframe: "/assets/games/papalouie2/game.html"
+    },
+    {
+        title: "Papa's Pizzeria",
+        category: "Strategy",
+        image: "/assets/games/papaspizzeria/game.png",
+        background: "/assets/games/papaspizzeria/game.gif",
+        slug: "papaspizzeria",
+        iframe: "/assets/games/papaspizzeria/game.html"
+    },
+    {
+        title: "Paper.io 2",
+        category: "Strategy",
+        image: "/assets/games/paper.io2/game.png",
+        background: "/assets/games/paper.io2/game.gif",
+        slug: "paper.io2",
+        iframe: "/assets/games/paper.io2/game.html"
+    },
+    {
+        title: "Plants Vs Zombies",
+        category: "Strategy",
+        image: "/assets/games/plantsvszombies/game.png",
+        background: "/assets/games/plantsvszombies/game.gif",
+        slug: "plantsvszombies",
+        iframe: "/assets/games/plantsvszombies/game.html"
+    },
+    {
+        title: "Portal (Flash)",
+        category: "Puzzle",
+        image: "/assets/games/portalflash/game.png",
+        background: "/assets/games/portalflash/game.gif",
+        slug: "portalflash",
+        iframe: "/assets/games/portalflash/game.html"
+    },
+    {
+        title: "Riddle School",
+        category: "Puzzle",
+        image: "/assets/games/riddleschool/game.png",
+        background: "/assets/games/riddleschool/game.gif",
+        slug: "riddleschool",
+        iframe: "/assets/games/riddleschool/game.html"
+    },
+    {
+        title: "Riddle School 2",
+        category: "Puzzle",
+        image: "/assets/games/riddleschool2/game.png",
+        background: "/assets/games/riddleschool2/game.gif",
+        slug: "riddleschool2",
+        iframe: "/assets/games/riddleschool2/game.html"
+    },
+    {
+        title: "Riddle School 3",
+        category: "Puzzle",
+        image: "/assets/games/riddleschool3/game.png",
+        background: "/assets/games/riddleschool3/game.gif",
+        slug: "riddleschool3",
+        iframe: "/assets/games/riddleschool3/game.html"
+    },
+    {
+        title: "Roblox",
+        category: "Multiplayer",
+        image: "/assets/games/roblox/game.png",
+        background: "/assets/games/roblox/game.gif",
+        slug: "roblox",
+        iframe: "/assets/games/roblox/game.html"
+    },
+    {
+        title: "Rocket League 2D",
+        category: "Multiplayer",
+        image: "/assets/games/rocketleague2d/game.png",
+        background: "/assets/games/rocketleague2d/game.gif",
+        slug: "rocketleague2d",
+        iframe: "/assets/games/rocketleague2d/game.html"
+    },
+    {
+        title: "Rooftop Snipers",
+        category: "Multiplayer",
+        image: "/assets/games/rooftopsnipers/game.png",
+        background: "/assets/games/rooftopsnipers/game.gif",
+        slug: "rooftopsnipers",
+        iframe: "/assets/games/rooftopsnipers/game.html"
+    },
+    {
+        title: "Shopping Cart Hero 3",
+        category: "Puzzle",
+        image: "/assets/games/shoppingcarthero3/game.png",
+        background: "/assets/games/shoppingcarthero3/game.gif",
+        slug: "shoppingcarthero3",
+        iframe: "/assets/games/shoppingcarthero3/game.html"
+    },
+    {
+        title: "Slope",
+        category: "Strategy",
+        image: "/assets/games/slope/game.png",
+        background: "/assets/games/slope/game.gif",
+        slug: "slope",
+        iframe: "/assets/games/slope/game.html"
+    },
+    {
+        title: "Snowball.io",
+        category: "Multiplayer",
+        image: "/assets/games/snowball.io/game.png",
+        background: "/assets/games/snowball.io/game.gif",
+        slug: "snowball.io",
+        iframe: "/assets/games/snowball.io/game.html"
+    },
+    {
+        title: "Snow Rider 3D",
+        category: "Strategy",
+        image: "/assets/games/snowrider3d/game.png",
+        background: "/assets/games/snowrider3d/game.gif",
+        slug: "snowrider3d",
+        iframe: "/assets/games/snowrider3d/game.html"
+    },
+    {
+        title: "Soccer Random",
+        category: "Sports",
+        image: "/assets/games/soccerrandom/game.png",
+        background: "/assets/games/soccerrandom/game.gif",
+        slug: "soccerrandom",
+        iframe: "/assets/games/soccerrandom/game.html"
+    },
+    {
+        title: "Sports Heads Football",
+        category: "Sports",
+        image: "/assets/games/sportsheadsfootball/game.png",
+        background: "/assets/games/sportsheadsfootball/game.gif",
+        slug: "sportsheadsfootball",
+        iframe: "/assets/games/sportsheadsfootball/game.html"
+    },
+    {
+        title: "Stick Archers Battle",
+        category: "Multiplayer",
+        image: "/assets/games/stickarchersbattle/game.png",
+        background: "/assets/games/stickarchersbattle/game.gif",
+        slug: "stickarchersbattle",
+        iframe: "/assets/games/stickarchersbattle/game.html"
+    },
+    {
+        title: "Stick Duel: Medieval Wars",
+        category: "Multiplayer",
+        image: "/assets/games/stickduelmedievalwars/game.png",
+        background: "/assets/games/stickduelmedievalwars/game.gif",
+        slug: "stickduelmedievalwars",
+        iframe: "/assets/games/stickduelmedievalwars/game.html"
+    },
+    {
+        title: "Super Liquid Soccer",
+        category: "Sports",
+        image: "/assets/games/superliquidsoccer/game.png",
+        background: "/assets/games/superliquidsoccer/game.gif",
+        slug: "superliquidsoccer",
+        iframe: "/assets/games/superliquidsoccer/game.html"
+    },
+    {
+        title: "Tanuki Sunset",
+        category: "Action",
+        image: "/assets/games/tanukisunset/game.png",
+        background: "/assets/games/tanukisunset/game.gif",
+        slug: "tanukisunset",
+        iframe: "/assets/games/tanukisunset/game.html"
+    },
+    {
+        title: "The Impossible Quiz",
+        category: "Puzzle",
+        image: "/assets/games/theimpossiblequiz/game.png",
+        background: "/assets/games/theimpossiblequiz/game.gif",
+        slug: "theimpossiblequiz",
+        iframe: "/assets/games/theimpossiblequiz/game.html"
+    },
+    {
+        title: "The Worlds Hardest Game",
+        category: "Puzzle",
+        image: "/assets/games/theworldshardestgame/game.png",
+        background: "/assets/games/theworldshardestgame/game.gif",
+        slug: "theworldshardestgame",
+        iframe: "/assets/games/theworldshardestgame/game.html"
+    },
+    {
+        title: "Time Shooter 3",
+        category: "Action",
+        image: "/assets/games/timeshooter3/game.png",
+        background: "/assets/games/timeshooter3/game.gif",
+        slug: "timeshooter3",
+        iframe: "/assets/games/timeshooter3/game.html"
+    },
+    {
+        title: "Tiny Fishing",
+        category: "Strategy",
+        image: "/assets/games/tinyfishing/game.png",
+        background: "/assets/games/tinyfishing/game.gif",
+        slug: "tinyfishing",
+        iframe: "/assets/games/tinyfishing/game.html"
+    },
+    {
+        title: "Tomb Of The Mask",
+        category: "Puzzle",
+        image: "/assets/games/tombofthemask/game.png",
+        background: "/assets/games/tombofthemask/game.gif",
+        slug: "tombofthemask",
+        iframe: "/assets/games/tombofthemask/game.html"
+    },
+    {
+        title: "Toss The Turtle",
+        category: "Strategy",
+        image: "/assets/games/tosstheturtle/game.png",
+        background: "/assets/games/tosstheturtle/game.gif",
+        slug: "tosstheturtle",
+        iframe: "/assets/games/tosstheturtle/game.html"
+    },
+    {
+        title: "Tube Jumpers",
+        category: "Multiplayer",
+        image: "/assets/games/tubejumpers/game.png",
+        background: "/assets/games/tubejumpers/game.gif",
+        slug: "tubejumpers",
+        iframe: "/assets/games/tubejumpers/game.html"
+    },
+    {
+        title: "Unfair Mario",
+        category: "Puzzle",
+        image: "/assets/games/unfairmario/game.png",
+        background: "/assets/games/unfairmario/game.gif",
+        slug: "unfairmario",
+        iframe: "/assets/games/unfairmario/game.html"
+    },
+    {
+        title: "Volley Random",
+        category: "Sports",
+        image: "/assets/games/volleyrandom/game.png",
+        background: "/assets/games/volleyrandom/game.gif",
+        slug: "volleyrandom",
+        iframe: "/assets/games/volleyrandom/game.html"
     }
 ];
 
