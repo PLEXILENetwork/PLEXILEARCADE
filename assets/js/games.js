@@ -1,14 +1,22 @@
 const games = [
     {
-        title: "Roblox",
-        category: "Multiplayer",
-        image: "/assets/games/roblox/game.png",
-        background: "/assets/games/roblox/game.gif",
-        slug: "roblox",
-        iframe: "/assets/games/roblox/game.html"
+        title: "1 on 1 Soccer",
+        category: "Sports",
+        image: "/assets/games/1on1soccer/game.png",
+        background: "/assets/games/1on1soccer/game.gif",
+        slug: "1on1soccer",
+        iframe: "/assets/games/1on1soccer/game.html"
     },
     {
-        title: "Bacon May Die",
+        title: "12 Mini Battles",
+        category: "Multiplayer",
+        image: "/assets/games/12minibattles/game.png",
+        background: "/assets/games/12minibattles/game.gif",
+        slug: "12minibattles",
+        iframe: "/assets/games/12minibattles/game.html"
+    },
+    {
+        title: "60s Burger Run",
         category: "Action",
         image: "/assets/games/baconmaydie/game.png",
         background: "/assets/games/baconmaydie/game.gif",
