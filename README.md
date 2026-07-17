@@ -1,6 +1,6 @@
 <p align="center">
   <kbd>
-    <img src="./assets/images/banner.png" alt="PLEXILE ARCADE" style="border-radius: 25%; width: 490px; height: auto;">
+    <img src="./assets/images/banner.png" alt="PLEXILE ARCADE" style="border-radius: 25%; width: 420px; height: auto;">
   </kbd>
 </p>
 
@@ -31,7 +31,7 @@ Play instantly, no downloads, no sign up. Dive into games with action, puzzles, 
 Deploy PLEXILE ARCADE using your preferred hosting platform.
 
 > [!IMPORTANT]
-> Due to the size of our game library, hosting may require additional storage and bandwidth.
+> Hosting may require large amounts of storage and bandwidth.
 
 ### Installation
 
