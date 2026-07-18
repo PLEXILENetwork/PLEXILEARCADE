@@ -22,8 +22,8 @@ let mysteryAudio = null;
 let animationId = null;
 let spawnInterval = null;
 
-const isSettingsPage = window.location.pathname.includes("settings.html");
-
+const isSettingsPage = window.location.pathname.replace(/\/$/, "").endsWith("settings") ||
+                       window.location.pathname.endsWith("settings.html");
 
 
 if (select) {
