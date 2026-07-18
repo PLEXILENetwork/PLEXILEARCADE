@@ -42,7 +42,7 @@ frame.addEventListener("load", () => {
                 background.remove();
             }
 
-            gameContainer.style.display = "block";
+            gameContainer.classList.add("loaded");
 
         }, 300);
 
