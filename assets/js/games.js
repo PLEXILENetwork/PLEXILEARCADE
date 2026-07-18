@@ -256,14 +256,6 @@ const games = [
         iframe: "/assets/games/ducklife4/game.html"
     },
     {
-        title: "Eaglercraft 1.5",
-        category: "Multiplayer",
-        image: "/assets/games/eaglercraft1.5/game.png",
-        background: "/assets/games/eaglercraft1.5/game.gif",
-        slug: "eaglercraft1.5",
-        iframe: "/assets/games/eaglercraft1.5/game.html"
-    },
-    {
         title: "Eaglercraft 1.8",
         category: "Multiplayer",
         image: "/assets/games/eaglercraft1.8/game.png",
@@ -798,6 +790,14 @@ const games = [
         background: "/assets/games/volleyrandom/game.gif",
         slug: "volleyrandom",
         iframe: "/assets/games/volleyrandom/game.html"
+    },
+    {
+        title: "We Become What We Behold",
+        category: "Strategy",
+        image: "/assets/games/webecomewhatwebehold/game.png",
+        background: "/assets/games/webecomewhatwebehold/game.gif",
+        slug: "webecomewhatwebehold",
+        iframe: "/assets/games/webecomewhatwebehold/game.html"
     }
 ];
 
