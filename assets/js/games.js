@@ -792,12 +792,12 @@ const games = [
         iframe: "/assets/games/volleyrandom/game.html"
     },
     {
-        title: "We Become What We Behold",
-        category: "Strategy",
-        image: "/assets/games/webecomewhatwebehold/game.png",
-        background: "/assets/games/webecomewhatwebehold/game.gif",
-        slug: "webecomewhatwebehold",
-        iframe: "/assets/games/webecomewhatwebehold/game.html"
+        title: "xx142-b2.exe",
+        category: "Puzzle",
+        image: "/assets/games/xx142-b2.exe/game.png",
+        background: "/assets/games/xx142-b2.exe/game.gif",
+        slug: "xx142-b2.exe",
+        iframe: "/assets/games/xx142-b2.exe/game.html"
     }
 ];
 
