@@ -803,21 +803,94 @@ const games = [
 
 const gamesGrid = document.getElementById("gamesGrid");
 
-games.forEach(game => {
-    const card = document.createElement("div");
-    card.className = "game-card";
+if (gamesGrid) {
+    games.forEach(game => {
+        const card = document.createElement("div");
+        card.className = "game-card";
 
-    card.innerHTML = `
-        <img src="${game.image}" alt="${game.title}">
-        <div class="info">
-            <h3>${game.title}</h3>
-            <p>#${game.category}</p>
-        </div>
-    `;
+        card.innerHTML = `
+            <img src="${game.image}" alt="${game.title}">
+            <div class="info">
+                <h3>${game.title}</h3>
+                <p>#${game.category}</p>
+            </div>
+        `;
 
-    card.addEventListener("click", () => {
-        window.location.href = `/iframe.html#${game.slug}`;
+        card.addEventListener("click", () => {
+            let recent = JSON.parse(localStorage.getItem("recentGames")) || [];
+
+            recent = recent.filter(slug => slug !== game.slug);
+
+            recent.unshift(game.slug);
+
+            if (recent.length > 10) {
+                recent.pop();
+            }
+
+            localStorage.setItem("recentGames", JSON.stringify(recent));
+
+            window.location.href = `/iframe.html#${game.slug}`;
+        });
+
+        gamesGrid.appendChild(card);
     });
+}
 
-    gamesGrid.appendChild(card);
-});
+
+const recentContainer = document.getElementById("recentGames");
+const noRecent = document.getElementById("noRecentGames");
+
+if (recentContainer) {
+
+    const recent = JSON.parse(localStorage.getItem("recentGames")) || [];
+
+    const recentList = recent
+        .map(slug => games.find(game => game.slug === slug))
+        .filter(Boolean);
+
+    if (recentList.length === 0) {
+
+        if (noRecent) {
+            noRecent.style.display = "block";
+        }
+
+    } else {
+
+        if (noRecent) {
+            noRecent.style.display = "none";
+        }
+
+        recentList.forEach(game => {
+
+            const card = document.createElement("div");
+            card.className = "game-card";
+
+            card.innerHTML = `
+                <img src="${game.image}" alt="${game.title}">
+                <div class="info">
+                    <h3>${game.title}</h3>
+                    <p>#${game.category}</p>
+                </div>
+            `;
+
+            card.addEventListener("click", () => {
+                let recent = JSON.parse(localStorage.getItem("recentGames")) || [];
+
+                recent = recent.filter(slug => slug !== game.slug);
+
+                recent.unshift(game.slug);
+
+                if (recent.length > 10) {
+                    recent.pop();
+                }
+
+                localStorage.setItem("recentGames", JSON.stringify(recent));
+
+                window.location.href = `/iframe.html#${game.slug}`;
+            });
+
+            recentContainer.appendChild(card);
+
+        });
+    }
+}

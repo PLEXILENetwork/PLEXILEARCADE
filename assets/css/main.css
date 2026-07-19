@@ -291,3 +291,32 @@ body {
 :focus-visible {
     outline: 3px solid #C93131;
 }
+
+.recently-played h2 {
+    margin-top: -7px;
+    margin-bottom: 20px;
+    font-size: 27px;
+    font-weight: 700;
+}
+.empty-state {
+    display:none;
+    text-align:center;
+    padding:75px 20px;
+    color:#888;
+}
+
+.empty-state i {
+    font-size:57px;
+    color:#fff;
+}
+
+.empty-state h3 {
+    color:white;
+    margin-top:15px;
+    font-size: 22px;
+}
+
+.empty-state p {
+    margin-top:5px;
+    font-size: 18px;
+}
