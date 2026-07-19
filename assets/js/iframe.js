@@ -9,7 +9,10 @@ document.title = `PLEXILE ARCADE - ${game.title}`;
 
 document.getElementById("gameTitle").textContent = game.title;
 document.getElementById("gameImage").src = game.image;
-document.getElementById("background").src = game.background;
+
+const backgroundVideo = document.getElementById("background");
+backgroundVideo.src = game.background;
+backgroundVideo.play();
 
 const loader = document.getElementById("loader");
 const frame = document.getElementById("gameFrame");
