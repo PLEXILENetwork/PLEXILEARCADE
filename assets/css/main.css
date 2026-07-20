@@ -292,16 +292,73 @@ body {
     outline: 3px solid #C93131;
 }
 
-.recently-played h2 {
+.recentlyplayed-section,
+.newlyadded-section,
+.mostplayed-section {
+    margin-bottom: 30px;
+}
+
+.recentlyplayed-section:last-of-type,
+.newlyadded-section:last-of-type,
+.mostplayed-section:last-of-type {
+    margin-bottom: 0;
+}
+
+.recentlyplayed-section h2 {
     margin-top: -7px;
-    margin-bottom: 20px;
-    font-size: 27px;
+    margin-bottom: 4px;
+    font-size: 29px;
     font-weight: 700;
 }
+
+.recentlyplayed-section p {
+    color: #888888;
+    font-size: 16.5px;
+}
+
+.recentlyplayed-section .games-grid {
+    margin-top: 22px;
+}
+
+
+.newlyadded-section h2 {
+    margin-top: -7px;
+    margin-bottom: 4px;
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.newlyadded-section p {
+    color: #888888;
+    font-size: 16.5px;
+}
+
+.newlyadded-section .games-grid {
+    margin-top: 22px;
+}
+
+
+.mostplayed-section h2 {
+    margin-top: -7px;
+    margin-bottom: 4px;
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.mostplayed-section p {
+    color: #888888;
+    font-size: 16.5px;
+}
+
+.mostplayed-section .games-grid {
+    margin-top: 22px;
+}
+
+
 .empty-state {
     display:none;
     text-align:center;
-    padding:75px 20px;
+    padding:100px 20px;
     color:#888;
 }
 
@@ -313,10 +370,10 @@ body {
 .empty-state h3 {
     color:white;
     margin-top:15px;
-    font-size: 22px;
+    font-size:22px;
 }
 
 .empty-state p {
     margin-top:5px;
-    font-size: 18px;
+    font-size:18px;
 }

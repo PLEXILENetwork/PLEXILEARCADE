@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PLEXILE ARCADE - Games</title>
+  <title>PLEXILE ARCADE - Apps</title>
   <link rel="manifest" href="/manifest.json"/>
   <link rel="icon" type="image/png" href="/assets/images/logo.png"/>
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -41,26 +41,32 @@
 <div class="main">
   <div class="page-header">
     <div>
-      <h1>Your Library 👋</h1>
-      <p>Jump back into your favorite games or discover something new.</p>
+      <h1>Check Out Applications 📱</h1>
+      <p>Explore powerful tools, creative apps, entertainment players, emulators and AI experiences.</p>
     </div>
   </div>
 
-<section class="recently-played">
-    <h2>Recently Played</h2>
+  <div class="search-bar">
+    <i class="bx bx-search icon"></i>
+    <input type="text" placeholder="Search for apps...">
+  </div>
 
-    <div id="recentGames" class="games-grid"></div>
+  <div class="filters">
+    <div class="filter-btn active">All</div>
+    <div class="filter-btn">Media</div>
+    <div class="filter-btn">Tools</div>
+    <div class="filter-btn">Creative</div>
+    <div class="filter-btn">Gaming</div>
+    <div class="filter-btn">AI</div>
+  </div>
 
-    <div id="noRecentGames" class="empty-state">
-        <i class="bx bx-time-five"></i>
-        <h3>No Recently Played Games</h3>
-        <p>Check out our games first.</p>
-    </div>
+  <p id="no-game-results" style="display:none;">No results found.</p>
+
+<section class="games-section">
+    <div class="games-grid" id="gamesGrid"></div>
 </section>
 
- </div>
-
- </div>
+</div>
 
 <!--Settings-->
 <script src="/assets/js/settings/backgroundeffects.js"></script>
@@ -72,7 +78,7 @@
 
 <script src="/assets/js/settings.js"></script>
 <script src="/assets/js/highlight.js"></script>
-<script src="/assets/js/games.js"></script>
+<script src="/assets/js/apps.js"></script>
 <script src="/assets/js/search.js"></script>
 
 </body>
