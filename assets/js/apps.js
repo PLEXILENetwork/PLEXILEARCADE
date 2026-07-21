@@ -1,4 +1,4 @@
-const games = [
+const apps = [
 {
     title: "Android Emulator",
     category: "Gaming",
@@ -97,51 +97,50 @@ const games = [
 }
 ];
 
-const gamesGrid = document.getElementById("gamesGrid");
+const appsGrid = document.getElementById("appsGrid");
 
-if (gamesGrid) {
-    games.forEach(game => {
+if (appsGrid) {
+    apps.forEach(app => {
         const card = document.createElement("div");
         card.className = "game-card";
 
         card.innerHTML = `
-            <img src="${game.image}" alt="${game.title}">
+            <img src="${app.image}" alt="${app.title}">
             <div class="info">
-                <h3>${game.title}</h3>
-                <p>#${game.category}</p>
+                <h3>${app.title}</h3>
+                <p>#${app.category}</p>
             </div>
         `;
 
         card.addEventListener("click", () => {
-            let recent = JSON.parse(localStorage.getItem("recentGames")) || [];
+            let recent = JSON.parse(localStorage.getItem("recentApps")) || [];
 
-            recent = recent.filter(slug => slug !== game.slug);
+            recent = recent.filter(slug => slug !== app.slug);
 
-            recent.unshift(game.slug);
+            recent.unshift(app.slug);
 
             if (recent.length > 10) {
                 recent.pop();
             }
 
-            localStorage.setItem("recentGames", JSON.stringify(recent));
+            localStorage.setItem("recentApps", JSON.stringify(recent));
 
-            window.location.href = `/iframe.html#${game.slug}`;
+            window.location.href = `/app.html#${app.slug}`;
         });
 
-        gamesGrid.appendChild(card);
+        appsGrid.appendChild(card);
     });
 }
 
-
-const recentContainer = document.getElementById("recentGames");
-const noRecent = document.getElementById("noRecentGames");
+const recentContainer = document.getElementById("recentApps");
+const noRecent = document.getElementById("noRecentApps");
 
 if (recentContainer) {
 
-    const recent = JSON.parse(localStorage.getItem("recentGames")) || [];
+    const recent = JSON.parse(localStorage.getItem("recentApps")) || [];
 
     const recentList = recent
-        .map(slug => games.find(game => game.slug === slug))
+        .map(slug => apps.find(app => app.slug === slug))
         .filter(Boolean);
 
     if (recentList.length === 0) {
@@ -156,33 +155,33 @@ if (recentContainer) {
             noRecent.style.display = "none";
         }
 
-        recentList.forEach(game => {
+        recentList.forEach(app => {
 
             const card = document.createElement("div");
             card.className = "game-card";
 
             card.innerHTML = `
-                <img src="${game.image}" alt="${game.title}">
+                <img src="${app.image}" alt="${app.title}">
                 <div class="info">
-                    <h3>${game.title}</h3>
-                    <p>#${game.category}</p>
+                    <h3>${app.title}</h3>
+                    <p>#${app.category}</p>
                 </div>
             `;
 
             card.addEventListener("click", () => {
-                let recent = JSON.parse(localStorage.getItem("recentGames")) || [];
+                let recent = JSON.parse(localStorage.getItem("recentApps")) || [];
 
-                recent = recent.filter(slug => slug !== game.slug);
+                recent = recent.filter(slug => slug !== app.slug);
 
-                recent.unshift(game.slug);
+                recent.unshift(app.slug);
 
                 if (recent.length > 10) {
                     recent.pop();
                 }
 
-                localStorage.setItem("recentGames", JSON.stringify(recent));
+                localStorage.setItem("recentApps", JSON.stringify(recent));
 
-                window.location.href = `/iframe.html#${game.slug}`;
+                window.location.href = `/app.html#${app.slug}`;
             });
 
             recentContainer.appendChild(card);

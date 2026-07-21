@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Draw</title>
+<link rel="icon" type="image/png" href="logo.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Rajdhani",sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    background:#f3f3f3;
+}
+
+.app{
+    width:100%;
+    height:100vh;
+    position:relative;
+}
+
+.save{
+    position:absolute;
+    top:25px;
+    right:98px;
+    font-size:26px;
+    cursor:pointer;
+    z-index:20;
+    transition:.2s;
+}
+
+.save:hover{
+    color:#c93131;
+    transform:translateY(-3px);
+}
+
+.pencils{
+    position:absolute;
+    left:-30px;
+    top:46%;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    z-index:10;
+}
+
+.pencil{
+    width:165px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    cursor:pointer;
+    transition:.25s ease;
+}
+
+.pencil:hover{
+    transform:translateX(15px);
+}
+
+.pencil.active{
+    transform:translateX(25px) scale(1.08);
+}
+
+.paper:before{
+    content:"";
+    position:absolute;
+    inset:-12px;
+    background:rgba(0,0,0,.05);
+    filter:blur(20px);
+    z-index:-1;
+    border-radius:10px;
+}
+
+canvas{
+    cursor:crosshair;
+}
+
+.pencil.active .body{
+    box-shadow:inset 0 4px 7px rgba(255,255,255,.6),0 8px 15px rgba(0,0,0,.35);
+}
+
+.tip{
+    order:2;
+    width:0;
+    height:0;
+    border-top:12px solid transparent;
+    border-bottom:12px solid transparent;
+    border-left:45px solid #d8b48a;
+    filter:drop-shadow(2px 3px 3px rgba(0,0,0,.25));
+    position:relative;
+}
+
+.tip:before{
+    content:"";
+    position:absolute;
+    right: 4px;
+    top:-5px;
+    width:0;
+    height:0;
+    border-top:5px solid transparent;
+    border-bottom:5px solid transparent;
+    border-left:14px solid var(--color);
+}
+
+.body{
+    order:1;
+    width:170px;
+    height:24px;
+    position:relative;
+    border-radius:5px 0 0 5px;
+    box-shadow:inset 0 4px 5px rgba(255,255,255,.5),0 5px 10px rgba(0,0,0,.25);
+}
+
+.body:before{
+    content:"";
+    position:absolute;
+    left:20px;
+    top:0;
+    width:4px;
+    height:100%;
+}
+
+.body:after{
+    content:"";
+    position:absolute;
+    right:15px;
+    top:3px;
+    width:8px;
+    height:19px;
+    border-radius:10%;
+}
+
+.canvas-area{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.paper{
+    position:relative;
+    left: 50px;
+    width:80%;
+    height:80%;
+}
+
+.paper canvas{
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    border:1px solid #ddd;
+    border-radius:5px;
+    box-shadow:0 18px 45px rgba(0,0,0,.15);
+}
+
+#paperCanvas{
+    background:
+    radial-gradient(circle at 45px 120px, #d8d8d8 0 11px,transparent 12px),
+    radial-gradient(circle at 45px 375px, #d8d8d8 0 11px,transparent 12px),
+    radial-gradient(circle at 45px 630px, #d8d8d8 0 11px,transparent 12px),
+    linear-gradient(to right,transparent 85px, #ff5b5b 85px, #ff5b5b 88px, transparent 88px),
+    repeating-linear-gradient(to bottom, #ffffff 0px, #ffffff 39px, #74d7d7 40px, #ffffff 41px);
+
+}
+
+.eraser{
+    position:absolute;
+    bottom:80px;
+    left:40px;
+    width:80px;
+    height:45px;
+    background:
+    linear-gradient(135deg,#ff9fbd,#ffd6e2);
+    border:2px solid #e88ca7;
+    border-radius:7px;
+    transform:rotate(-25deg);
+    cursor:pointer;
+    z-index:10;
+    box-shadow:0 6px 15px rgba(0,0,0,.25);
+    transition:.2s;
+}
+
+.eraser:before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:10px;
+    background:#f27fa0;
+    border-radius:6px 6px 0 0;
+}
+
+.eraser:hover{
+    transform:rotate(-25deg) translateY(-6px);
+}
+
+.eraser.active{
+    outline:3px solid #c93131;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="app">
+
+<div class="save" id="save">
+
+💾 Save
+
+</div>
+
+<div class="pencils">
+
+<div class="pencil active" data-color="#111111" style="--color:#111111">
+<div class="body" style="background:#111"></div>
+<div class="tip"></div>
+</div>
+
+<div class="pencil" data-color="#e63946" style="--color:#e63946">
+<div class="body" style="background:#e63946"></div>
+<div class="tip"></div>
+</div>
+
+<div class="pencil" data-color="#ff7b00" style="--color:#ff7b00">
+<div class="body" style="background:#ff7b00"></div>
+<div class="tip"></div>
+</div>
+
+<div class="pencil" data-color="#ffd60a" style="--color:#ffd60a">
+<div class="body" style="background:#ffd60a"></div>
+<div class="tip"></div>
+</div>
+
+<div class="pencil" data-color="#2dc653" style="--color:#2dc653">
+<div class="body" style="background:#2dc653"></div>
+<div class="tip"></div>
+</div>
+
+<div class="pencil" data-color="#0077ff" style="--color:#0077ff">
+<div class="body" style="background:#0077ff"></div>
+<div class="tip"></div>
+</div>
+
+<div class="pencil" data-color="#8338ec" style="--color:#8338ec">
+<div class="body" style="background:#8338ec"></div>
+<div class="tip"></div>
+</div>
+
+<div class="pencil" data-color="#ff4d9d" style="--color:#ff4d9d">
+<div class="body" style="background:#ff4d9d"></div>
+<div class="tip"></div>
+</div>
+
+<div class="pencil" data-color="#8b4513" style="--color:#8b4513">
+<div class="body" style="background:#8b4513"></div>
+<div class="tip"></div>
+</div>
+
+<div class="pencil" data-color="#ffffff" style="--color:#fff">
+<div class="body" style="background:#fff;border:1px solid #fff"></div>
+<div class="tip"></div>
+</div>
+
+</div>
+
+<div class="canvas-area">
+
+<div class="paper">
+
+<canvas id="paperCanvas" width="1200" height="750"></canvas>
+
+<canvas id="canvas" width="1200" height="750"></canvas>
+
+</div>
+</div>
+
+<div class="eraser" id="eraser"></div>
+<script>
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+let drawing = false;
+let color = "#111111";
+let erasing = false;
+ctx.lineCap = "round";
+ctx.lineJoin = "round";
+
+/* SELECT COLORS */
+
+document.querySelectorAll(".pencil").forEach(pencil => { 
+    pencil.onclick = () => {
+
+        document
+        .querySelectorAll(".pencil")
+        .forEach(p => p.classList.remove("active"));
+
+        pencil.classList.add("active");
+
+        color = pencil.dataset.color;
+
+        erasing = false;
+
+        document
+        .getElementById("eraser")
+        .classList.remove("active");
+
+    };
+
+});
+
+/* ERASER */
+
+document.getElementById("eraser").onclick = () => {
+
+    erasing = !erasing;
+
+    document
+    .getElementById("eraser")
+    .classList.toggle("active");
+
+};
+
+canvas.onmousedown = (e) => {
+
+    drawing = true;
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        e.offsetX,
+        e.offsetY
+    );
+
+};
+
+canvas.onmouseup = () => {
+
+    drawing = false;
+
+    ctx.beginPath();
+
+};
+
+canvas.onmouseleave = () => {
+
+    drawing = false;
+
+};
+
+/* DRAWING */
+
+canvas.onmousemove = (e) => {
+
+    if(!drawing) return;
+
+    if(erasing){
+
+        ctx.globalCompositeOperation = "destination-out";
+
+        ctx.lineWidth = 45;
+
+    }else{
+
+        ctx.globalCompositeOperation = "source-over";
+
+        ctx.strokeStyle = color;
+
+        ctx.lineWidth = 5;
+
+    }
+
+    ctx.lineTo(
+        e.offsetX,
+        e.offsetY
+    );
+
+    ctx.stroke();
+
+};
+
+/* SAVE IMAGE */
+
+document.getElementById("save").onclick = () => {
+
+    const exportCanvas = document.createElement("canvas");
+
+    exportCanvas.width = canvas.width;
+
+    exportCanvas.height = canvas.height;
+
+    const exportCtx = exportCanvas.getContext("2d");
+
+    exportCtx.drawImage(
+        document.getElementById("paperCanvas"),
+        0,
+        0
+    );
+
+    exportCtx.drawImage(
+        canvas,
+        0,
+        0
+    );
+
+    const link = document.createElement("a");
+
+    link.download = "drawing.png";
+
+    link.href = exportCanvas.toDataURL();
+
+    link.click();
+
+};
+</script>
+</div>
+
+</body>
+</html>

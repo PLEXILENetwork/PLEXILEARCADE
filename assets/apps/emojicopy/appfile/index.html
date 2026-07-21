@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>emojiCOPY</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter,sans-serif;
+}
+
+body {
+    background:#fff;
+    color:#111;
+}
+
+header {
+    text-align:center;
+    padding:55px 20px 25px;
+}
+
+.logo {
+    font-size:52px;
+    font-weight:800;
+    letter-spacing:-3px;
+}
+
+.logo span {
+    color:#65d32e;
+}
+
+.subtitle {
+    color:#666;
+    margin-top:12px;
+}
+
+.search-area {
+    display:flex;
+    justify-content:center;
+    margin:25px auto 45px;
+}
+
+#search {
+    width:min(650px,90%);
+    padding:17px 22px;
+    border-radius:20px;
+    border:1px solid #ddd;
+    font-size:16px;
+    outline:none;
+    transition:.2s;
+}
+
+#search:focus {
+    border-color:#65d32e;
+    box-shadow:0 0 0 5px rgba(101,211,46,.18);
+}
+
+.container {
+    width:min(1200px,92%);
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(75px,1fr));
+    gap:15px;
+    padding-bottom:60px;
+}
+
+.emoji-card {
+    height:75px;
+    border:1px solid #e5e5e5;
+    border-radius:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:38px;
+    cursor:pointer;
+    background:white;
+    transition:.2s;
+}
+
+.emoji-card:hover {
+    transform:translateY(-5px);
+    border-color:#65d32e;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.toast {
+    position:fixed;
+    bottom:35px;
+    left:50%;
+    transform:translateX(-50%) translateY(100px);
+    background:#111;
+    color:white;
+    padding:14px 25px;
+    border-radius:50px;
+    opacity:0;
+    transition:.3s;
+}
+
+.toast.show {
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">emoji<span>COPY</span></div>
+    <p class="subtitle">Click any emoji to copy instantly</p>
+</header>
+
+
+<div class="search-area">
+<input id="search" placeholder="Search emojis... (example: dog, heart, fire)">
+</div>
+
+
+<div class="container" id="emojiContainer"></div>
+
+
+<div class="toast" id="toast">
+Emoji copied ✓
+</div>
+
+
+<script>
+
+const container = document.getElementById("emojiContainer");
+const search = document.getElementById("search");
+const toast = document.getElementById("toast");
+
+let emojis = [];
+
+
+fetch("https://cdn.jsdelivr.net/npm/emojilib@latest/dist/emoji-en-US.json")
+.then(response => response.json())
+.then(data => {
+
+    emojis = Object.entries(data).map(([emoji, names]) => {
+
+        return {
+            emoji: emoji,
+            name: Array.isArray(names) ? names.join(" ") : names
+        };
+
+    });
+
+    display(emojis);
+
+})
+.catch(() => {
+
+    container.innerHTML = `
+    <p style="grid-column:1/-1;text-align:center;color:#777;">
+    Failed loading emojis. Refresh the page.
+    </p>
+    `;
+
+});
+
+
+function display(list){
+
+    container.innerHTML = "";
+
+    list.forEach(item => {
+
+        const card = document.createElement("div");
+
+        card.className = "emoji-card";
+
+        card.textContent = item.emoji;
+
+        card.title = item.name;
+
+
+        card.onclick = () => {
+
+            navigator.clipboard.writeText(item.emoji);
+
+            toast.classList.add("show");
+
+            setTimeout(() => {
+                toast.classList.remove("show");
+            },1200);
+
+        };
+
+
+        container.appendChild(card);
+
+    });
+
+}
+
+
+
+search.addEventListener("input",()=>{
+
+    const value = search.value.toLowerCase();
+
+    const filtered = emojis.filter(item =>
+        item.name.toLowerCase().includes(value)
+    );
+
+    display(filtered);
+
+});
+
+
+</script>
+
+</body>
+</html>
