@@ -1,21 +1,5 @@
 const apps = [
 {
-    title: "Android Emulator",
-    category: "Gaming",
-    image: "/assets/apps/androidemulator/app.png",
-    background: "/assets/apps/androidemulator/app.webm",
-    slug: "androidemulator",
-    iframe: "/assets/apps/androidemulator/app.html"
-},
-{
-    title: "Audio Player",
-    category: "Media",
-    image: "/assets/apps/audioplayer/app.png",
-    background: "/assets/apps/audioplayer/app.webm",
-    slug: "audioplayer",
-    iframe: "/assets/apps/audioplayer/app.html"
-},
-{
     title: "ChatAI",
     category: "AI",
     image: "/assets/apps/chatai/app.png",
@@ -86,6 +70,22 @@ const apps = [
     background: "/assets/apps/silk/app.webm",
     slug: "silk",
     iframe: "/assets/apps/silk/app.html"
+},
+{
+    title: "Spotify",
+    category: "Media",
+    image: "/assets/apps/spotify/app.png",
+    background: "/assets/apps/spotify/app.webm",
+    slug: "spotify",
+    iframe: "/assets/apps/spotify/app.html"
+},
+{
+    title: "Windows 11",
+    category: "Media",
+    image: "/assets/apps/windows11/app.png",
+    background: "/assets/apps/windows11/app.webm",
+    slug: "windows11",
+    iframe: "/assets/apps/windows11/app.html"
 },
 {
     title: "YouTube",
