@@ -1,6 +1,6 @@
 <p align="center">
 <kbd>
-   <img src="./assets/images/logo.png" alt="PLEXILE ARCADE" style="border-radius: 50%; width: 75px;height: auto;">
+   <img src="./assets/images/banner.png" alt="PLEXILE ARCADE" style="border-radius: 60%; width: 75px;height: auto;">
 </kbd>
 </p>
 
@@ -10,6 +10,7 @@
   <img src="https://img.shields.io/github/stars/PLEXILENetwork/PLEXILEARCADE?style=for-the-badge&color=C93131" alt="Stars">
   <img src="https://img.shields.io/github/issues/PLEXILENetwork/PLEXILEARCADE?style=for-the-badge&color=C93131" alt="Issues">
 </p>
+
 ---
 
 ## Setup
@@ -28,7 +29,7 @@ cd PLEXILEARCADE
 
 ## Features
 
-| Feature | Description |           |
+| Feature | Description |ㅤㅤㅤㅤㅤㅤㅤ |
 | --- | --- | --- |
 | `Speed` | Enjoy fast loading times with optimized games and a smooth browsing experience. |
 | `Quality` | Experience high-quality game visuals, thumbnails, and a polished modern interface. |
