@@ -1,50 +1,47 @@
 <p align="center">
-  <kbd>
-    <img src="./assets/images/banner.png" alt="PLEXILE ARCADE" style="border-radius: 25%; width: 420px; height: auto;">
-  </kbd>
+<kbd>
+   <img src="/assets/images/logo.png" alt="PLEXILE ARCADE" style="border-radius: 50%; width: 100px;height: auto;">
+</kbd>
 </p>
+
+<p align="center">Play instantly, no downloads, no sign up.</p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/stars/knwzero/PLEXILEARCADE?style=for-the-badge&color=C93131" alt="Stars">
-  <img src="https://img.shields.io/github/issues/knwzero/PLEXILEARCADE?style=for-the-badge&color=C93131" alt="Issues">
+  <img src="https://img.shields.io/github/stars/PLEXILENetwork/PLEXILEARCADE?style=for-the-badge&color=C93131" alt="Stars">
+  <img src="https://img.shields.io/github/issues/PLEXILENetwork/PLEXILEARCADE?style=for-the-badge&color=C93131" alt="Issues">
 </p>
-
 ---
 
+## Setup
 
-## 🎮 About
+Deploy PLEXILE ARCADE with your preferred platform:
 
-Play instantly, no downloads, no sign up. Dive into games with action, puzzles, multiplayer and more.
-
-
-## ✨ Features
-
-- Hundreds of browser games across multiple genres
-- Built-in apps and interactive tools
-- Personalized settings and customization options
-- Smooth performance with fast loading times
-- Sleek, modern gaming interface
-
-
-## 🚀 Setup
-
-Deploy PLEXILE ARCADE using your preferred hosting platform.
-
-> [!IMPORTANT]
-> Hosting may require large amounts of storage and bandwidth.
+> [!IMPORTANT]  
+> Hosting will require large amounts of storage and bandwidth.
 
 ### Installation
 
 ```bash
 git clone https://github.com/PLEXILENetwork/PLEXILEARCADE.git
 ```
-
 ```bash
 cd PLEXILEARCADE
 ```
+
+## Features
+
+| Feature | Description |
+| --- | --- |
+| `Speed` | Enjoy fast loading times with optimized games and a smooth browsing experience. |
+| `Quality` | Experience high-quality game visuals, thumbnails, and a polished modern interface. |
+| `Languages` | Accessible worldwide with support for multiple languages and global players. |
+| `Compatibility` | Play seamlessly across computers, phones, tablets, and other supported devices. |
+| `Game Library` | Explore a growing collection of games across multiple genres and categories. |
+| `Ad Control` | Enjoy gaming with fewer interruptions by managing ads to fit your experience. |
+| `Performance` | Optimized for smooth gameplay with efficient loading and responsive controls. |
 
 ---
 
 ## License
 
-PLEXILE ARCADE is protected by copyright using the [Apache License 2.0](./LICENSE)
+PLEXILE ARCADE is protected from copyright under the [Apache License 2.0](./LICENSE)
