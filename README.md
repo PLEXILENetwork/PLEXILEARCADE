@@ -1,6 +1,6 @@
 <p align="center">
 <kbd>
-   <img src="./assets/images/banner.png" alt="PLEXILE ARCADE" style="border-radius: 60%; width: 75px;height: auto;">
+   <img src="./assets/images/banner.png" alt="PLEXILE ARCADE" style="border-radius: 60%; width: 350px;height: auto;">
 </kbd>
 </p>
 
@@ -29,7 +29,7 @@ cd PLEXILEARCADE
 
 ## Features
 
-| Feature | Description |ㅤㅤㅤㅤㅤㅤㅤ |
+| Feature | Description |ㅤㅤ |
 | --- | --- | --- |
 | `Speed` | Enjoy fast loading times with optimized games and a smooth browsing experience. |
 | `Quality` | Experience high-quality game visuals, thumbnails, and a polished modern interface. |
