@@ -1,6 +1,6 @@
 <p align="center">
 <kbd>
-   <img src="/assets/images/logo.png" alt="PLEXILE ARCADE" style="border-radius: 50%; width: 100px;height: auto;">
+   <img src="./assets/images/logo.png" alt="PLEXILE ARCADE" style="border-radius: 50%; width: 75px;height: auto;">
 </kbd>
 </p>
 
@@ -19,8 +19,6 @@ Deploy PLEXILE ARCADE with your preferred platform:
 > [!IMPORTANT]  
 > Hosting will require large amounts of storage and bandwidth.
 
-### Installation
-
 ```bash
 git clone https://github.com/PLEXILENetwork/PLEXILEARCADE.git
 ```
@@ -30,11 +28,10 @@ cd PLEXILEARCADE
 
 ## Features
 
-| Feature | Description |
-| --- | --- |
+| Feature | Description |           |
+| --- | --- | --- |
 | `Speed` | Enjoy fast loading times with optimized games and a smooth browsing experience. |
 | `Quality` | Experience high-quality game visuals, thumbnails, and a polished modern interface. |
-| `Languages` | Accessible worldwide with support for multiple languages and global players. |
 | `Compatibility` | Play seamlessly across computers, phones, tablets, and other supported devices. |
 | `Game Library` | Explore a growing collection of games across multiple genres and categories. |
 | `Ad Control` | Enjoy gaming with fewer interruptions by managing ads to fit your experience. |
