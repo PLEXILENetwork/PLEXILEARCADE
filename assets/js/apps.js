@@ -1,19 +1,19 @@
 const apps = [
 {
+    title: "32257480 Calculator",
+    category: "Tools",
+    image: "/assets/apps/32257480calculator/app.png",
+    background: "/assets/apps/32257480calculator/app.webm",
+    slug: "32257480calculator",
+    iframe: "/assets/apps/32257480calculator/app.html"
+},
+{
     title: "ChatAI",
     category: "AI",
     image: "/assets/apps/chatai/app.png",
     background: "/assets/apps/chatai/app.webm",
     slug: "chatai",
     iframe: "/assets/apps/chatai/app.html"
-},
-{
-    title: "HTML/CSS Calculator",
-    category: "Tools",
-    image: "/assets/apps/htmlcsscalculator/app.png",
-    background: "/assets/apps/htmlcsscalculator/app.webm",
-    slug: "htmlcsscalculator",
-    iframe: "/assets/apps/htmlcsscalculator/app.html"
 },
 {
     title: "Code Editor",

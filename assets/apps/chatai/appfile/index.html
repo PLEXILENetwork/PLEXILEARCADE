@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatAI</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+
+<div class="main">
+<div class="header">
+<a href="/assets/apps/chatai/appfile/index.html" class="logo">
+ChatAI
+</a>
+
+<button class="refresh" onclick="openReset()">
+<i class='bx bx-refresh'></i>
+</button>
+</div>
+
+<div class="chat" id="chat">
+</div>
+
+<div class="bottom">
+<div class="input">
+<input id="prompt" placeholder="Message ChatAI...">
+<button class="send" onclick="sendMessage()">
+<i class='bx bx-send'></i>
+</button>
+</div>
+</div>
+</div>
+
+<div class="overlay" id="overlay">
+<div class="reset-box">
+<h2>Reset chat?</h2>
+<p>This will clear your conversation and start a new chat.</p>
+
+<div class="reset-buttons">
+<button class="cancel" onclick="closeReset()">Cancel</button>
+<button class="confirm" onclick="resetChat()">Confirm</button>
+</div>
+</div>
+</div>
+
+<script src="config.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
