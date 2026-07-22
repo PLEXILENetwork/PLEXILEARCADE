@@ -48,20 +48,20 @@ const apps = [
     iframe: "/assets/apps/emojicopy/app.html"
 },
 {
-    title: "Online Soundboard",
-    category: "Media",
-    image: "/assets/apps/onlinesoundboard/app.png",
-    background: "/assets/apps/onlinesoundboard/app.webm",
-    slug: "onlinesoundboard",
-    iframe: "/assets/apps/onlinesoundboard/app.html"
-},
-{
     title: "Ruffle",
     category: "Gaming",
     image: "/assets/apps/ruffle/app.png",
     background: "/assets/apps/ruffle/app.webm",
     slug: "ruffle",
     iframe: "/assets/apps/ruffle/app.html"
+},
+{
+    title: "Soundboard",
+    category: "Media",
+    image: "/assets/apps/soundboard/app.png",
+    background: "/assets/apps/soundboard/app.webm",
+    slug: "soundboard",
+    iframe: "/assets/apps/soundboard/app.html"
 },
 {
     title: "Silk",
