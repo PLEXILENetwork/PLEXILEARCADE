@@ -1,6 +1,6 @@
 <p align="center">
 <kbd>
-   <img src="./assets/images/banner.png" alt="PLEXILE ARCADE" style="border-radius: 60%; width: 350px;height: auto;">
+   <img src="./assets/images/banner.png" alt="PLEXILE ARCADE" style="border-radius: 60%; width: 400px;height: auto;">
 </kbd>
 </p>
 
