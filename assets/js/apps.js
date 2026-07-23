@@ -8,20 +8,20 @@ const apps = [
     iframe: "/assets/apps/32257480calculator/app.html"
 },
 {
+    title: "Beepbox",
+    category: "Media",
+    image: "/assets/apps/beepbox/app.png",
+    background: "/assets/apps/beepbox/app.webm",
+    slug: "beepbox",
+    iframe: "/assets/apps/beepbox/app.html"
+},
+{
     title: "ChatAI",
     category: "AI",
     image: "/assets/apps/chatai/app.png",
     background: "/assets/apps/chatai/app.webm",
     slug: "chatai",
     iframe: "/assets/apps/chatai/app.html"
-},
-{
-    title: "Code Editor",
-    category: "Tools",
-    image: "/assets/apps/codeeditor/app.png",
-    background: "/assets/apps/codeeditor/app.webm",
-    slug: "codeeditor",
-    iframe: "/assets/apps/codeeditor/app.html"
 },
 {
     title: "Draw",
