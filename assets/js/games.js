@@ -16,6 +16,14 @@ const games = [
         iframe: "/assets/games/1on1soccer/game.html"
     },
     {
+        title: "8 Ball Billiards Classic",
+        category: "Strategy",
+        image: "/assets/games/8ballbilliardsclassic/game.png",
+        background: "/assets/games/8ballbilliardsclassic/game.webm",
+        slug: "8ballbilliardsclassic",
+        iframe: "/assets/games/8ballbilliardsclassic/game.html"
+    },
+    {
         title: "2048",
         category: "Puzzle",
         image: "/assets/games/2048/game.png",
@@ -88,6 +96,14 @@ const games = [
         iframe: "/assets/games/baconmaydie/game.html"
     },
     {
+        title: "Baldis Basics",
+        category: "Horror",
+        image: "/assets/games/baldisbasics/game.png",
+        background: "/assets/games/baldisbasics/game.webm",
+        slug: "baldisbasics",
+        iframe: "/assets/games/baldisbasics/game.html"
+    },
+    {
         title: "Basketball Stars",
         category: "Sports",
         image: "/assets/games/basketballstars/game.png",
@@ -158,6 +174,14 @@ const games = [
         background: "/assets/games/boxingrandom/game.webm",
         slug: "boxingrandom",
         iframe: "/assets/games/boxingrandom/game.html"
+    },
+    {
+        title: "Burger & frights",
+        category: "Horror",
+        image: "/assets/games/burger&frights/game.png",
+        background: "/assets/games/burger&frights/game.webm",
+        slug: "burger&frights",
+        iframe: "/assets/games/burger&frights/game.html"
     },
     {
         title: "Burrito Bison",
@@ -510,6 +534,14 @@ const games = [
         background: "/assets/games/learntofly3/game.webm",
         slug: "learntofly3",
         iframe: "/assets/games/learntofly3/game.html"
+    },
+    {
+        title: "Monkey Mart",
+        category: "Strategy",
+        image: "/assets/games/monkeymart/game.png",
+        background: "/assets/games/monkeymart/game.webm",
+        slug: "monkeymart",
+        iframe: "/assets/games/monkeymart/game.html"
     },
     {
         title: "Moto X3M",
