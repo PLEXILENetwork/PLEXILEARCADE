@@ -96,7 +96,7 @@ const games = [
         iframe: "/assets/games/baconmaydie/game.html"
     },
     {
-        title: "Baldis Basics",
+        title: "Baldi's Basics",
         category: "Horror",
         image: "/assets/games/baldisbasics/game.png",
         background: "/assets/games/baldisbasics/game.webm",
@@ -376,6 +376,14 @@ const games = [
         iframe: "/assets/games/funnyshooter2/game.html"
     },
     {
+        title: "Geometry Dash",
+        category: "Strategy",
+        image: "/assets/games/geometrydash/game.png",
+        background: "/assets/games/geometrydash/game.webm",
+        slug: "geometrydash",
+        iframe: "/assets/games/geometrydash/game.html"
+    },
+    {
         title: "Getaway Shootout",
         category: "Action",
         image: "/assets/games/getawayshootout/game.png",
@@ -624,6 +632,22 @@ const games = [
         iframe: "/assets/games/portalflash/game.html"
     },
     {
+        title: "Red Ball 4",
+        category: "Action",
+        image: "/assets/games/redball4/game.png",
+        background: "/assets/games/redball4/game.webm",
+        slug: "redball4",
+        iframe: "/assets/games/redball4/game.html"
+    },
+    {
+        title: "Retro Bowl",
+        category: "Sports",
+        image: "/assets/games/retrobowl/game.png",
+        background: "/assets/games/retrobowl/game.webm",
+        slug: "retrobowl",
+        iframe: "/assets/games/retrobowl/game.html"
+    },
+    {
         title: "Riddle School",
         category: "Puzzle",
         image: "/assets/games/riddleschool/game.png",
@@ -654,6 +678,14 @@ const games = [
         background: "/assets/games/roblox/game.webm",
         slug: "roblox",
         iframe: "/assets/games/roblox/game.html"
+    },
+    {
+        title: "Rocketgoal.io",
+        category: "Multiplayer",
+        image: "/assets/games/rocketgoal.io/game.png",
+        background: "/assets/games/rocketgoal.io/game.webm",
+        slug: "rocketgoal.io",
+        iframe: "/assets/games/rocketgoal.io/game.html"
     },
     {
         title: "Rocket League 2D",
