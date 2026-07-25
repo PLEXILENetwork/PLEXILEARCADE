@@ -122,9 +122,8 @@ function loadEffect(effect) {
 
 
 
-        case "eggs":
-
-            startRain("/assets/images/egg.png");
+        case "lines":
+            createLines();
 
             break;
 
@@ -138,6 +137,15 @@ function loadEffect(effect) {
 
 
     }
+
+}
+
+function createLines() {
+
+    const lines = document.createElement("div");
+    lines.className = "lines-effect";
+
+    container.appendChild(lines);
 
 }
 

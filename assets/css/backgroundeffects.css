@@ -127,3 +127,36 @@
         );
 
 }
+
+.lines-effect {
+    position: absolute;
+    inset: -20px;
+    overflow: hidden;
+}
+
+.lines-effect::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0,
+            transparent 7px,
+            rgba(255,255,255,0.035) 7px,
+            rgba(255,255,255,0.035) 8px
+        );
+
+    will-change: transform;
+    animation: linesMove 2s linear infinite;
+}
+
+@keyframes linesMove {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(8px, 8px, 0);
+    }
+}

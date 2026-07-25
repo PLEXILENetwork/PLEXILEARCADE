@@ -25,7 +25,7 @@
     position:fixed;
     top:0;
     right:-380px;
-    width:360px;
+    width:380px;
     height:100%;
     background:#111111;
     border-left:1px solid #333333;
@@ -56,8 +56,8 @@
 .drawer-nav{
     display:flex;
     align-items:center;
-    gap:4px;
-    margin-left: 100px;
+    gap:5px;
+    margin-left: 103px;
 }
 
 .drawer-nav button{
@@ -74,7 +74,6 @@
     font-size:16px;
     min-width:70px;
     text-align:center;
-    font-weight:600;
 }
 
 .drawer-pages{
@@ -138,13 +137,37 @@
 .page-pill {
     background-color: #C93131;
     color: #fff;
-    padding: 8px 16px;
+    padding: 7px 15px;
     border-radius: 999px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-weight: 600;
+    font-weight:500;
     white-space: nowrap;
+}
+
+#prevPage,
+#nextPage {
+    padding: 7px 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1C1C1C;
+    border: 1px solid #333333;
+    border-radius: 999px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#prevPage:hover,
+#nextPage:hover {
+    background-color: #111111;
+}
+
+#prevPage i,
+#nextPage i {
+    font-size: 20px;
 }
 
 .empty-games {
