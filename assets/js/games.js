@@ -14,8 +14,7 @@ const games = [
         image: "/assets/games/1on1soccer/game.png",
         background: "/assets/games/1on1soccer/game.webm",
         slug: "1on1soccer",
-        iframe: "/assets/games/1on1soccer/game.html",
-        popular: true
+        iframe: "/assets/games/1on1soccer/game.html"
     },
     {
         title: "8 Ball Billiards Classic",
@@ -24,7 +23,7 @@ const games = [
         background: "/assets/games/8ballbilliardsclassic/game.webm",
         slug: "8ballbilliardsclassic",
         iframe: "/assets/games/8ballbilliardsclassic/game.html",
-        popular: true
+        new: true
     },
     {
         title: "2048",
@@ -32,8 +31,7 @@ const games = [
         image: "/assets/games/2048/game.png",
         background: "/assets/games/2048/game.webm",
         slug: "2048",
-        iframe: "/assets/games/2048/game.html",
-        new: true
+        iframe: "/assets/games/2048/game.html"
     },
     {
         title: "60s Burger Run",
@@ -41,8 +39,7 @@ const games = [
         image: "/assets/games/60sburgerrun/game.png",
         background: "/assets/games/60sburgerrun/game.webm",
         slug: "60sburgerrun",
-        iframe: "/assets/games/60sburgerrun/game.html",
-        new: true
+        iframe: "/assets/games/60sburgerrun/game.html"
     },
     {
         title: "Achievement Unlocked",
@@ -50,8 +47,7 @@ const games = [
         image: "/assets/games/achievementunlocked/game.png",
         background: "/assets/games/achievementunlocked/game.webm",
         slug: "achievementunlocked",
-        iframe: "/assets/games/achievementunlocked/game.html",
-        new: true
+        iframe: "/assets/games/achievementunlocked/game.html"
     },
     {
         title: "A Dance Of Fire & Ice",
@@ -83,7 +79,8 @@ const games = [
         image: "/assets/games/amongus/game.png",
         background: "/assets/games/amongus/game.webm",
         slug: "amongus",
-        iframe: "/assets/games/amongus/game.html"
+        iframe: "/assets/games/amongus/game.html",
+        popular: true
     },
     {
         title: "Awesome Tanks 2",
@@ -107,7 +104,8 @@ const games = [
         image: "/assets/games/baldisbasics/game.png",
         background: "/assets/games/baldisbasics/game.webm",
         slug: "baldisbasics",
-        iframe: "/assets/games/baldisbasics/game.html"
+        iframe: "/assets/games/baldisbasics/game.html",
+        popular: true
     },
     {
         title: "Basketball Stars",
@@ -155,7 +153,8 @@ const games = [
         image: "/assets/games/bloxorz/game.png",
         background: "/assets/games/bloxorz/game.webm",
         slug: "bloxorz",
-        iframe: "/assets/games/bloxorz/game.html"
+        iframe: "/assets/games/bloxorz/game.html",
+        new: true
     },
     {
         title: "Bob The Robber",
@@ -243,7 +242,8 @@ const games = [
         image: "/assets/games/deepestsword/game.png",
         background: "/assets/games/deepestsword/game.webm",
         slug: "deepestsword",
-        iframe: "/assets/games/deepestsword/game.html"
+        iframe: "/assets/games/deepestsword/game.html",
+        new: true
     },
     {
         title: "Diggy",
@@ -275,7 +275,8 @@ const games = [
         image: "/assets/games/driftboss/game.png",
         background: "/assets/games/driftboss/game.webm",
         slug: "driftboss",
-        iframe: "/assets/games/driftboss/game.html"
+        iframe: "/assets/games/driftboss/game.html",
+        new: true
     },
     {
         title: "Duck Life 4",
@@ -307,7 +308,8 @@ const games = [
         image: "/assets/games/evilglitch/game.png",
         background: "/assets/games/evilglitch/game.webm",
         slug: "evilglitch",
-        iframe: "/assets/games/evilglitch/game.html"
+        iframe: "/assets/games/evilglitch/game.html",
+        popular: true
     },
     {
         title: "Extreme Pamplona",
@@ -395,7 +397,8 @@ const games = [
         image: "/assets/games/getawayshootout/game.png",
         background: "/assets/games/getawayshootout/game.webm",
         slug: "getawayshootout",
-        iframe: "/assets/games/getawayshootout/game.html"
+        iframe: "/assets/games/getawayshootout/game.html",
+        popular: true
     },
     {
         title: "Google Feud",
@@ -427,7 +430,8 @@ const games = [
         image: "/assets/games/hanger2/game.png",
         background: "/assets/games/hanger2/game.webm",
         slug: "hanger2",
-        iframe: "/assets/games/hanger2/game.html"
+        iframe: "/assets/games/hanger2/game.html",
+        new: true
     },
     {
         title: "Hobo",
@@ -499,7 +503,8 @@ const games = [
         image: "/assets/games/idlebreakout/game.png",
         background: "/assets/games/idlebreakout/game.webm",
         slug: "idlebreakout",
-        iframe: "/assets/games/idlebreakout/game.html"
+        iframe: "/assets/games/idlebreakout/game.html",
+        new: true
     },
     {
         title: "Infiltrating The Airship",
@@ -515,7 +520,8 @@ const games = [
         image: "/assets/games/infinitecraft/game.png",
         background: "/assets/games/infinitecraft/game.webm",
         slug: "infinitecraft",
-        iframe: "/assets/games/infinitecraft/game.html"
+        iframe: "/assets/games/infinitecraft/game.html",
+        popular: true
     },
     {
         title: "Jacksmith",
@@ -547,7 +553,8 @@ const games = [
         image: "/assets/games/learntofly3/game.png",
         background: "/assets/games/learntofly3/game.webm",
         slug: "learntofly3",
-        iframe: "/assets/games/learntofly3/game.html"
+        iframe: "/assets/games/learntofly3/game.html",
+        new: true
     },
     {
         title: "Monkey Mart",
@@ -643,7 +650,8 @@ const games = [
         image: "/assets/games/redball4/game.png",
         background: "/assets/games/redball4/game.webm",
         slug: "redball4",
-        iframe: "/assets/games/redball4/game.html"
+        iframe: "/assets/games/redball4/game.html",
+        popular: true
     },
     {
         title: "Retro Bowl",
@@ -811,7 +819,8 @@ const games = [
         image: "/assets/games/timeshooter3/game.png",
         background: "/assets/games/timeshooter3/game.webm",
         slug: "timeshooter3",
-        iframe: "/assets/games/timeshooter3/game.html"
+        iframe: "/assets/games/timeshooter3/game.html",
+        popular: true
     },
     {
         title: "Tiny Fishing",
@@ -867,7 +876,8 @@ const games = [
         image: "/assets/games/xx142-b2.exe/game.png",
         background: "/assets/games/xx142-b2.exe/game.webm",
         slug: "xx142-b2.exe",
-        iframe: "/assets/games/xx142-b2.exe/game.html"
+        iframe: "/assets/games/xx142-b2.exe/game.html",
+        new: true
     }
 ];
 
@@ -907,8 +917,8 @@ if (gamesGrid) {
 }
 
 
-const recentContainer = document.getElementById("recentGames");
-const noRecent = document.getElementById("noRecentGames");
+const recentContainer = document.getElementById("recentApps");
+const noRecent = document.getElementById("noRecentApps");
 
 if (recentContainer) {
 
@@ -959,7 +969,7 @@ if (recentContainer) {
                 window.location.href = `/game.html#${game.slug}`;
             });
 
-            recentContainer.appendChild(card);
+            appsRecentContainer.appendChild(card);
 
         });
     }
