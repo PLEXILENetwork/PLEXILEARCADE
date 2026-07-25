@@ -8,6 +8,14 @@ html {
     overflow-x: hidden;
 }
 
+html.no-scroll,
+body.no-scroll{
+    overflow:hidden;
+    height:100%;
+    position:fixed;
+    width:100%;
+}
+
 body {
     font-family: 'Rajdhani', sans-serif;
     background-color: #0F0F0F;
@@ -92,6 +100,7 @@ body {
     padding: 30px;
     padding-bottom: 105px;
 }
+
 .page-header {
     background: linear-gradient(145deg, #C93131, #a91f1f);
     padding: 30px;

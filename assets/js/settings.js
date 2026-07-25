@@ -9,10 +9,10 @@ settingsBtn.addEventListener("click", () => {
 
     overlay.classList.add("active");
 
-    document.body.style.overflow = "hidden";
+    document.documentElement.classList.add("no-scroll");
+    document.body.classList.add("no-scroll");
 
 });
-
 
 function settingsUpdated() {
 
@@ -20,12 +20,12 @@ function settingsUpdated() {
 
 }
 
-
 function closeSettings() {
 
     overlay.classList.remove("active");
 
-    document.body.style.overflow = "";
+    document.documentElement.classList.remove("no-scroll");
+    document.body.classList.remove("no-scroll");
 
     if (settingsChanged) {
 
@@ -35,7 +35,6 @@ function closeSettings() {
     }
 
 }
-
 
 overlay.addEventListener("click", (e) => {
 
@@ -47,7 +46,6 @@ overlay.addEventListener("click", (e) => {
 
 });
 
-
 document.addEventListener("keydown", (e) => {
 
     if (e.key === "Escape") {
@@ -57,7 +55,6 @@ document.addEventListener("keydown", (e) => {
     }
 
 });
-
 
 window.closeSettings = closeSettings;
 window.settingsUpdated = settingsUpdated;

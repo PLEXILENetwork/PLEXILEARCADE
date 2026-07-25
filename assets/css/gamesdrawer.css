@@ -1,0 +1,234 @@
+.nav-btn{
+    background:none;
+    border:none;
+    padding:0;
+    cursor:pointer;
+}
+
+
+.drawer-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(6px);
+    opacity:0;
+    pointer-events:none;
+    transition:.3s ease;
+    z-index:998;
+}
+
+
+.drawer-overlay.show{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.games-drawer{
+
+    position:fixed;
+
+    top:0;
+    right:-380px;
+
+    width:360px;
+    height:100%;
+
+    background:#111111;
+
+    border-left:1px solid #333333;
+
+    transition:.35s ease;
+
+    z-index:999;
+
+    overflow:hidden;
+
+}
+
+
+
+.games-drawer.open{
+
+    right:0;
+
+}
+
+
+
+
+.drawer-header{
+
+    height:75px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 20px;
+
+    border-bottom:1px solid #333333;
+
+}
+
+
+
+.drawer-header h2{
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+
+
+
+.drawer-nav{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+
+
+.drawer-nav button{
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:28px;
+
+}
+
+
+
+.drawer-nav span{
+
+    color:white;
+
+    font-size:16px;
+
+    min-width:70px;
+
+    text-align:center;
+
+    font-weight:600;
+
+}
+
+
+
+
+.drawer-pages{
+
+    display:flex;
+
+    width:300%;
+
+    height:calc(100% - 75px);
+
+    transition:.35s ease;
+
+}
+
+
+
+
+.drawer-page{
+
+    width:33.333%;
+
+    padding:18px;
+
+    overflow-y:auto;
+
+}
+
+
+
+
+.drawer-page .game-card{
+
+    display:flex;
+
+    margin-bottom:15px;
+
+    background:#1C1C1C;
+
+    border:1px solid #333333;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+
+}
+
+.drawer-page .game-card .info{
+    border:none;
+    border-left:1px solid #333333;
+    border-radius:0;
+}
+
+
+.drawer-page .game-card:hover{
+
+    transform:translateX(5px);
+    box-shadow: 0 5px 25px #000000 ;
+
+}
+
+
+.drawer-page .game-card img{
+    width:96px;
+    height:72px;
+    object-fit:cover;
+    border-radius:12px 0 0 12px;
+}
+
+
+.drawer-page .info{
+
+    padding:12px;
+
+}
+
+
+
+.drawer-page .info h3{
+
+    color:white;
+
+    margin:0;
+
+    font-size:18px;
+
+}
+
+
+
+.drawer-page .info p{
+
+    color:#c2c2c2;
+
+    margin-top:4px;
+
+    font-size:14px;
+
+}

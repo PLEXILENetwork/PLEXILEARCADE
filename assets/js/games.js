@@ -5,7 +5,8 @@ const games = [
         image: "/assets/games/12minibattles/game.png",
         background: "/assets/games/12minibattles/game.webm",
         slug: "12minibattles",
-        iframe: "/assets/games/12minibattles/game.html"
+        iframe: "/assets/games/12minibattles/game.html",
+        popular: true
     },
     {
         title: "1 on 1 Soccer",
@@ -13,7 +14,8 @@ const games = [
         image: "/assets/games/1on1soccer/game.png",
         background: "/assets/games/1on1soccer/game.webm",
         slug: "1on1soccer",
-        iframe: "/assets/games/1on1soccer/game.html"
+        iframe: "/assets/games/1on1soccer/game.html",
+        popular: true
     },
     {
         title: "8 Ball Billiards Classic",
@@ -21,7 +23,8 @@ const games = [
         image: "/assets/games/8ballbilliardsclassic/game.png",
         background: "/assets/games/8ballbilliardsclassic/game.webm",
         slug: "8ballbilliardsclassic",
-        iframe: "/assets/games/8ballbilliardsclassic/game.html"
+        iframe: "/assets/games/8ballbilliardsclassic/game.html",
+        popular: true
     },
     {
         title: "2048",
@@ -29,7 +32,8 @@ const games = [
         image: "/assets/games/2048/game.png",
         background: "/assets/games/2048/game.webm",
         slug: "2048",
-        iframe: "/assets/games/2048/game.html"
+        iframe: "/assets/games/2048/game.html",
+        new: true
     },
     {
         title: "60s Burger Run",
@@ -37,7 +41,8 @@ const games = [
         image: "/assets/games/60sburgerrun/game.png",
         background: "/assets/games/60sburgerrun/game.webm",
         slug: "60sburgerrun",
-        iframe: "/assets/games/60sburgerrun/game.html"
+        iframe: "/assets/games/60sburgerrun/game.html",
+        new: true
     },
     {
         title: "Achievement Unlocked",
@@ -45,7 +50,8 @@ const games = [
         image: "/assets/games/achievementunlocked/game.png",
         background: "/assets/games/achievementunlocked/game.webm",
         slug: "achievementunlocked",
-        iframe: "/assets/games/achievementunlocked/game.html"
+        iframe: "/assets/games/achievementunlocked/game.html",
+        new: true
     },
     {
         title: "A Dance Of Fire & Ice",
