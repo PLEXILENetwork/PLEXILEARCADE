@@ -18,7 +18,7 @@
 Deploy PLEXILE ARCADE with your preferred platform:
 
 > [!IMPORTANT]  
-> Hosting requires a minimum of 1 GB of storage.
+> Hosting requires a minimum of 2+ GB of storage.
 
 ```bash
 git clone https://github.com/PLEXILENetwork/PLEXILEARCADE.git
