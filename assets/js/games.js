@@ -590,7 +590,7 @@ const games = [
     },
     {
         title: "Murder",
-        category: "Puzzle",
+        category: "Strategy",
         image: "/assets/games/murder/game.png",
         background: "/assets/games/murder/game.webm",
         slug: "murder",
@@ -735,7 +735,7 @@ const games = [
     },
     {
         title: "Shopping Cart Hero 3",
-        category: "Puzzle",
+        category: "Strategy",
         image: "/assets/games/shoppingcarthero3/game.png",
         background: "/assets/games/shoppingcarthero3/game.webm",
         slug: "shoppingcarthero3",
