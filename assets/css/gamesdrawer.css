@@ -24,12 +24,12 @@
 .games-drawer{
     position:fixed;
     top:0;
-    right:-380px;
-    width:380px;
+    right:-540px;
+    width:400px;
     height:100%;
     background:#111111;
     border-left:1px solid #333333;
-    transition:.35s ease;
+    transition:.45s ease;
     z-index:999;
     overflow:hidden;
 }

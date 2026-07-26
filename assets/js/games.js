@@ -91,6 +91,14 @@ const games = [
         iframe: "/assets/games/awesometanks2/game.html"
     },
     {
+        title: "Backrooms",
+        category: "Horror",
+        image: "/assets/games/backrooms/game.png",
+        background: "/assets/games/backrooms/game.webm",
+        slug: "backrooms",
+        iframe: "/assets/games/backrooms/game.html"
+    },
+    {
         title: "Bacon May Die",
         category: "Action",
         image: "/assets/games/baconmaydie/game.png",
@@ -171,6 +179,14 @@ const games = [
         background: "/assets/games/bobtherobber2/game.webm",
         slug: "bobtherobber2",
         iframe: "/assets/games/bobtherobber2/game.html"
+    },
+    {
+        title: "Boxing Physics 2",
+        category: "Multiplayer",
+        image: "/assets/games/boxingphysics2/game.png",
+        background: "/assets/games/boxingphysics2/game.webm",
+        slug: "boxingphysics2",
+        iframe: "/assets/games/boxingphysics2/game.html"
     },
     {
         title: "Boxing Random",
@@ -758,6 +774,14 @@ const games = [
         iframe: "/assets/games/soccerrandom/game.html"
     },
     {
+        title: "Sonic 2",
+        category: "Action",
+        image: "/assets/games/sonic2/game.png",
+        background: "/assets/games/sonic2/game.webm",
+        slug: "sonic2",
+        iframe: "/assets/games/sonic2/game.html"
+    },
+    {
         title: "Sports Heads Football",
         category: "Sports",
         image: "/assets/games/sportsheadsfootball/game.png",
@@ -780,6 +804,14 @@ const games = [
         background: "/assets/games/stickduelmedievalwars/game.webm",
         slug: "stickduelmedievalwars",
         iframe: "/assets/games/stickduelmedievalwars/game.html"
+    },
+    {
+        title: "Subway Surfers",
+        category: "Strategy",
+        image: "/assets/games/subwaysurfers/game.png",
+        background: "/assets/games/subwaysurfers/game.webm",
+        slug: "subwaysurfers",
+        iframe: "/assets/games/subwaysurfers/game.html"
     },
     {
         title: "Super Liquid Soccer",
