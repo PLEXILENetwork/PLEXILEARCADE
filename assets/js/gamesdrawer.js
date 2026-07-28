@@ -14,9 +14,9 @@ let currentPage = 0;
 let scrollPosition = 0;
 
 const pageNames = [
+    "Recent",
     "Popular",
-    "New",
-    "Recent"
+    "New"
 ];
 
 

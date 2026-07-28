@@ -237,6 +237,22 @@ const games = [
         iframe: "/assets/games/coreball/game.html"
     },
     {
+        title: "Crazy Chicken 3D",
+        category: "Multiplayer",
+        image: "/assets/games/crazychicken3d/game.png",
+        background: "/assets/games/crazychicken3d/game.webm",
+        slug: "crazychicken3d",
+        iframe: "/assets/games/crazychicken3d/game.html"
+    },
+    {
+        title: "Crossy Road",
+        category: "Strategy",
+        image: "/assets/games/crossyroad/game.png",
+        background: "/assets/games/crossyroad/game.webm",
+        slug: "crossyroad",
+        iframe: "/assets/games/crossyroad/game.html"
+    },
+    {
         title: "Cut The Rope",
         category: "Puzzle",
         image: "/assets/games/cuttherope/game.png",
@@ -653,6 +669,14 @@ const games = [
         iframe: "/assets/games/plantsvszombies/game.html"
     },
     {
+        title: "Pokemon: Firered",
+        category: "Action",
+        image: "/assets/games/pokemonfirered/game.png",
+        background: "/assets/games/pokemonfirered/game.webm",
+        slug: "pokemonfirered",
+        iframe: "/assets/games/pokemonfirered/game.html"
+    },
+    {
         title: "Portal (Flash)",
         category: "Puzzle",
         image: "/assets/games/portalflash/game.png",
@@ -732,6 +756,14 @@ const games = [
         background: "/assets/games/rooftopsnipers/game.webm",
         slug: "rooftopsnipers",
         iframe: "/assets/games/rooftopsnipers/game.html"
+    },
+    {
+        title: "Santy Is Home",
+        category: "Horror",
+        image: "/assets/games/santyishome/game.png",
+        background: "/assets/games/santyishome/game.webm",
+        slug: "santyishome",
+        iframe: "/assets/games/santyishome/game.html"
     },
     {
         title: "Shopping Cart Hero 3",
