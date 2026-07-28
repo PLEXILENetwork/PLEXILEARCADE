@@ -253,6 +253,14 @@ const games = [
         iframe: "/assets/games/crossyroad/game.html"
     },
     {
+        title: "CSGO Clicker",
+        category: "Strategy",
+        image: "/assets/games/csgoclicker/game.png",
+        background: "/assets/games/csgoclicker/game.webm",
+        slug: "csgoclicker",
+        iframe: "/assets/games/csgoclicker/game.html"
+    },
+    {
         title: "Cut The Rope",
         category: "Puzzle",
         image: "/assets/games/cuttherope/game.png",
@@ -278,12 +286,28 @@ const games = [
         new: true
     },
     {
+        title: "Defend The Tank",
+        category: "Action",
+        image: "/assets/games/defendthetank/game.png",
+        background: "/assets/games/defendthetank/game.webm",
+        slug: "defendthetank",
+        iframe: "/assets/games/defendthetank/game.html"
+    },
+    {
         title: "Diggy",
         category: "Puzzle",
         image: "/assets/games/diggy/game.png",
         background: "/assets/games/diggy/game.webm",
         slug: "diggy",
         iframe: "/assets/games/diggy/game.html"
+    },
+    {
+        title: "Doodle Jump",
+        category: "Strategy",
+        image: "/assets/games/doodlejump/game.png",
+        background: "/assets/games/doodlejump/game.webm",
+        slug: "doodlejump",
+        iframe: "/assets/games/doodlejump/game.html"
     },
     {
         title: "Doom",
@@ -852,6 +876,14 @@ const games = [
         background: "/assets/games/superliquidsoccer/game.webm",
         slug: "superliquidsoccer",
         iframe: "/assets/games/superliquidsoccer/game.html"
+    },
+    {
+        title: "TABS",
+        category: "Action",
+        image: "/assets/games/tabs/game.png",
+        background: "/assets/games/tabs/game.webm",
+        slug: "tabs",
+        iframe: "/assets/games/tabs/game.html"
     },
     {
         title: "Tanuki Sunset",
