@@ -33,4 +33,4 @@ selenite.cc: 15% of game assets
 classroom-6x.io: 60% of game assets (cdn)
 ```
 
-Made with ❤️ by j (PLEXILE Network)
+Made with ❤️ by knwzero (PLEXILE Network)
