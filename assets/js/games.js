@@ -563,14 +563,6 @@ const games = [
         new: true
     },
     {
-        title: "Infiltrating The Airship",
-        category: "Strategy",
-        image: "/assets/games/infiltratingtheairship/game.png",
-        background: "/assets/games/infiltratingtheairship/game.webm",
-        slug: "infiltratingtheairship",
-        iframe: "/assets/games/infiltratingtheairship/game.html"
-    },
-    {
         title: "Infinite Craft",
         category: "Puzzle",
         image: "/assets/games/infinitecraft/game.png",
@@ -844,6 +836,14 @@ const games = [
         background: "/assets/games/sportsheadsfootball/game.webm",
         slug: "sportsheadsfootball",
         iframe: "/assets/games/sportsheadsfootball/game.html"
+    },
+    {
+        title: "Stealing The Diamond",
+        category: "Strategy",
+        image: "/assets/games/stealingthediamond/game.png",
+        background: "/assets/games/stealingthediamond/game.webm",
+        slug: "stealingthediamond",
+        iframe: "/assets/games/stealingthediamond/game.html"
     },
     {
         title: "Stick Archers Battle",
