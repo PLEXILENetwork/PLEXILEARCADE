@@ -1005,7 +1005,7 @@ if (gamesGrid) {
 
             localStorage.setItem("recentGames", JSON.stringify(recent));
 
-            window.location.href = `/game.html#${game.slug}`;
+            window.top.location.href = `/game.html#${game.slug}`;
         });
 
         gamesGrid.appendChild(card);
@@ -1062,7 +1062,7 @@ if (recentContainer) {
 
                 localStorage.setItem("recentGames", JSON.stringify(recent));
 
-                window.location.href = `/game.html#${game.slug}`;
+                window.top.location.href = `/game.html#${game.slug}`;
             });
 
             appsRecentContainer.appendChild(card);
