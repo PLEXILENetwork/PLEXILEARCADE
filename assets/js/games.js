@@ -197,6 +197,14 @@ const games = [
         iframe: "/assets/games/boxingrandom/game.html"
     },
     {
+        title: "Breaking The Bank",
+        category: "Strategy",
+        image: "/assets/games/breakingthebank/game.png",
+        background: "/assets/games/breakingthebank/game.webm",
+        slug: "breakingthebank",
+        iframe: "/assets/games/breakingthebank/game.html"
+    },
+    {
         title: "Burger & frights",
         category: "Horror",
         image: "/assets/games/burger&frights/game.png",
@@ -836,14 +844,6 @@ const games = [
         background: "/assets/games/sportsheadsfootball/game.webm",
         slug: "sportsheadsfootball",
         iframe: "/assets/games/sportsheadsfootball/game.html"
-    },
-    {
-        title: "Stealing The Diamond",
-        category: "Strategy",
-        image: "/assets/games/stealingthediamond/game.png",
-        background: "/assets/games/stealingthediamond/game.webm",
-        slug: "stealingthediamond",
-        iframe: "/assets/games/stealingthediamond/game.html"
     },
     {
         title: "Stick Archers Battle",
