@@ -440,12 +440,12 @@ const games = [
         iframe: "/assets/games/fryingnemo/game.html"
     },
     {
-        title: "Funny Shooter 2",
+        title: "Funny Shooter",
         category: "Action",
-        image: "/assets/games/funnyshooter2/game.png",
-        background: "/assets/games/funnyshooter2/game.webm",
-        slug: "funnyshooter2",
-        iframe: "/assets/games/funnyshooter2/game.html"
+        image: "/assets/games/funnyshooter/game.png",
+        background: "/assets/games/funnyshooter/game.webm",
+        slug: "funnyshooter",
+        iframe: "/assets/games/funnyshooter/game.html"
     },
     {
         title: "Geometry Dash",
@@ -638,7 +638,7 @@ const games = [
     },
     {
         title: "My Rusty Submarine",
-        category: "Strategy",
+        category: "Multiplayer",
         image: "/assets/games/myrustysubmarine/game.png",
         background: "/assets/games/myrustysubmarine/game.webm",
         slug: "myrustysubmarine",
@@ -685,20 +685,20 @@ const games = [
         iframe: "/assets/games/paper.io2/game.html"
     },
     {
+        title: "PKMFR",
+        category: "Action",
+        image: "/assets/games/pkmfr/game.png",
+        background: "/assets/games/pkmfr/game.webm",
+        slug: "pkmfr",
+        iframe: "/assets/games/pkmfr/game.html"
+    },
+    {
         title: "Plants Vs Zombies",
         category: "Strategy",
         image: "/assets/games/plantsvszombies/game.png",
         background: "/assets/games/plantsvszombies/game.webm",
         slug: "plantsvszombies",
         iframe: "/assets/games/plantsvszombies/game.html"
-    },
-    {
-        title: "Pokemon: Firered",
-        category: "Action",
-        image: "/assets/games/pokemonfirered/game.png",
-        background: "/assets/games/pokemonfirered/game.webm",
-        slug: "pokemonfirered",
-        iframe: "/assets/games/pokemonfirered/game.html"
     },
     {
         title: "Portal (Flash)",
@@ -782,6 +782,14 @@ const games = [
         iframe: "/assets/games/rooftopsnipers/game.html"
     },
     {
+        title: "S2",
+        category: "Action",
+        image: "/assets/games/s2/game.png",
+        background: "/assets/games/s2/game.webm",
+        slug: "s2",
+        iframe: "/assets/games/s2/game.html"
+    },
+    {
         title: "Santy Is Home",
         category: "Horror",
         image: "/assets/games/santyishome/game.png",
@@ -830,14 +838,6 @@ const games = [
         iframe: "/assets/games/soccerrandom/game.html"
     },
     {
-        title: "Sonic 2",
-        category: "Action",
-        image: "/assets/games/sonic2/game.png",
-        background: "/assets/games/sonic2/game.webm",
-        slug: "sonic2",
-        iframe: "/assets/games/sonic2/game.html"
-    },
-    {
         title: "Sports Heads Football",
         category: "Sports",
         image: "/assets/games/sportsheadsfootball/game.png",
@@ -878,20 +878,20 @@ const games = [
         iframe: "/assets/games/superliquidsoccer/game.html"
     },
     {
+        title: "T³",
+        category: "Horror",
+        image: "/assets/games/t3/game.png",
+        background: "/assets/games/t3/game.webm",
+        slug: "t3",
+        iframe: "/assets/games/t3/game.html"
+    },
+    {
         title: "TABS",
         category: "Action",
         image: "/assets/games/tabs/game.png",
         background: "/assets/games/tabs/game.webm",
         slug: "tabs",
         iframe: "/assets/games/tabs/game.html"
-    },
-    {
-        title: "Tanuki Sunset",
-        category: "Action",
-        image: "/assets/games/tanukisunset/game.png",
-        background: "/assets/games/tanukisunset/game.webm",
-        slug: "tanukisunset",
-        iframe: "/assets/games/tanukisunset/game.html"
     },
     {
         title: "The Impossible Quiz",
