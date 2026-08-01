@@ -59,7 +59,7 @@ const games = [
     },
     {
         title: "Age Of War",
-        category: "Strategy",
+        category: "Action",
         image: "/assets/games/ageofwar/game.png",
         background: "/assets/games/ageofwar/game.webm",
         slug: "ageofwar",
@@ -360,7 +360,7 @@ const games = [
     },
     {
         title: "Elastic Man",
-        category: "Action",
+        category: "Strategy",
         image: "/assets/games/elasticman/game.png",
         background: "/assets/games/elasticman/game.webm",
         slug: "elasticman",
@@ -479,14 +479,6 @@ const games = [
         background: "/assets/games/gravitysoccer/game.webm",
         slug: "gravitysoccer",
         iframe: "/assets/games/gravitysoccer/game.html"
-    },
-    {
-        title: "Guess The Number",
-        category: "Puzzle",
-        image: "/assets/games/guessthenumber/game.png",
-        background: "/assets/games/guessthenumber/game.webm",
-        slug: "guessthenumber",
-        iframe: "/assets/games/guessthenumber/game.html"
     },
     {
         title: "Gun Mayhem 2",
@@ -860,6 +852,14 @@ const games = [
         background: "/assets/games/subwaysurfers/game.webm",
         slug: "subwaysurfers",
         iframe: "/assets/games/subwaysurfers/game.html"
+    },
+    {
+        title: "SUPERHOT",
+        category: "Action",
+        image: "/assets/games/superhot/game.png",
+        background: "/assets/games/superhot/game.webm",
+        slug: "superhot",
+        iframe: "/assets/games/superhot/game.html"
     },
     {
         title: "Super Liquid Soccer",
