@@ -481,6 +481,14 @@ const games = [
         iframe: "/assets/games/gravitysoccer/game.html"
     },
     {
+        title: "Guess The Number",
+        category: "Puzzle",
+        image: "/assets/games/guessthenumber/game.png",
+        background: "/assets/games/guessthenumber/game.webm",
+        slug: "guessthenumber",
+        iframe: "/assets/games/guessthenumber/game.html"
+    },
+    {
         title: "Gun Mayhem 2",
         category: "Action",
         image: "/assets/games/gunmayhem2/game.png",
@@ -685,14 +693,6 @@ const games = [
         iframe: "/assets/games/paper.io2/game.html"
     },
     {
-        title: "PKMFR",
-        category: "Action",
-        image: "/assets/games/pkmfr/game.png",
-        background: "/assets/games/pkmfr/game.webm",
-        slug: "pkmfr",
-        iframe: "/assets/games/pkmfr/game.html"
-    },
-    {
         title: "Plants Vs Zombies",
         category: "Strategy",
         image: "/assets/games/plantsvszombies/game.png",
@@ -782,14 +782,6 @@ const games = [
         iframe: "/assets/games/rooftopsnipers/game.html"
     },
     {
-        title: "S2",
-        category: "Action",
-        image: "/assets/games/s2/game.png",
-        background: "/assets/games/s2/game.webm",
-        slug: "s2",
-        iframe: "/assets/games/s2/game.html"
-    },
-    {
         title: "Santy Is Home",
         category: "Horror",
         image: "/assets/games/santyishome/game.png",
@@ -876,6 +868,14 @@ const games = [
         background: "/assets/games/superliquidsoccer/game.webm",
         slug: "superliquidsoccer",
         iframe: "/assets/games/superliquidsoccer/game.html"
+    },
+    {
+        title: "Super Stickman Golf",
+        category: "Sports",
+        image: "/assets/games/superstickmangolf/game.png",
+        background: "/assets/games/superstickmangolf/game.webm",
+        slug: "superstickmangolf",
+        iframe: "/assets/games/superstickmangolf/game.html"
     },
     {
         title: "T³",

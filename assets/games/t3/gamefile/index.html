@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <base href="https://cdn.jsdelivr.net/gh/web-ports/baldi-mods@main/t3/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <style>
@@ -25,10 +24,10 @@
     <div id="gameContainer"></div>
     <script src="Build/UnityLoader.js"></script>
     <script>
-var loadingText = document.querySelector("#loading-text");
-    let totalBytes = 0;
-    let loadedBytes = 0;
-
+async function fetchWithProgress(url) {
+  const response = await fetch(url);
+  return await response.arrayBuffer();
+}
 
     async function mergeFiles(fileParts, cacheKey) {
       const cache = await caches.open("t3-cache");
