@@ -107,6 +107,14 @@ const games = [
         iframe: "/assets/games/baconmaydie/game.html"
     },
     {
+        title: "Bad Time Simulator",
+        category: "Action",
+        image: "/assets/games/badtimesimulator/game.png",
+        background: "/assets/games/badtimesimulator/game.webm",
+        slug: "badtimesimulator",
+        iframe: "/assets/games/badtimesimulator/game.html"
+    },
+    {
         title: "Baldi's Basics",
         category: "Horror",
         image: "/assets/games/baldisbasics/game.png",
@@ -414,6 +422,30 @@ const games = [
         background: "/assets/games/fnaf1/game.webm",
         slug: "fnaf1",
         iframe: "/assets/games/fnaf1/game.html"
+    },
+    {
+        title: "FNAF 2",
+        category: "Horror",
+        image: "/assets/games/fnaf2/game.png",
+        background: "/assets/games/fnaf2/game.webm",
+        slug: "fnaf2",
+        iframe: "/assets/games/fnaf2/game.html"
+    },
+    {
+        title: "FNAF 3",
+        category: "Horror",
+        image: "/assets/games/fnaf3/game.png",
+        background: "/assets/games/fnaf3/game.webm",
+        slug: "fnaf3",
+        iframe: "/assets/games/fnaf3/game.html"
+    },
+    {
+        title: "FNAF 4",
+        category: "Horror",
+        image: "/assets/games/fnaf4/game.png",
+        background: "/assets/games/fnaf4/game.webm",
+        slug: "fnaf4",
+        iframe: "/assets/games/fnaf4/game.html"
     },
     {
         title: "FNAW",

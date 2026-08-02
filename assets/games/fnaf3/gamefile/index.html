@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+<div id="app">Merging File...</div>
+
+<script>
+(async () => {
+    const [part1, part2] = await Promise.all([
+        fetch("index-part1.html").then(r => r.text()),
+        fetch("index-part2.html").then(r => r.text())
+    ]);
+
+    document.open();
+    document.write(part1 + part2);
+    document.close();
+})();
+</script>
+
+</body>
+</html>
