@@ -83,6 +83,14 @@ const games = [
         popular: true
     },
     {
+        title: "APEX-07",
+        category: "Horror",
+        image: "/assets/games/apex-07/game.png",
+        background: "/assets/games/apex-07/game.webm",
+        slug: "apex-07",
+        iframe: "/assets/games/apex-07/game.html"
+    },
+    {
         title: "Awesome Tanks 2",
         category: "Action",
         image: "/assets/games/awesometanks2/game.png",
@@ -505,6 +513,14 @@ const games = [
         iframe: "/assets/games/googlefeud/game.html"
     },
     {
+        title: "Granny",
+        category: "Horror",
+        image: "/assets/games/granny/game.png",
+        background: "/assets/games/granny/game.webm",
+        slug: "granny",
+        iframe: "/assets/games/granny/game.html"
+    },
+    {
         title: "Gravity Soccer",
         category: "Sports",
         image: "/assets/games/gravitysoccer/game.png",
@@ -854,6 +870,14 @@ const games = [
         iframe: "/assets/games/soccerrandom/game.html"
     },
     {
+        title: "Sonic Mania",
+        category: "Action",
+        image: "/assets/games/sonicmania/game.png",
+        background: "/assets/games/sonicmania/game.webm",
+        slug: "sonicmania",
+        iframe: "/assets/games/sonicmania/game.html"
+    },
+    {
         title: "Sports Heads Football",
         category: "Sports",
         image: "/assets/games/sportsheadsfootball/game.png",
@@ -989,6 +1013,14 @@ const games = [
         background: "/assets/games/unfairmario/game.webm",
         slug: "unfairmario",
         iframe: "/assets/games/unfairmario/game.html"
+    },
+    {
+        title: "Untitled Goose Game",
+        category: "Strategy",
+        image: "/assets/games/untitledgoosegame/game.png",
+        background: "/assets/games/untitledgoosegame/game.webm",
+        slug: "untitledgoosegame",
+        iframe: "/assets/games/untitledgoosegame/game.html"
     },
     {
         title: "Volley Random",

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<style>
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html, body {
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#111;
+    font-family:Inter,Arial,sans-serif;
+    text-align:center;
+}
+
+#loader {
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    color:#fff;
+    font-size:1.4rem;
+}
+
+canvas {
+    width:100%;
+    height:100%;
+    margin:auto;
+    padding:0;
+    border:0;
+    background:#111;
+    image-rendering:pixelated;
+    display:block;
+}
+
+#output {
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div id="loader">Merging File...</div>
+
+<canvas id="canvas" width="424" height="240" onclick="window.focus();" oncontextmenu="event.preventDefault();"></canvas>
+<textarea id="output"></textarea>
+
+<script>
+var canvas = document.getElementById("canvas");
+
+var Module = {
+
+preRun:[function(){
+
+    FS.mkdir("/saves");
+
+    FS.mount(
+        IDBFS,
+        {},
+        "/saves"
+    );
+
+
+    FS.syncfs(true,function(err){
+
+        if(err){
+            console.log("FS load error:", err);
+        }
+
+
+        try{
+
+            if(FS.analyzePath("/saves/SaveData.bin").exists){
+
+                var data = FS.readFile("/saves/SaveData.bin");
+
+                FS.writeFile(
+                    "/SaveData.bin",
+                    data
+                );
+
+                console.log("Save data loaded");
+
+            }
+
+        }catch(e){
+
+            console.log("No save data", e);
+
+        }
+
+    });
+
+
+}],
+
+
+postRun:[function(){
+
+    document.getElementById("loader").style.display = "none";
+
+    canvas.style.visibility = "visible";
+
+
+    setInterval(function(){
+
+        try{
+
+            var data = FS.readFile("/SaveData.bin");
+
+            FS.writeFile(
+                "/saves/SaveData.bin",
+                data
+            );
+
+        }catch(e){}
+
+
+        FS.syncfs(false,function(err){
+
+            if(err){
+                console.log("FS save error:", err);
+            }
+
+        });
+
+
+    },5000);
+
+
+}],
+
+
+print:function(text){
+
+    console.log(text);
+
+},
+
+
+printErr:function(text){
+
+    console.error(text);
+
+},
+
+
+canvas:(function(){
+
+
+    var canvas =
+    document.getElementById("canvas");
+
+
+    canvas.addEventListener(
+        "webglcontextlost",
+        function(e){
+
+            alert(
+            "WebGL context lost. Reload the page."
+            );
+
+            e.preventDefault();
+
+        },
+        false
+    );
+
+
+    return canvas;
+
+
+})(),
+
+
+setStatus:function(text){
+
+    console.log(text);
+
+},
+
+
+totalDependencies:0,
+
+
+monitorRunDependencies:function(left){
+
+    this.totalDependencies =
+    Math.max(
+        this.totalDependencies,
+        left
+    );
+
+
+    console.log(
+        "Dependencies left:",
+        left
+    );
+
+}
+
+
+};
+
+
+
+Module.setStatus("Loading...");
+
+
+
+window.addEventListener(
+"beforeunload",
+function(){
+
+    try{
+
+        var data =
+        FS.readFile("/SaveData.bin");
+
+
+        FS.writeFile(
+            "/saves/SaveData.bin",
+            data
+        );
+
+    }
+    catch(e){}
+
+
+
+    FS.syncfs(
+        false,
+        function(err){}
+    );
+
+
+});
+</script>
+
+<script src="Data.js"></script>
+<script type="text/javascript" src="RSDKv5U.js"></script>
+</body>
+</html>
