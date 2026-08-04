@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 <style>
 * {
     margin:0;
@@ -29,6 +30,12 @@ html, body {
     font-size:1.4rem;
 }
 
+#merge-status {
+    margin-top:10px;
+    color:#C93131;
+    font-size:0.9rem;
+}
+
 canvas {
     width:100%;
     height:100%;
@@ -44,23 +51,69 @@ canvas {
     display:none;
 }
 </style>
+
 </head>
 
 <body>
 
-<div id="loader">Merging File...</div>
+<div id="loader">
+    <div>Merging File</div>
+    <div id="merge-status">[Starting Merge...]</div>
+</div>
 
 <canvas id="canvas" width="424" height="240" onclick="window.focus();" oncontextmenu="event.preventDefault();"></canvas>
+
 <textarea id="output"></textarea>
 
 <script>
+
+var mergeStatus = document.getElementById("merge-status");
+
+var mergeMessages = [
+    "[Merging Data.data.part0...]",
+    "[Merging Data.data.part1...]",
+    "[Merging Data.data.part2...]",
+    "[Merging Data.data.part3...]",
+    "[Merging Data.data.part4...]",
+    "[Merging Data.data.part5...]",
+    "[Merging Data.data.part6...]",
+    "[Merging Data.data.part7...]",
+    "[Merging Data.data.part8...]",
+    "[Merging Data.data.part9...]",
+    "[Merging Data.data.part10...]",
+    "[Merging Data.data.part11...]",
+    "[Merging Data.data.part12...]",
+    "[Merging Data.data.part13...]",
+    "[Checking RSDKv5U.wasm...]",
+    "[Loading game data...]"
+];
+
+var mergeIndex = 0;
+
+var mergeInterval = setInterval(function(){
+
+    if(mergeIndex < mergeMessages.length){
+
+        mergeStatus.innerHTML = mergeMessages[mergeIndex];
+        mergeIndex++;
+
+    }
+
+},900);
+
+
+
 var canvas = document.getElementById("canvas");
+
 
 var Module = {
 
+
 preRun:[function(){
 
+
     FS.mkdir("/saves");
+
 
     FS.mount(
         IDBFS,
@@ -71,31 +124,43 @@ preRun:[function(){
 
     FS.syncfs(true,function(err){
 
+
         if(err){
+
             console.log("FS load error:", err);
+
         }
 
 
         try{
 
+
             if(FS.analyzePath("/saves/SaveData.bin").exists){
 
+
                 var data = FS.readFile("/saves/SaveData.bin");
+
 
                 FS.writeFile(
                     "/SaveData.bin",
                     data
                 );
 
+
                 console.log("Save data loaded");
+
 
             }
 
+
         }catch(e){
+
 
             console.log("No save data", e);
 
+
         }
+
 
     });
 
@@ -103,12 +168,18 @@ preRun:[function(){
 }],
 
 
+
 postRun:[function(){
 
-    document.getElementById("loader").style.display = "none";
+    clearInterval(mergeInterval);
+
+    mergeStatus.innerHTML = "[Merge Complete...]";
+
+    setTimeout(function(){
+        document.getElementById("loader").style.display = "none";
+    },25);
 
     canvas.style.visibility = "visible";
-
 
     setInterval(function(){
 
@@ -139,11 +210,13 @@ postRun:[function(){
 }],
 
 
+
 print:function(text){
 
     console.log(text);
 
 },
+
 
 
 printErr:function(text){
@@ -153,6 +226,7 @@ printErr:function(text){
 },
 
 
+
 canvas:(function(){
 
 
@@ -160,25 +234,36 @@ canvas:(function(){
     document.getElementById("canvas");
 
 
+
     canvas.addEventListener(
+
         "webglcontextlost",
+
         function(e){
+
 
             alert(
             "WebGL context lost. Reload the page."
             );
 
+
             e.preventDefault();
 
+
         },
+
         false
+
     );
+
 
 
     return canvas;
 
 
+
 })(),
+
 
 
 setStatus:function(text){
@@ -188,10 +273,13 @@ setStatus:function(text){
 },
 
 
+
 totalDependencies:0,
 
 
+
 monitorRunDependencies:function(left){
+
 
     this.totalDependencies =
     Math.max(
@@ -200,12 +288,15 @@ monitorRunDependencies:function(left){
     );
 
 
+
     console.log(
         "Dependencies left:",
         left
     );
 
+
 }
+
 
 
 };
@@ -217,35 +308,54 @@ Module.setStatus("Loading...");
 
 
 window.addEventListener(
+
 "beforeunload",
+
 function(){
 
+
     try{
+
 
         var data =
         FS.readFile("/SaveData.bin");
 
 
+
         FS.writeFile(
+
             "/saves/SaveData.bin",
+
             data
+
         );
 
+
+
     }
+
     catch(e){}
 
 
 
+
     FS.syncfs(
+
         false,
+
         function(err){}
+
     );
 
 
+
 });
+
+
 </script>
 
 <script src="Data.js"></script>
 <script type="text/javascript" src="RSDKv5U.js"></script>
+
 </body>
 </html>
