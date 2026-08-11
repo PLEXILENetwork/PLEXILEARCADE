@@ -1,0 +1,416 @@
+[gd_scene format=3 uid="uid://njbxo33j6lie"]
+
+[ext_resource type="Script" uid="uid://mhjhlnc1nkat" path="res://scripts/MainMenuUI.gd" id="1_0ykhv"]
+[ext_resource type="Texture2D" uid="uid://chef0g771na7j" path="res://ui/credits_clark.png" id="2_2wh52"]
+[ext_resource type="AudioStream" uid="uid://beyxwojgkg4in" path="res://audio/menu_theme.ogg" id="3_2wh52"]
+[ext_resource type="Script" uid="uid://c08ehagenntgx" path="res://scripts/Skins.gd" id="4_ow34m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ve7bo"]
+bg_color = Color(0.98039216, 0.9764706, 0.9647059, 0.7529412)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 0.8862745)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0nni"]
+bg_color = Color(0.98039216, 0.9764706, 0.9647059, 0.7529412)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 0.8862745)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbsmt"]
+bg_color = Color(0.9098039, 0.9019608, 0.8784314, 0.7529412)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 0.8862745)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nugwq"]
+bg_color = Color(0.6, 0.6, 0.6, 0.9098039)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 0.8862745)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_400sg"]
+bg_color = Color(0.6, 0.6, 0.6, 0.9098039)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 0.8862745)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uiv8l"]
+bg_color = Color(0.56078434, 0.56078434, 0.56078434, 0.84313726)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 0.8862745)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5n26c"]
+bg_color = Color(0.98039216, 0.9764706, 0.9647059, 0.7529412)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 0.8862745)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kiw3p"]
+bg_color = Color(0.98039216, 0.9764706, 0.9647059, 0.7529412)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 0.8862745)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aug50"]
+bg_color = Color(0.9098039, 0.9019608, 0.8784314, 0.7529412)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 0.8862745)
+
+[sub_resource type="Animation" id="Animation_ibkli"]
+resource_name = "FadeIn"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qbsmt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cpr0p"]
+_data = {
+&"FadeIn": SubResource("Animation_ibkli"),
+&"RESET": SubResource("Animation_qbsmt")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2mlb"]
+bg_color = Color(0.98039216, 0.9764706, 0.9647059, 0.7529412)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 0.8862745)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eb6x1"]
+bg_color = Color(0.98039216, 0.9764706, 0.9647059, 0.7529412)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 0.8862745)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_moq3k"]
+bg_color = Color(0.98039216, 0.9764706, 0.9647059, 0.7529412)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 0.8862745)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw6rb"]
+bg_color = Color(0.9098039, 0.9019608, 0.8784314, 0.7529412)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 0.8862745)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s68nt"]
+bg_color = Color(0.98039216, 0.9764706, 0.9647059, 0.7529412)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 0.8862745)
+
+[node name="MainMenuUI" type="Control" unique_id=2056404778]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ykhv")
+
+[node name="Title" type="Label" parent="." unique_id=1255220397]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 93.0
+offset_right = 645.0
+offset_bottom = 226.0
+theme_override_constants/line_spacing = 4
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 97
+text = "Hussrooms"
+
+[node name="Subtitle" type="Label" parent="." unique_id=11646748]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 216.0
+offset_right = 548.0
+offset_bottom = 262.0
+theme_override_constants/line_spacing = 4
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 27
+text = "Created by plexilearcade.net"
+
+[node name="MenuButtons" type="VBoxContainer" parent="." unique_id=941461934]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 305.0
+offset_right = 473.0
+offset_bottom = 539.0
+theme_override_constants/separation = 12
+
+[node name="PlayButton" type="Button" parent="MenuButtons" unique_id=1996978057]
+custom_minimum_size = Vector2(350, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+theme_override_styles/normal = SubResource("StyleBoxFlat_ve7bo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s0nni")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qbsmt")
+text = "Play"
+
+[node name="SubLevelsButton" type="Button" parent="MenuButtons" unique_id=411506077]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+theme_override_styles/normal = SubResource("StyleBoxFlat_nugwq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_400sg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uiv8l")
+text = "Sub-Levels"
+
+[node name="SkinsButton" type="Button" parent="MenuButtons" unique_id=1043447710]
+custom_minimum_size = Vector2(350, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+theme_override_styles/normal = SubResource("StyleBoxFlat_ve7bo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s0nni")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qbsmt")
+text = "Skins
+"
+
+[node name="CreditsButton" type="VBoxContainer" parent="." unique_id=678789127]
+layout_mode = 0
+offset_left = 1010.0
+offset_top = 300.0
+offset_right = 1090.0
+offset_bottom = 380.0
+pivot_offset = Vector2(188, 156)
+
+[node name="CreditsButton" type="Button" parent="CreditsButton" unique_id=844987034]
+custom_minimum_size = Vector2(80, 75)
+layout_mode = 2
+theme_override_constants/icon_max_width = 78
+theme_override_styles/normal = SubResource("StyleBoxFlat_5n26c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kiw3p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_aug50")
+icon = ExtResource("2_2wh52")
+
+[node name="Subtitle" type="Label" parent="CreditsButton" unique_id=1818306492]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 17
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=686627511]
+libraries/ = SubResource("AnimationLibrary_cpr0p")
+autoplay = &"FadeIn"
+
+[node name="CreditsPopup" type="Panel" parent="." unique_id=198817170]
+visible = false
+layout_mode = 0
+offset_left = 188.0
+offset_top = 70.0
+offset_right = 988.0
+offset_bottom = 600.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d2mlb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsPopup" unique_id=1936445019]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 20.0
+offset_right = 768.0
+offset_bottom = 503.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "credits.txt
+______________________________
+
+Created by
+knwzero (dsc.gg/plexilenetwork)
+
+Inspired by
+• Clark (EARLY ACCESS) Huss rooms (Roblox)
+• Garry's Mod Captain Clark (Backrooms) add-on.
+
+Engine
+Godot 4.4
+
+SketchFab Assets Used
+
+• Mary Kline Still Life by Certified_funny_man
+• Original Backrooms by Huuxloc
+• Captain Clark (Fix) by FnafStuff
+• Clark from El Backrooms (Rigged) by FnafStuff
+
+Thank you for playing!"
+fit_content = true
+scroll_active = false
+
+[node name="BackButton" type="Button" parent="." unique_id=568434388]
+visible = false
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 0
+offset_left = 134.0
+offset_top = 70.0
+offset_right = 174.0
+offset_bottom = 107.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_eb6x1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_moq3k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yw6rb")
+text = "<"
+
+[node name="MenuTheme" type="AudioStreamPlayer" parent="." unique_id=153748667]
+stream = ExtResource("3_2wh52")
+autoplay = true
+
+[node name="SkinsPopup" type="Panel" parent="." unique_id=2146987450]
+visible = false
+layout_mode = 0
+offset_left = 187.0
+offset_top = 69.0
+offset_right = 987.0
+offset_bottom = 597.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_s68nt")
+script = ExtResource("4_ow34m")
+
+[node name="LeftButton" type="Button" parent="SkinsPopup" unique_id=320931211]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 0
+offset_left = 782.0
+offset_top = 252.0
+offset_right = 822.0
+offset_bottom = 289.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_eb6x1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_moq3k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yw6rb")
+text = ">"
+
+[node name="EquipButton" type="Button" parent="SkinsPopup" unique_id=1056059761]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 0
+offset_left = 207.0
+offset_top = 414.0
+offset_right = 592.0
+offset_bottom = 468.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_eb6x1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_moq3k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yw6rb")
+
+[node name="ClarksButton" type="Button" parent="SkinsPopup" unique_id=1787938437]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 0
+offset_left = -23.0
+offset_top = 245.0
+offset_right = 17.0
+offset_bottom = 282.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_eb6x1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_moq3k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yw6rb")
+text = "<"
+
+[node name="CharacterName" type="Label" parent="SkinsPopup" unique_id=925694134]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 352.0
+offset_right = 398.0
+offset_bottom = 402.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+
+[node name="CharacterImage" type="TextureRect" parent="SkinsPopup" unique_id=70184376]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 62.0
+offset_right = 646.0
+offset_bottom = 337.0
+
+[connection signal="pressed" from="MenuButtons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MenuButtons/SkinsButton" to="." method="_on_skins_button_pressed"]
+[connection signal="pressed" from="CreditsButton/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="SkinsPopup/LeftButton" to="SkinsPopup" method="_on_left_button_pressed"]
+[connection signal="pressed" from="SkinsPopup/ClarksButton" to="SkinsPopup" method="_on_right_button_pressed"]

@@ -367,6 +367,14 @@ const games = [
         iframe: "/assets/games/ducklife4/game.html"
     },
     {
+        title: "Dumb Ways To Die",
+        category: "Strategy",
+        image: "/assets/games/dumbwaystodie/game.png",
+        background: "/assets/games/dumbwaystodie/game.webm",
+        slug: "dumbwaystodie",
+        iframe: "/assets/games/dumbwaystodie/game.html"
+    },
+    {
         title: "Eaglercraft 1.8",
         category: "Multiplayer",
         image: "/assets/games/eaglercraft1.8/game.png",
@@ -546,6 +554,14 @@ const games = [
         new: true
     },
     {
+        title: "Helix Jump",
+        category: "Strategy",
+        image: "/assets/games/helixjump/game.png",
+        background: "/assets/games/helixjump/game.webm",
+        slug: "helixjump",
+        iframe: "/assets/games/helixjump/game.html"
+    },
+    {
         title: "Hobo",
         category: "Action",
         image: "/assets/games/hobo/game.png",
@@ -608,6 +624,14 @@ const games = [
         background: "/assets/games/hole.io/game.webm",
         slug: "hole.io",
         iframe: "/assets/games/hole.io/game.html"
+    },
+    {
+        title: "Hussrooms",
+        category: "Strategy",
+        image: "/assets/games/hussrooms/game.png",
+        background: "/assets/games/hussrooms/game.webm",
+        slug: "hussrooms",
+        iframe: "/assets/games/hussrooms/game.html"
     },
     {
         title: "Idle Breakout",
@@ -924,6 +948,14 @@ const games = [
         background: "/assets/games/superliquidsoccer/game.webm",
         slug: "superliquidsoccer",
         iframe: "/assets/games/superliquidsoccer/game.html"
+    },
+    {
+        title: "Super Mario 64",
+        category: "Action",
+        image: "/assets/games/supermario64/game.png",
+        background: "/assets/games/supermario64/game.webm",
+        slug: "supermario64",
+        iframe: "/assets/games/supermario64/game.html"
     },
     {
         title: "Super Stickman Golf",
