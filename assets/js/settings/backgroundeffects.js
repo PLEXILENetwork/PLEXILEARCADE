@@ -109,36 +109,27 @@ function loadEffect(effect) {
 
     clearEffects();
 
-
-
     switch(effect) {
 
+        case "default":
+            createLines();
+            break;
 
         case "waves":
-
             createWaves();
-
             break;
-
-
-
-        case "lines":
-            createLines();
-
-            break;
-
-
 
         case "mystery":
-
             startMystery();
-
             break;
 
+        case "none":
+            break;
 
     }
 
 }
+
 
 function createLines() {
 

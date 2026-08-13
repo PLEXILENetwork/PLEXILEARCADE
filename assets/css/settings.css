@@ -22,11 +22,10 @@ body{
     }
 
 .page-header{
-    background:linear-gradient(145deg,#C93131,#a91f1f);
+    background: #C93131;
     border-radius:16px;
     padding:30px;
     margin-bottom:30px;
-    box-shadow:0 0 30px rgba(201,49,49,.25);
 }
 
 .page-header h1{
