@@ -107,7 +107,7 @@ const code = `
 
             <div class="promo-text">
                 <h2>Follow Us</h2>
-                <p>@plexilearcade</p>
+                <p>tiktok.com/@plexilearcade</p>
             </div>
 
             <a
@@ -129,7 +129,7 @@ const code = `
 
             <div class="promo-text">
                 <h2>UBGHub</h2>
-                <p>Vote for Us!</p>
+                <p>Vote for plexilearcade.net</p>
             </div>
 
             <a
