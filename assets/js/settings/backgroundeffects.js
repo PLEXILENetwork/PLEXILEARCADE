@@ -112,6 +112,9 @@ function loadEffect(effect) {
     switch(effect) {
 
         case "default":
+            break;
+
+        case "lines":
             createLines();
             break;
 

@@ -69,11 +69,57 @@ const code = `
 
 <div class="main">
   <div class="page-header">
-    <div>
-      <h1>Welcome to PLEXILE ARCADE! 👋</h1>
-      <p>Play instantly, no downloads, no sign up. Dive into games with action, puzzles, multiplayer and more.</p>
-    </div>
+  <div>
+     <h1>Welcome to PLEXILE ARCADE!</h1>
   </div>
+  </div>
+
+  <div class="promo-row">
+
+            <div class="promo-card discord-card">
+
+                <div class="promo-icon">
+                    <i class="bx bxl-discord-alt"></i>
+                </div>
+
+                <div class="promo-text">
+                    <h2>Join The Discord</h2>
+                    <p>discord.gg/8fapCF74Wm</p>
+                </div>
+
+                <a
+                    href="https://dsc.gg/plexilenetwork"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="promo-arrow"
+                >
+                    <i class="bx bx-right-arrow-alt"></i>
+                </a>
+
+            </div>
+
+            <div class="promo-card ubghub-card">
+
+                <div class="promo-icon">
+                    <i class="bx bx-file"></i>
+                </div>
+
+                <div class="promo-text">
+                    <h2>UBGHub</h2>
+                    <p>Vote for Us!</p>
+                </div>
+
+                <a
+                    href="https://ubghub.org/?site=Plexile+Arcade"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="promo-arrow"
+                >
+                    <i class="bx bx-right-arrow-alt"></i>
+                </a>
+
+        </div>
+    </div>
 
   <div class="search-bar">
     <i class="bx bx-search icon"></i>
@@ -90,7 +136,7 @@ const code = `
     <div class="filter-btn">Horror</div>
   </div>
 
-  <p id="no-game-results" style="display:none;">No results found.</p>
+  <p id="no-game-results" style="display:none;">No games found.</p>
 
 <section class="games-section">
     <div class="games-grid" id="gamesGrid"></div>

@@ -21,22 +21,64 @@ body{
       height: 100vh;
     }
 
-.page-header{
+.page-header {
+    position: relative;
+    height: 113px;
+    overflow: hidden;
+    border-radius: 17px;
     background: #C93131;
-    border-radius:16px;
-    padding:30px;
-    margin-bottom:30px;
+    display: flex;
+    align-items: center;
+    padding: 18px 24px;
+    margin-bottom: 30px;
 }
 
-.page-header h1{
-    font-size:36px;
-    font-weight:700;
+.page-header h1 {
+    position: relative;
+    z-index: 10;
+    top: 2px;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 2.35rem;
+    line-height: .88;
+    letter-spacing: -0.6px;  
+    font-weight: 700;
+    max-width: 600px;
+    color: #fff;
 }
 
-.page-header p{
-    margin-top:10px;
-    color:#f0f0f0;
-    font-size:18px;
+
+.page-header::before {
+    content: "ARCADE";
+    position: absolute;
+    right: -70px;
+    top: 63%;
+    transform: translateY(-50%) rotate(-11deg);
+    font-family: "Rajdhani", sans-serif;
+    font-size: 8rem;
+    font-weight: 700;
+    letter-spacing: 8px;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.035);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+}
+
+.page-header::after {
+    content: "PLEXILE";
+    position: absolute;
+    right: 90px;
+    top: 42%;
+    transform: translateY(-50%) rotate(-7deg);
+    font-family: "Rajdhani", sans-serif;
+    font-size: 8rem;
+    font-weight: 700;
+    letter-spacing: 8px;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.075);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
 }
 
 .settings-overlay{

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#111;
+    font-family:Inter,Arial,sans-serif;
+}
+
+#app{
+    color:#fff;
+    font-size:1.4rem;
+    text-align:center;
+}
+
+#merge-status{
+    margin-top:10px;
+    color:#C93131;
+    font-size:0.9rem;
+}
+</style>
+</head>
+<body>
+
+<div id="app">
+    <div>Merging File</div>
+    <div id="merge-status">
+        [Starting Merge...]
+    </div>
+</div>
+
+<script>
+
+var mergeStatus =
+document.getElementById("merge-status");
+
+
+var mergeMessages = [
+
+    "[Merging online-part1.html...]",
+
+    "[Merging online-part2.html...]",
+
+    "[Merging online-part3.html...]",
+
+    "[Checking files...]",
+
+    "[Loading webpage...]"
+
+];
+
+
+var mergeIndex = -1;
+
+
+var mergeInterval = setInterval(function(){
+
+    mergeIndex++;
+
+    if(mergeIndex < mergeMessages.length){
+
+        mergeStatus.innerHTML =
+        mergeMessages[mergeIndex];
+
+        if(mergeIndex === mergeMessages.length - 1){
+
+            clearInterval(mergeInterval);
+
+        }
+
+    }
+
+},1000);
+
+
+(async () => {
+
+try{
+
+const [part1, part2, part3] = await Promise.all([
+
+    fetch("online-part1.html")
+    .then(r => r.text()),
+
+    fetch("online-part2.html")
+    .then(r => r.text()),
+
+    fetch("online-part3.html")
+    .then(r => r.text())
+
+]);
+
+
+while(mergeIndex < mergeMessages.length - 1){
+
+    await new Promise(resolve =>
+        setTimeout(resolve,50)
+    );
+
+}
+
+
+document.open();
+
+document.write(
+    part1 + part2 + part3
+);
+
+document.close();
+
+
+}
+
+catch(error){
+
+clearInterval(mergeInterval);
+
+mergeStatus.innerHTML =
+"[Merge Failed...]";
+
+console.error(
+"Merge failed:",
+error
+);
+
+}
+
+})();
+
+</script>
+
+</body>
+</html>
