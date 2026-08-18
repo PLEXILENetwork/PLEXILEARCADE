@@ -68,11 +68,81 @@ const code = `
 </div>
 
 <div class="main">
-  <div class="page-header">
-  <div>
-     <h1>Welcome to PLEXILE ARCADE!</h1>
-  </div>
-  </div>
+
+    <div class="page-header">
+        <div>
+            <h1>Welcome to PLEXILE ARCADE!</h1>
+        </div>
+    </div>
+
+    <div class="promo-row">
+
+        <div class="promo-card discord-card">
+
+            <div class="promo-icon">
+                <i class="bx bxl-discord-alt"></i>
+            </div>
+
+            <div class="promo-text">
+                <h2>Join The Discord</h2>
+                <p>discord.gg/8fapCF74Wm</p>
+            </div>
+
+            <a
+                href="https://dsc.gg/plexilenetwork"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="promo-arrow"
+            >
+                <i class="bx bx-right-arrow-alt"></i>
+            </a>
+
+        </div>
+
+        <div class="promo-card tiktok-card">
+
+            <div class="promo-icon">
+                <i class="bx bxl-tiktok"></i>
+            </div>
+
+            <div class="promo-text">
+                <h2>Follow Us</h2>
+                <p>@plexilearcade</p>
+            </div>
+
+            <a
+                href="https://www.tiktok.com/@plexilearcade"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="promo-arrow"
+            >
+                <i class="bx bx-right-arrow-alt"></i>
+            </a>
+
+        </div>
+
+        <div class="promo-card ubghub-card">
+
+            <div class="promo-icon">
+                <i class="bx bx-file"></i>
+            </div>
+
+            <div class="promo-text">
+                <h2>UBGHub</h2>
+                <p>Vote for Us!</p>
+            </div>
+
+            <a
+                href="https://ubghub.org/?site=Plexile+Arcade"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="promo-arrow"
+            >
+                <i class="bx bx-right-arrow-alt"></i>
+            </a>
+
+        </div>
+    </div>
 
   <div class="search-bar">
     <i class="bx bx-search icon"></i>
@@ -117,54 +187,3 @@ const code = `
 
 
 document.getElementById("preview").srcdoc = code;
-
-/* Idrk If this looks good so imma just leave it here if i ever change my mind
-
-<div class="promo-row">
-
-    <div class="promo-card discord-card">
-
-        <div class="promo-icon">
-            <i class="bx bxl-discord-alt"></i>
-        </div>
-
-        <div class="promo-text">
-            <h2>Join The Discord</h2>
-            <p>discord.gg/8fapCF74Wm</p>
-        </div>
-
-        <a
-            href="https://dsc.gg/plexilenetwork"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="promo-arrow"
-        >
-            <i class="bx bx-right-arrow-alt"></i>
-        </a>
-
-    </div>
-
-    <div class="promo-card ubghub-card">
-
-        <div class="promo-icon">
-            <i class="bx bx-file"></i>
-        </div>
-
-        <div class="promo-text">
-            <h2>UBGHub</h2>
-            <p>Vote for Us!</p>
-        </div>
-
-        <a
-            href="https://ubghub.org/?site=Plexile+Arcade"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="promo-arrow"
-        >
-            <i class="bx bx-right-arrow-alt"></i>
-        </a>
-
-    </div>
-
-</div>
-*/

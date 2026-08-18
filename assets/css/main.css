@@ -277,11 +277,6 @@ body {
 
 }
 
-.promo-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
 
 .promo-card {
     height: 90px;
@@ -292,6 +287,27 @@ body {
     color: #fff;
     overflow: hidden;
     margin-bottom: 30px;
+}
+
+.promo-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+.tiktok-card {
+    background: #080808;
+}
+
+.tiktok-card .promo-icon {
+    background: #000;
+}
+
+.tiktok-card .promo-icon i {
+    color: #fff;
+    text-shadow:
+        -1px -1px 0 #25F4EE,
+        1px 1px 0 #FE2C55;
 }
 
 .discord-card {
