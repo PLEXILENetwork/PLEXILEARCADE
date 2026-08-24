@@ -1,40 +1,31 @@
-const container = document.getElementById("gameContainer");
+const frame = document.getElementById("gameFrame");
 const btn = document.getElementById("fullscreenBtn");
-const navbar = document.querySelector(".bottom-nav-container");
 
-const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+if (btn && frame) {
 
-let mobileFullscreen = false;
+    btn.addEventListener("click", async () => {
 
-btn.addEventListener("click", async () => {
-    if (isMobile) {
-        mobileFullscreen = !mobileFullscreen;
+        try {
 
-        container.classList.toggle("mobile-fullscreen", mobileFullscreen);
-        navbar.style.display = mobileFullscreen ? "none" : "";
+            if (document.fullscreenElement) {
+                await document.exitFullscreen();
+                return;
+            }
 
-        btn.innerHTML = mobileFullscreen
-            ? "<i class='bx bx-exit-fullscreen'></i>"
-            : "<i class='bx bx-fullscreen'></i>";
+            if (frame.requestFullscreen) {
+                await frame.requestFullscreen();
+            } else if (frame.webkitRequestFullscreen) {
+                frame.webkitRequestFullscreen();
+            } else if (frame.msRequestFullscreen) {
+                frame.msRequestFullscreen();
+            }
 
-        return;
-    }
+        } catch (error) {
 
-    try {
-        if (!document.fullscreenElement) {
-            await container.requestFullscreen();
-        } else {
-            await document.exitFullscreen();
+            console.error("Fullscreen failed:", error);
+
         }
-    } catch (err) {
-        console.error("Fullscreen failed:", err);
-    }
-});
 
-document.addEventListener("fullscreenchange", () => {
-    if (!isMobile) {
-        btn.innerHTML = document.fullscreenElement
-            ? "<i class='bx bx-exit-fullscreen'></i>"
-            : "<i class='bx bx-fullscreen'></i>";
-    }
-});
+    });
+
+}

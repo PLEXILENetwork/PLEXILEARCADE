@@ -1,56 +1,96 @@
-const slug = location.hash.substring(1);
-const app = apps.find(a => a.slug === slug);
+function loadApp() {
 
-if (!app) {
-    location.replace("/404.html");
-}
+    const slug = location.hash.substring(1);
+    const app = apps.find(a => a.slug === slug);
 
-document.title = `PLEXILE ARCADE - ${app.title}`;
+    if (!app) {
+        location.replace("/404.html");
+        return;
+    }
 
-document.getElementById("gameTitle").textContent = app.title;
-document.getElementById("gameImage").src = app.image;
+    document.title = `PLEXILE ARCADE - ${app.title}`;
 
-const backgroundVideo = document.getElementById("background");
-backgroundVideo.src = app.background;
-backgroundVideo.play();
+    const gameTitle = document.getElementById("gameTitle");
+    const gameImage = document.getElementById("gameImage");
+    const backgroundVideo = document.getElementById("background");
+    const loader = document.getElementById("loader");
+    const frame = document.getElementById("gameFrame");
+    const gameContainer = document.getElementById("gameContainer");
+    const gameBackground = document.querySelector(".game-background");
+    const loadingText = document.querySelector(".loading-text");
 
-document.querySelector(".loading-text").textContent = "Loading app...";
+    if (gameTitle) {
+        gameTitle.textContent = app.title;
+    }
 
-const loader = document.getElementById("loader");
-const frame = document.getElementById("gameFrame");
-const gameContainer = document.getElementById("gameContainer");
-const background = document.querySelector(".background");
+    if (gameImage) {
+        gameImage.src = app.image;
+    }
 
-const startTime = Date.now();
+    if (loadingText) {
+        loadingText.textContent = "Loading app...";
+    }
 
-frame.src = app.iframe;
+    if (backgroundVideo) {
+        backgroundVideo.src = app.background;
+        backgroundVideo.load();
 
-frame.addEventListener("load", () => {
+        backgroundVideo.play().catch(() => {});
+    }
 
-    const elapsed = Date.now() - startTime;
-    const remaining = Math.max(0, 5000 - elapsed);
+    const startTime = Date.now();
 
-    setTimeout(() => {
+    if (frame) {
+        frame.src = app.iframe;
+    }
 
-        loader.style.opacity = "0";
+    if (!frame) {
+        return;
+    }
 
-        if (background) {
-            background.style.transition = "opacity .1s ease";
-            background.style.opacity = "0";
-        }
+    frame.onload = () => {
+
+        const elapsed = Date.now() - startTime;
+        const remaining = Math.max(0, 5000 - elapsed);
 
         setTimeout(() => {
 
-            loader.remove();
-
-            if (background) {
-                background.remove();
+            if (loader) {
+                loader.style.opacity = "0";
             }
 
-            gameContainer.classList.add("loaded");
+            setTimeout(() => {
 
-        }, 300);
+                if (backgroundVideo) {
+                    backgroundVideo.pause();
+                    backgroundVideo.removeAttribute("src");
+                    backgroundVideo.load();
+                }
 
-    }, remaining);
+                if (gameBackground) {
+                    gameBackground.remove();
+                }
 
+                if (loader) {
+                    loader.remove();
+                }
+
+                if (gameContainer) {
+                    gameContainer.classList.add("loaded");
+                }
+
+            }, 300);
+
+        }, remaining);
+
+    };
+
+}
+
+
+loadApp();
+
+
+window.addEventListener("hashchange", () => {
+    location.reload();
 });

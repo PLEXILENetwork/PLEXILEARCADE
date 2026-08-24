@@ -6,166 +6,116 @@ const code = `
   <base target="_top">
 
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="stylesheet" href="/assets/css/gamesdrawer.css">
   <link rel="stylesheet" href="/assets/css/backgroundeffects.css">
 
 </head>
 <body>
 
- <div id="bg-effects"></div> 
+<div id="bg-effects"></div> 
 
-<div class="bottom-nav-container">
-  <div class="bottom-nav">
-    <a href="/" class="nav-btn"><i class="bx bx-home-alt"></i></a>
-    <button class="nav-btn" id="gamesBtn" type="button">
-      <i class="bx bx-joystick"></i>
-    </button>
-    <div class="nav-spacer"></div>
-    <a href="/apps.html" class="nav-btn"><i class="bx bx-grid-alt"></i></a>
-    <a href="/faq.html" class="nav-btn"><i class="bx bx-help-circle"></i></a>
-  </div>
-    <button class="settings-fab" id="settingsBtn" type="button">
-      <i class="bx bx-cog"></i>
-    </button>
-</div>
+    <div class="site">
 
-<div class="settings-overlay" id="settingsOverlay">
-    <iframe
-        id="settingsFrame"
-        src="/settings.html"
-        loading="lazy">
-    </iframe>
-</div>
-
-<div class="drawer-overlay" id="drawerOverlay"></div>
-<div class="games-drawer" id="gamesDrawer">
-    <div class="drawer-header">
-
-        <h2>Games</h2>
-        <div class="drawer-nav">
-        <button id="prevPage" type="button">
-            <i class="bx bx-chevron-left"></i>
-        </button>
-
-        <span id="pageTitle" class="page-pill">
-            Recent
-        </span>
-
-        <button id="nextPage" type="button">
-            <i class="bx bx-chevron-right"></i>
-        </button>
-        </div>
-    </div>
-
-    <div class="drawer-pages" id="drawerPages">
-    <div class="drawer-page" id="recentGames"></div>
-    <div class="drawer-page" id="popularGames"></div>
-    <div class="drawer-page" id="newGames"></div>
-    </div>
-</div>
-
-<div class="main">
-
-    <div class="page-header">
-        <div>
-            <h1>Welcome to PLEXILE ARCADE!</h1>
-        </div>
-    </div>
-
-    <div class="promo-row">
-
-        <div class="promo-card discord-card">
-
-            <div class="promo-icon">
-                <i class="bx bxl-discord-alt"></i>
+        <nav>
+            <div class="logo">
+             <a href="/">
+               <img src="/assets/images/logo2.png" alt="Logo">
+             </a>
             </div>
 
-            <div class="promo-text">
-                <h2>Join The Discord</h2>
-                <p>discord.gg/8fapCF74Wm</p>
+            <div class="nav-links">
+                <a href="/" class="nav-link active">Games</a>
+                <a href="/apps.html" class="nav-link">Apps</a>
+                <a href="/settings.html" class="nav-link">Settings</a>
             </div>
+        </nav>
 
-            <a
-                href="https://dsc.gg/plexilenetwork"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="promo-arrow"
-            >
-                <i class="bx bx-right-arrow-alt"></i>
+        <div class="header-links">
+
+            <a href="https://dsc.gg/plexilenetwork"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="header-link discord">
+
+                <div class="header-icon">
+                    <i class="bx bxl-discord-alt"></i>
+                </div>
+
+                <div class="header-info">
+                    <h2>Join The Discord</h2>
+                    <p>discord.gg/8fapCF74Wm</p>
+                </div>
+
+            </a>
+
+            <a href="https://ubghub.org/?site=Plexile+Arcade"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="header-link ubghub">
+
+                <div class="header-icon">
+                    <i class="bx bx-file"></i>
+                </div>
+
+                <div class="header-info">
+                    <h2>Vote For Us</h2>
+                    <p>Vote for plexilearcade.net</p>
+                </div>
+
+            </a>
+
+            <a href="https://www.tiktok.com/@plexilearcade"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="header-link tiktok">
+
+                <div class="header-icon">
+                    <i class="bx bxl-tiktok"></i>
+                </div>
+
+                <div class="header-info">
+                    <h2>Follow Us</h2>
+                    <p>tiktok.com/@plexilearcade</p>
+                </div>
+
             </a>
 
         </div>
 
-        <div class="promo-card tiktok-card">
+        <main class="content">
 
-            <div class="promo-icon">
-                <i class="bx bxl-tiktok"></i>
+            <div class="page-header">
+
+                <div class="search-bar">
+                    <i class="bx bx-search icon"></i>
+                    <input type="text" placeholder="Search for games...">
+                </div>
+
+                <div class="filters">
+                    <div class="filter-btn active">All</div>
+                    <div class="filter-btn">Action</div>
+                    <div class="filter-btn">Puzzle</div>
+                    <div class="filter-btn">Multiplayer</div>
+                    <div class="filter-btn">Strategy</div>
+                    <div class="filter-btn">Sports</div>
+                    <div class="filter-btn">Horror</div>
+                </div>
+
+                <p id="no-game-results" style="display:none;">
+                    No games found.
+                </p>
+
+                <section class="games-section">
+                    <div class="games-grid" id="gamesGrid"></div>
+                </section>
+
             </div>
 
-            <div class="promo-text">
-                <h2>Follow Us</h2>
-                <p>tiktok.com/@plexilearcade</p>
-            </div>
+        </main>
 
-            <a
-                href="https://www.tiktok.com/@plexilearcade"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="promo-arrow"
-            >
-                <i class="bx bx-right-arrow-alt"></i>
-            </a>
-
-        </div>
-
-        <div class="promo-card ubghub-card">
-
-            <div class="promo-icon">
-                <i class="bx bx-file"></i>
-            </div>
-
-            <div class="promo-text">
-                <h2>UBGHub</h2>
-                <p>Vote for plexilearcade.net</p>
-            </div>
-
-            <a
-                href="https://ubghub.org/?site=Plexile+Arcade"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="promo-arrow"
-            >
-                <i class="bx bx-right-arrow-alt"></i>
-            </a>
-
-        </div>
     </div>
-
-  <div class="search-bar">
-    <i class="bx bx-search icon"></i>
-    <input type="text" placeholder="Search for games...">
-  </div>
-
-  <div class="filters">
-    <div class="filter-btn active">All</div>
-    <div class="filter-btn">Action</div>
-    <div class="filter-btn">Puzzle</div>
-    <div class="filter-btn">Multiplayer</div>
-    <div class="filter-btn">Strategy</div>
-    <div class="filter-btn">Sports</div>
-    <div class="filter-btn">Horror</div>
-  </div>
-
-  <p id="no-game-results" style="display:none;">No games found.</p>
-
-<section class="games-section">
-    <div class="games-grid" id="gamesGrid"></div>
-</section>
-
-</div>
 
 <!--Settings-->
 <script src="/assets/js/settings/backgroundeffects.js"></script>

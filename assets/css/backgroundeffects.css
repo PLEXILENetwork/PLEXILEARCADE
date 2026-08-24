@@ -1,137 +1,110 @@
 #bg-effects {
     position: fixed;
-
     inset: 0;
-
     width: 100%;
     height: 100%;
-
-
     overflow: hidden;
-
-
     pointer-events: none;
-
-
-    z-index: -1;
+    z-index: 0;
 }
 
-
-
-.wave-container{
+.wave-container {
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 22vh;
+    height: 10vh;
     overflow: hidden;
+    pointer-events: none;
 }
 
-.wave{
+.wave {
     position: absolute;
     bottom: 0;
     left: -20%;
     width: 140%;
-    height: 100%;
+    height: 40%;
     opacity: 0.75;
+    pointer-events: none;
 }
 
-.wave1{
+.wave1 {
     animation: waveMove1 2s ease-in-out infinite alternate;
 }
 
-.wave2{
+.wave2 {
     animation: waveMove2 4s ease-in-out infinite alternate;
 }
 
-.wave3{
+.wave3 {
     animation: waveMove3 6s ease-in-out infinite alternate;
 }
 
-.wave1 path{
+.wave1 path {
     fill: #c9313169;
 }
 
-.wave2 path{
+.wave2 path {
     fill: rgba(201, 49, 49, 0.08);
 }
 
-.wave3 path{
+.wave3 path {
     fill: rgba(201, 49, 49, 0.15);
 }
 
-@keyframes waveMove1{
-    from{
+@keyframes waveMove1 {
+    from {
         transform: translateX(0);
     }
-    to{
+
+    to {
         transform: translateX(-6%);
     }
 }
 
-@keyframes waveMove2{
-    from{
+@keyframes waveMove2 {
+    from {
         transform: translateX(-3%);
     }
-    to{
+
+    to {
         transform: translateX(5%);
     }
 }
 
-@keyframes waveMove3{
-    from{
+@keyframes waveMove3 {
+    from {
         transform: translateX(0);
     }
-    to{
+
+    to {
         transform: translateX(-4%);
     }
 }
 
-
 .effect-object {
-
     position: absolute;
-
-
     pointer-events: none;
-
-
     user-select: none;
-
-
     object-fit: contain;
-
-
     will-change: transform;
-
-
     transform-origin: center;
-
-
-    filter:
-
-        drop-shadow(
-            0 10px 15px rgba(0,0,0,0.25)
-        );
-
-
+    filter: drop-shadow(
+        0 10px 15px rgba(0, 0, 0, 0.25)
+    );
 }
 
-
 .effect-object.landed {
-
-    filter:
-
-        drop-shadow(
-            0 6px 12px rgba(0,0,0,0.35)
-        );
-
+    filter: drop-shadow(
+        0 6px 12px rgba(0, 0, 0, 0.35)
+    );
 }
 
 .lines-effect {
     position: absolute;
     inset: -20px;
     overflow: hidden;
+    pointer-events: none;
 }
 
 .lines-effect::before {
@@ -144,8 +117,8 @@
             45deg,
             transparent 0,
             transparent 7px,
-            rgba(255,255,255,0.035) 7px,
-            rgba(255,255,255,0.035) 8px
+            rgba(255, 255, 255, 0.035) 7px,
+            rgba(255, 255, 255, 0.035) 8px
         );
 
     will-change: transform;
@@ -156,7 +129,57 @@
     from {
         transform: translate3d(0, 0, 0);
     }
+
     to {
         transform: translate3d(8px, 8px, 0);
     }
+}
+
+.bg-logo {
+    position: absolute;
+    width: 260px;
+    opacity: 0.045;
+    user-select: none;
+    pointer-events: none;
+}
+
+.logo-1 {
+    top: 5%;
+    left: -70px;
+    transform: rotate(-15deg);
+}
+
+.logo-2 {
+    top: 18%;
+    right: -80px;
+    width: 320px;
+    transform: rotate(18deg);
+}
+
+.logo-3 {
+    top: 48%;
+    left: -100px;
+    width: 300px;
+    transform: rotate(12deg);
+}
+
+.logo-4 {
+    top: 60%;
+    right: -90px;
+    width: 280px;
+    transform: rotate(-12deg);
+}
+
+.logo-5 {
+    bottom: -80px;
+    left: 18%;
+    width: 300px;
+    transform: rotate(-8deg);
+}
+
+.logo-6 {
+    bottom: -70px;
+    right: 15%;
+    width: 260px;
+    transform: rotate(15deg);
 }

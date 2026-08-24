@@ -1,94 +1,84 @@
-function loadGame(){
+function loadGame() {
 
-const slug = location.hash.substring(1);
-const game = games.find(g => g.slug === slug);
+    const slug = location.hash.substring(1);
+    const game = games.find(g => g.slug === slug);
 
-if (!game) {
-    location.replace("/404.html");
-    return;
-}
+    if (!game) {
+        location.replace("/404.html");
+        return;
+    }
 
-document.title = `PLEXILE ARCADE - ${game.title}`;
+    document.title = `PLEXILE ARCADE - ${game.title}`;
 
-document.getElementById("gameTitle").textContent = game.title;
-document.getElementById("gameImage").src = game.image;
+    const gameTitle = document.getElementById("gameTitle");
+    const gameImage = document.getElementById("gameImage");
+    const backgroundVideo = document.getElementById("background");
+    const loader = document.getElementById("loader");
+    const frame = document.getElementById("gameFrame");
+    const gameContainer = document.getElementById("gameContainer");
+    const gameBackground = document.querySelector(".game-background");
 
-const backgroundVideo = document.getElementById("background");
+    if (gameTitle) {
+        gameTitle.textContent = game.title;
+    }
 
-if(backgroundVideo){
+    if (gameImage) {
+        gameImage.src = game.image;
+    }
 
-    backgroundVideo.src = game.background;
-    backgroundVideo.play();
+    if (backgroundVideo) {
+        backgroundVideo.src = game.background;
+        backgroundVideo.load();
 
-}
+        backgroundVideo.play().catch(() => {});
+    }
 
+    const startTime = Date.now();
 
-const loader = document.getElementById("loader");
-const frame = document.getElementById("gameFrame");
-const gameContainer = document.getElementById("gameContainer");
-const background = document.querySelector(".background");
+    if (frame) {
+        frame.src = game.iframe;
+    }
 
+    if (!frame) {
+        return;
+    }
 
-const startTime = Date.now();
+    frame.onload = () => {
 
-frame.src = game.iframe;
-
-
-frame.onload = () => {
-
-    const elapsed = Date.now() - startTime;
-    const remaining = Math.max(0, 5000 - elapsed);
-
-
-    setTimeout(() => {
-
-
-        if(loader){
-
-            loader.style.opacity = "0";
-
-        }
-
-
-        if(background){
-
-            background.style.transition = "opacity .1s ease";
-            background.style.opacity = "0";
-
-        }
-
+        const elapsed = Date.now() - startTime;
+        const remaining = Math.max(0, 5000 - elapsed);
 
         setTimeout(() => {
 
-
-            if(loader){
-
-                loader.remove();
-
+            if (loader) {
+                loader.style.opacity = "0";
             }
 
+            setTimeout(() => {
 
-            if(background){
+                if (backgroundVideo) {
+                    backgroundVideo.pause();
+                    backgroundVideo.removeAttribute("src");
+                    backgroundVideo.load();
+                }
 
-                background.remove();
+                if (gameBackground) {
+                    gameBackground.remove();
+                }
 
-            }
+                if (loader) {
+                    loader.remove();
+                }
 
+                if (gameContainer) {
+                    gameContainer.classList.add("loaded");
+                }
 
-            if(gameContainer){
+            }, 300);
 
-                gameContainer.classList.add("loaded");
+        }, remaining);
 
-            }
-
-
-        },300);
-
-
-    },remaining);
-
-
-};
+    };
 
 }
 
@@ -97,7 +87,5 @@ loadGame();
 
 
 window.addEventListener("hashchange", () => {
-
     location.reload();
-
 });

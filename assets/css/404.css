@@ -1,100 +1,264 @@
- *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-
-        body{
-            font-family: 'Rajdhani', sans-serif;
-            background:#111111;
-            color:#fff;
-            min-height:100vh;
-            min-height:100dvh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            padding-top: 80px;
-            padding-bottom: 120px;
-            overflow-x:hidden;
-        }
- 
-         html.no-scroll,
-         body.no-scroll{
-            overflow:hidden;
-        }
-
-        .code{
-            font-size:140px;
-            font-weight:1000;
-            line-height:1;
-            color:#C93131;
- 
-        }
-
-        h1{
-            margin-top:1px;
-            font-size:34px;
-        }
-
-        p{
-            margin-top:14px;
-            color:#b8b8b8;
-            line-height:1.5;
-            font-size: 17px;
-        }
-
-        .buttons{
-            display:flex;
-            justify-content:center;
-            gap:14px;
-            margin-top:30px;
-            margin-right: 250px;
-            flex-wrap:wrap;
-        }
-
-        .btn{
-            text-decoration:none;
-            padding:13px 19px;
-            border-radius:14px;
-            font-weight:600;
-            transition:.25s;
-        }
-
-        .primary{
-            background:#C93131;
-            color:#fff;
-        }
-
-        .primary:hover{
-            box-shadow:0 3px 9px rgba(201,49,49,.35);
-        }
-
-        .secondary{
-            background:#252525;
-            color:#fff;
-            border:1px solid #333333;
-        }
-
-        .secondary:hover{
-            background:#111111;
-        }
-
-        @keyframes fadeUp{
-            from{
-                opacity:0;
-                transform:translateY(20px);
-            }
-            to{
-                opacity:1;
-                transform:translateY(0);
-            }
-        }
-
- :focus {
-  outline: none; 
-  box-shadow: none; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-:focus-visible {
-  outline: 3px solid #C93131; 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: #151515;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    min-height: calc(0vh - 10px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 35px 20px;
+    background: #181A1B;
+    overflow: hidden;
+}
+
+.card {
+    width: min(1250px, 100%);
+    text-align: left;
+}
+
+.code {
+    color: #C93131;
+    font-size: 110px;
+    line-height: .85;
+    font-weight: 700;
+    letter-spacing: -5px;
+    margin-bottom: 18px;
+}
+
+.card h1 {
+    color: #eeedeb;
+    font-size: 38px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.card > p {
+    max-width: 560px;
+    margin: 12px 0 0;
+    color: #888;
+    font-size: 17px;
+    line-height: 1.45;
+    font-weight: 600;
+}
+
+.buttons {
+    width: 100%;
+    max-width: 500px;
+    margin: 25px 0 0;
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+}
+
+.btn {
+    flex: 1;
+    height: 50px;
+    padding: 0 1px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    transition: background .2s ease, color .2s ease;
+}
+
+.btn.primary {
+    background: #C93131;
+    color: #fff;
+}
+
+.btn.primary:hover {
+    background: #d43333;
+}
+
+.btn.secondary {
+    background: #2B2E30;
+    color: #DDDAD6;
+}
+
+.btn.secondary:hover {
+    background: #35383A;
+    color: #fff;
+}
+
+.popular {
+    width: 100%;
+    margin-top: 55px;
+}
+
+.popular h2 {
+    color: #DDDAD6;
+    font-size: 27px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.popular-subtitle {
+    margin-top: 5px;
+    color: #888;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 17px;
+    font-weight: 600 !important;
+    letter-spacing: 0.2px;
+}
+
+.popular-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.popular-game {
+    min-width: 0;
+    display: block;
+    overflow: hidden;
+    background: #1F2123;
+    text-decoration: none;
+    transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.popular-game:hover {
+    background: #292C2E;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .12);
+}
+
+.popular-game img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.popular-info {
+    padding: 13px 15px 15px;
+}
+
+.popular-info h3 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #DDDAD6;
+    font-size: 18px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.popular-info p {
+    margin-top: 3px;
+    color: #888;
+    font-size: 14px;
+    line-height: 1.1;
+    font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+    .card {
+        width: 100%;
+    }
+
+    .popular-grid {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 850px) {
+    .container {
+        padding: 35px 25px 40px;
+    }
+
+    .popular-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 30px 20px 35px;
+    }
+
+    .code {
+        font-size: 85px;
+        margin-bottom: 16px;
+    }
+
+    .card h1 {
+        font-size: 32px;
+    }
+
+    .card > p {
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+    .buttons {
+        max-width: 100%;
+        gap: 10px;
+    }
+
+    .btn {
+        height: 48px;
+        padding: 0 18px;
+    }
+
+    .popular {
+        margin-top: 45px;
+    }
+
+    .popular h2 {
+        font-size: 24px;
+    }
+
+    .popular-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 17px;
+    }
+
+    .popular-info {
+        padding: 10px 11px 12px;
+    }
+
+    .popular-info h3 {
+        font-size: 15px;
+    }
+
+    .popular-info p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 380px) {
+    .popular-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
 }

@@ -1,238 +1,231 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family:'Rajdhani',sans-serif;
-    background:#0F0F0F;
-    color:#fff;
-    display: flex;
-    height: 100vh;
-    
+html {
+    scroll-behavior: smooth;
 }
 
- .main {
-      padding-bottom: 100px;
-      flex: 1;
-      padding: 40px;
-      overflow-y: auto;
-      height: 100vh;
-    }
+body {
+    min-height: 100vh;
+    background: #151515;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    overflow-x: hidden;
+}
 
-.page-header {
+.main {
     position: relative;
-    height: 113px;
-    overflow: hidden;
-    border-radius: 17px;
-    background: #C93131;
+    z-index: 1;
+    width: 100%;
+    background: #181A1B;
+    padding: 35px 40px 35px;
+}
+
+.settings-page {
+    width: 100%;
+    padding: 0;
+}
+
+.settings-section {
+    width: 100%;
+    margin-bottom: 38px;
+}
+
+.settings-section:last-child {
+    margin-bottom: 0;
+}
+
+.settings-section h2 {
+    margin: 0 0 17px;
+    color: #fff;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+}
+
+.setting-card {
+    width: 100%;
+    min-height: 88px;
     display: flex;
     align-items: center;
-    padding: 18px 24px;
-    margin-bottom: 30px;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 22px 28px;
+    background: #1F2123;
 }
 
-.page-header h1 {
-    position: relative;
-    z-index: 10;
-    top: 2px;
-    font-family: "Rajdhani", sans-serif;
-    font-size: 2.35rem;
-    line-height: .88;
-    letter-spacing: -0.6px;  
+.setting-card + .setting-card {
+    margin-top: 7px;
+}
+
+.setting-card > div:first-child {
+    min-width: 0;
+}
+
+.setting-card h3 {
+    color: #DDDAD6;
+    font-size: 18px;
+    line-height: 1.1;
     font-weight: 700;
-    max-width: 600px;
+}
+
+.setting-card p {
+    margin-top: 7px;
+    color: #888;
+    font-size: 14px;
+    line-height: 1.25;
+    font-weight: 600;
+}
+
+.setting-card select {
+    flex-shrink: 0;
+    min-width: 135px;
+    height: 42px;
+    padding: 0 38px 0 16px;
+    border: none;
+    outline: none;
+    border-radius: 0;
+    background: #2B2E30;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease;
+}
+
+.setting-card select:hover {
+    background: #303336;
+}
+
+.setting-card select:focus {
+    outline: none;
+    background: #303336;
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.setting-btn {
+    height: 42px;
+    padding: 0 24px;
+    border: none;
+    border-radius: 0;
+    background: #2B2E30;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease;
+}
+
+.setting-btn:hover {
+    background: #303336;
+}
+
+.setting-btn.primary {
+    background: #C93131;
     color: #fff;
 }
 
+.setting-btn.primary:hover {
+    background: #d33434;
+}
 
-.page-header::before {
-    content: "ARCADE";
-    position: absolute;
-    right: -70px;
-    top: 63%;
-    transform: translateY(-50%) rotate(-11deg);
-    font-family: "Rajdhani", sans-serif;
-    font-size: 8rem;
-    font-weight: 700;
-    letter-spacing: 8px;
-    line-height: 1;
-    color: rgba(255, 255, 255, 0.035);
-    white-space: nowrap;
+#cookieFile {
+    display: none;
+}
+
+#bg-effects {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
     pointer-events: none;
-    user-select: none;
 }
 
-.page-header::after {
-    content: "PLEXILE";
-    position: absolute;
-    right: 90px;
-    top: 42%;
-    transform: translateY(-50%) rotate(-7deg);
-    font-family: "Rajdhani", sans-serif;
-    font-size: 8rem;
-    font-weight: 700;
-    letter-spacing: 8px;
-    line-height: 1;
-    color: rgba(255, 255, 255, 0.075);
-    white-space: nowrap;
-    pointer-events: none;
-    user-select: none;
-}
-
-.settings-overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.65);
-    backdrop-filter:blur(8px);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    opacity:0;
-    visibility:hidden;
-    transition:.25s;
-    z-index:99999;
-}
-
-.settings-overlay.active{
-    opacity:1;
-    visibility:visible;
-}
-
-.settings-container{
-    width:min(1200px,95vw);
-    height:min(750px,92vh);
-    background:#111;
-    border:1px solid #333;
-    border-radius:20px;
-    overflow:hidden;
-    position:relative;
-    transform:scale(.96);
-    transition:.25s;
-}
-
-.settings-overlay.active .settings-container{
-    transform:scale(1);
-}
-
-.settings-container iframe{
-    width:100%;
-    height:100%;
-    border:none;
-    background:#111;
-}
-
-.settings-close{
-    position:absolute;
-    top:18px;
-    right:18px;
-    width:42px;
-    height:42px;
-    border:none;
-    border-radius:50%;
-    background:#1c1c1c;
-    color:#fff;
-    cursor:pointer;
-    font-size:26px;
-    z-index:2;
-}
-
-.settings-close:hover{
-    background:#C93131;
-}
-
-    ::-webkit-scrollbar{
-      width:3px;
+@media (max-width: 850px) {
+    .main {
+        padding: 40px 20px 25px;
     }
 
-    ::-webkit-scrollbar-track{
-     background:#111;
+    .settings-section {
+        margin-bottom: 34px;
     }
 
-    ::-webkit-scrollbar-thumb{
-      background: #695d5d;
-      border-radius:999px;
+    .setting-card {
+        gap: 25px;
+        padding: 21px 24px;
     }
 
-.settings-page{
-    display:flex;
-    flex-direction:column;
-    gap:40px;
-}
-
-.settings-section h2{
-    font-size:28px;
-    margin-bottom:5px;
-}
-
-.settings-section{
-    display:flex;
-    flex-direction:column;
-    gap:16px;
-}
-
-.setting-card{
-    background:#1C1C1C;
-    border:1px solid #333;
-    border-radius:16px;
-    padding:23px;
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
-    gap: 12px;
-    transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
-}
-
-.setting-card h3{
-    font-size:22px;
-    margin-bottom:6px;
-}
-
-.setting-card p{
-    color:#aaa;
-    max-width:500px;
-}
-
-.setting-card button {
-    background:#111;
-    color:#fff;
-    border:1px solid #333;
-    border-radius:10px;
-    padding:11px 17px;
-    font-family:inherit;
-    transition:background .15s ease;
-
-}
-
-.setting-card select{
-    background:#111;
-    color:#fff;
-    border:1px solid #333;
-    border-radius:10px;
-    padding:11px 17px;
-    font-family:inherit;
-    transition:background .15s ease;
-
-}
-
-.setting-card button:hover,
-.setting-card select:hover{
-    background:#161616;
-}
-
-@media(max-width:768px){
-    .setting-card{
-        flex-direction:column;
-        align-items:flex-start;
+    .setting-btn {
+        padding: 0 21px;
     }
 }
 
-:focus {
-  outline: none; 
-  box-shadow: none; 
+@media (max-width: 600px) {
+    .main {
+        padding: 36px 20px 22px;
+    }
+
+    .settings-section {
+        margin-bottom: 30px;
+    }
+
+    .settings-section h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .setting-card {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 17px;
+        padding: 20px;
+    }
+
+    .setting-card select {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .button-group {
+        width: 100%;
+        gap: 9px;
+    }
+
+    .setting-btn {
+        flex: 1;
+        padding: 0 18px;
+    }
 }
 
-:focus-visible {
-  outline: 3px solid #C93131; 
+@media (max-width: 380px) {
+    .main {
+        padding: 32px 15px 20px;
+    }
+
+    .setting-card {
+        padding: 17px;
+    }
+
+    .setting-card h3 {
+        font-size: 17px;
+    }
+
+    .setting-card p {
+        font-size: 13px;
+    }
+
+    .setting-btn {
+        padding: 0 14px;
+    }
 }

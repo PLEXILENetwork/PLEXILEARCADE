@@ -7,57 +7,97 @@
   <link rel="manifest" href="/manifest.json"/>
   <link rel="icon" type="image/png" href="/assets/images/logo.png"/>
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="stylesheet" href="/assets/css/gamesdrawer.css">
   <link rel="stylesheet" href="/assets/css/iframe.css">
+  <link rel="stylesheet" href="/assets/css/backgroundeffects.css">
 
 </head>
 <body>
 
-<div class="bottom-nav-container">
-  <div class="bottom-nav">
-    <a href="/" class="nav-btn"><i class="bx bx-home-alt"></i></a>
-    <button class="nav-btn" id="gamesBtn" type="button">
-      <i class="bx bx-joystick"></i>
-    </button>
-    <div class="nav-spacer"></div>
-    <a href="/apps.html" class="nav-btn"><i class="bx bx-grid-alt"></i></a>
-    <a href="/faq.html" class="nav-btn"><i class="bx bx-help-circle"></i></a>
-  </div>
-    <button class="settings-fab" id="settingsBtn" type="button">
-      <i class="bx bx-cog"></i>
-    </button>
-</div>
+<div id="bg-effects"></div> 
 
-<div class="settings-overlay" id="settingsOverlay">
-    <iframe
-        id="settingsFrame"
-        src="/settings.html"
-        loading="lazy">
-    </iframe>
-</div>
+    <div class="site">
 
-<div class="drawer-overlay" id="drawerOverlay"></div>
-<div class="games-drawer" id="gamesDrawer">
+        <nav>
+            <div class="logo">
+             <a href="/">
+               <img src="/assets/images/logo2.png" alt="Logo">
+             </a>
+            </div>
 
-<iframe 
-    id="gamesDrawerFrame"
-    src="/gamesdrawer.html"
-    class="games-drawer-frame"
-    frameborder="0">
-</iframe>
-</div>
-</div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Games</a>
+                <a href="/apps.html" class="nav-link active">Apps</a>
+                <a href="/settings.html" class="nav-link">Settings</a>
+            </div>
+        </nav>
 
-<div class="background">
-     <video id="background" autoplay muted loop playsinline></video>
+        <div class="header-links">
+
+            <a href="https://dsc.gg/plexilenetwork"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="header-link discord">
+
+                <div class="header-icon">
+                    <i class="bx bxl-discord-alt"></i>
+                </div>
+
+                <div class="header-info">
+                    <h2>Join The Discord</h2>
+                    <p>discord.gg/8fapCF74Wm</p>
+                </div>
+
+            </a>
+
+            <a href="https://ubghub.org/?site=Plexile+Arcade"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="header-link ubghub">
+
+                <div class="header-icon">
+                    <i class="bx bx-file"></i>
+                </div>
+
+                <div class="header-info">
+                    <h2>Vote For Us</h2>
+                    <p>Vote for plexilearcade.net</p>
+                </div>
+
+            </a>
+
+            <a href="https://www.tiktok.com/@plexilearcade"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="header-link tiktok">
+
+                <div class="header-icon">
+                    <i class="bx bxl-tiktok"></i>
+                </div>
+
+                <div class="header-info">
+                    <h2>Follow Us</h2>
+                    <p>tiktok.com/@plexilearcade</p>
+                </div>
+
+            </a>
+
+        </div>
+
+        <main class="content">
+
+        <div class="page-header">
+
+<div class="game-background">
+    <video id="background" autoplay muted loop playsinline></video>
     <div class="background-overlay"></div>
 </div>
 
 <div class="loader" id="loader">
+    <div class="thumbnail-wrapper">
     <img id="gameImage" class="thumbnail">
+    </div>
     <h1 id="gameTitle"></h1>
 
     <p class="loading-text">Loading app...</p>
@@ -67,15 +107,18 @@
     </div>
 </div>
 
+
 <div class="game-container" id="gameContainer">
-    <iframe id="gameFrame" allowfullscreen></iframe>
+    <iframe id="gameFrame" allow="fullscreen" allowfullscreen></iframe>
 
     <button class="fullscreen-btn" id="fullscreenBtn">
         <i class="bx bx-fullscreen"></i>
     </button>
 </div>
 
+
 <!--Settings-->
+<script src="/assets/js/settings/backgroundeffects.js"></script>
 <script src="/assets/js/settings/analytics.js"></script>
 <script src="/assets/js/settings/ads.js"></script>
 <script src="/assets/js/settings/panickey.js"></script>
@@ -86,7 +129,6 @@
 <script src="/assets/js/highlight.js"></script>
 <script src="/assets/js/apps.js"></script>
 <script src="/assets/js/appframe.js"></script>
-<script src="/assets/js/gamesdrawer.js"></script>
 <script src="/assets/js/fullscreen.js"></script>
 
 </body>

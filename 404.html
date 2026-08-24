@@ -1,89 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLEXILE ARCADE - 404</title>
-    <link rel="manifest" href="/manifest.json"/>
-    <link rel="icon" type="image/png" href="/assets/images/logo.png"/>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/404.css">
-    <link rel="stylesheet" href="/assets/css/gamesdrawer.css">
-   <link rel="stylesheet" href="/assets/css/backgroundeffects.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PLEXILE ARCADE - 404</title>
+  <link rel="manifest" href="/manifest.json"/>
+  <link rel="icon" type="image/png" href="/assets/images/logo.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/404.css">
+  <link rel="stylesheet" href="/assets/css/backgroundeffects.css">
 
 </head>
 <body>
 
-<div id="bg-effects"></div>
+ <div id="bg-effects"></div> 
 
-<div class="bottom-nav-container">
-  <div class="bottom-nav">
-    <a href="/" class="nav-btn"><i class="bx bx-home-alt"></i></a>
-    <button class="nav-btn" id="gamesBtn" type="button">
-      <i class="bx bx-joystick"></i>
-    </button>
-    <div class="nav-spacer"></div>
-    <a href="/apps.html" class="nav-btn"><i class="bx bx-grid-alt"></i></a>
-    <a href="/faq.html" class="nav-btn"><i class="bx bx-help-circle"></i></a>
-  </div>
-    <button class="settings-fab" id="settingsBtn" type="button">
-      <i class="bx bx-cog"></i>
-    </button>
-</div>
+    <div class="site">
 
-<div class="settings-overlay" id="settingsOverlay">
-    <iframe
-        id="settingsFrame"
-        src="/settings.html"
-        loading="lazy">
-    </iframe>
-</div>
+        <nav>
+            <div class="logo">
+             <a href="/">
+               <img src="/assets/images/logo2.png" alt="Logo">
+             </a>
+            </div>
 
-<div class="drawer-overlay" id="drawerOverlay"></div>
-<div class="games-drawer" id="gamesDrawer">
-    <div class="drawer-header">
+            <div class="nav-links">
+                <a href="/" class="nav-link">Games</a>
+                <a href="/apps.html" class="nav-link">Apps</a>
+                <a href="/settings.html" class="nav-link">Settings</a>
+            </div>
+        </nav>
 
-        <h2>Games</h2>
-        <div class="drawer-nav">
-        <button id="prevPage" type="button">
-            <i class="bx bx-chevron-left"></i>
-        </button>
+        <div class="header-links">
 
-        <span id="pageTitle" class="page-pill">
-            Recent
-        </span>
+            <a href="https://dsc.gg/plexilenetwork"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="header-link discord">
 
-        <button id="nextPage" type="button">
-            <i class="bx bx-chevron-right"></i>
-        </button>
+                <div class="header-icon">
+                    <i class="bx bxl-discord-alt"></i>
+                </div>
+
+                <div class="header-info">
+                    <h2>Join The Discord</h2>
+                    <p>discord.gg/8fapCF74Wm</p>
+                </div>
+
+            </a>
+
+            <a href="https://ubghub.org/?site=Plexile+Arcade"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="header-link ubghub">
+
+                <div class="header-icon">
+                    <i class="bx bx-file"></i>
+                </div>
+
+                <div class="header-info">
+                    <h2>Vote For Us</h2>
+                    <p>Vote for plexilearcade.net</p>
+                </div>
+
+            </a>
+
+            <a href="https://www.tiktok.com/@plexilearcade"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="header-link tiktok">
+
+                <div class="header-icon">
+                    <i class="bx bxl-tiktok"></i>
+                </div>
+
+                <div class="header-info">
+                    <h2>Follow Us</h2>
+                    <p>tiktok.com/@plexilearcade</p>
+                </div>
+
+            </a>
+
         </div>
-    </div>
 
-    <div class="drawer-pages" id="drawerPages">
-    <div class="drawer-page" id="recentGames"></div>
-    <div class="drawer-page" id="popularGames"></div>
-    <div class="drawer-page" id="newGames"></div>
-    </div>
-</div>
+        <main class="content">
+
+            <div class="page-header">
 
 <div class="container">
-<div class="card">
-    <div class="code">404</div>
+    <div class="card">
 
-    <h1>Page Not Found</h1>
+        <h1>Page Not Found</h1>
 
-    <p>
-        The page you're looking for doesn't exist or may have been removed.
-    </p>
+        <p>
+            The page you're looking for doesn't exist or may have been removed.
+        </p>
 
-    <div class="buttons"> 
-        <a href="/" class="btn primary">Back Home</a> 
-        <a href="javascript:history.back()" class="btn secondary">Go Back</a> 
-    </div> 
- </div>
+        <div class="buttons">
+            <a href="/" class="btn primary">Back Home</a>
+            <a href="javascript:history.back()" class="btn secondary">Go Back</a>
+        </div>
+
+<div class="popular">
+    <h2>Check out some of our popular games</h2>
+    <p class="popular-subtitle">Maybe you'll find something else that works.</p>
+
+    <div class="popular-grid" id="popular-games"></div>
+</div>
 
 <!--Settings-->
 <script src="/assets/js/settings/backgroundeffects.js"></script>
@@ -96,7 +122,33 @@
 <script src="/assets/js/settings.js"></script>
 <script src="/assets/js/highlight.js"></script>
 <script src="/assets/js/games.js"></script>
-<script src="/assets/js/gamesdrawer.js"></script>
+
+<script>
+    const popularGames = document.getElementById('popular-games');
+
+    function getRandomGames(array, amount) {
+        const shuffled = [...array].sort(() => Math.random() - 0.5);
+        return shuffled.slice(0, amount);
+    }
+
+    function displayPopularGames() {
+        const selectedGames = getRandomGames(games, 8);
+
+        popularGames.innerHTML = selectedGames.map(game => `
+            <a href="/game.html#${game.slug}" class="popular-game">
+                <img src="${game.image}" alt="${game.title}">
+                <div class="popular-info">
+                    <h3>${game.title}</h3>
+                    <p>#${game.category || 'Game'}</p>
+                </div>
+            </a>
+        `).join('');
+    }
+
+    displayPopularGames();
+</script>
+
+<script src="/assets/js/search.js"></script>
 
 </body>
 </html>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,118 +6,187 @@
   <title>PLEXILE ARCADE - Settings</title>
   <link rel="manifest" href="/manifest.json"/>
   <link rel="icon" type="image/png" href="/assets/images/logo.png"/>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/settings.css">
   <link rel="stylesheet" href="/assets/css/backgroundeffects.css">
-
 </head>
+
 <body>
 
 <div id="bg-effects"></div>
 
-<div class="main">
-<div class="page-header">
-<h1>Settings</h1>
-</div>
+<div class="site">
 
-<div class="settings-page">
+    <nav>
+        <div class="logo">
+             <a href="/">
+               <img src="/assets/images/logo2.png" alt="Logo">
+             </a>
+        </div>
 
-    <div class="settings-section">
-        <h2>Appearance</h2>
+        <div class="nav-links">
+            <a href="/" class="nav-link">Games</a>
+            <a href="/apps.html" class="nav-link">Apps</a>
+            <a href="/settings.html" class="nav-link active">Settings</a>
+        </div>
+    </nav>
 
-        <div class="setting-card">
-            <div>
-                <h3>Background Effects</h3>
-                <p>Customize the background across pages with different effects.</p>
+    <div class="header-links">
+
+        <a href="https://dsc.gg/plexilenetwork"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="header-link discord">
+
+            <div class="header-icon">
+                <i class="bx bxl-discord-alt"></i>
             </div>
 
-    <select id="effects">
-        <option value="default">None</option>
-        <option value="lines">Lines</option>
-        <option value="waves">Waves</option>
-        <option value="mystery">?????</option>
-    </select>
-   </div>
-  </div>
-
-    <div class="settings-section">
-        <h2>Miscellaneous</h2>
-
-<div class="setting-card">
-    <div>
-        <h3>Auto Cloak</h3>
-        <p>Automatically cloak PLEXILE ARCADE in an about:blank window.</p>
-    </div>
-
-    <select id="autoCloakSelect">
-       <option value="on">On</option>
-       <option value="off">Off</option>
-   </select> 
-</div>
-
-  <div class="setting-card">
-     <div>
-        <h3>Panic Key</h3>
-        <p>Press & hold ctrl + ] to quickly close your tab.</p>
-
-     </div>
-      <select id="panicToggle">
-         <option value="off" selected>Off</option>
-         <option value="on">On</option>
-      </select>
-     </div>
-
-     <div class="setting-card">
-    <div>
-        <h3>Save File</h3>
-        <p>Import or export your cookies across multiple devices or links.</p>
-    </div>
-
-    <div class="button-group">
-        <button class="setting-btn primary" onclick="exportCookies()">Export</button>
-        <button class="setting-btn" onclick="importCookies()">Import</button>
-    </div>
-
-    <input type="file" id="cookieFile" accept=".json" hidden>
-    </div>
-  </div>
-
-    <div class="settings-section">
-        <h2>Privacy</h2>
-
-        <div class="setting-card">
-            <div>
-                <h3>Advertisements</h3>
-                <p>Choose if you want to see advertisements during your experience.</p>
+            <div class="header-info">
+                <h2>Join The Discord</h2>
+                <p>discord.gg/8fapCF74Wm</p>
             </div>
 
-        <select id="adsToggle">
-           <option value="on">On</option>
-           <option value="off">Off</option>
-        </select>
-      </div>
+        </a>
 
-        
-     <div class="setting-card">
-       <div>
-           <h3>Analytics</h3>
-           <p>Help improve PLEXILE ARCADE by sharing anonymous usage data.</p>
-       </div>
+        <a href="https://ubghub.org/?site=Plexile+Arcade"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="header-link ubghub">
 
-       <select id="analyticsToggle">
-          <option value="on">On</option>
-          <option value="off">Off</option>
-       </select>
-     </div>
+            <div class="header-icon">
+                <i class="bx bx-file"></i>
+            </div>
+
+            <div class="header-info">
+                <h2>Vote For Us</h2>
+                <p>Vote for plexilearcade.net</p>
+            </div>
+
+        </a>
+
+        <a href="https://www.tiktok.com/@plexilearcade"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="header-link tiktok">
+
+            <div class="header-icon">
+                <i class="bx bxl-tiktok"></i>
+            </div>
+
+            <div class="header-info">
+                <h2>Follow Us</h2>
+                <p>tiktok.com/@plexilearcade</p>
+            </div>
+
+        </a>
+
+    </div>
+
+    
+    <div class="main">
+
+        <div class="settings-page">
+
+            <div class="settings-section">
+
+                <h2>Appearance</h2>
+
+                <div class="setting-card">
+                    <div>
+                        <h3>Background Effects</h3>
+                        <p>Customize the background across pages with different effects.</p>
+                    </div>
+
+                    <select id="effects">
+                        <option value="default">Default</option>
+                        <option value="waves">Waves</option>
+                        <option value="mystery">?????</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2>Miscellaneous</h2>
+
+                <div class="setting-card">
+                    <div>
+                        <h3>Auto Cloak</h3>
+                        <p>Automatically cloak pages in an about:blank window.</p>
+                    </div>
+
+                    <select id="autoCloakSelect">
+                        <option value="on">On</option>
+                        <option value="off">Off</option>
+                    </select>
+                </div>
+
+                <div class="setting-card">
+                    <div>
+                        <h3>Panic Key</h3>
+                        <p>Press 'E' to quickly redirect your tab.</p>
+                    </div>
+
+                    <select id="panicToggle">
+                        <option value="off" selected>Off</option>
+                        <option value="on">On</option>
+                    </select>
+                </div>
+
+                <div class="setting-card">
+                    <div>
+                        <h3>Save File</h3>
+                        <p>Import or export your cookies across multiple devices or links.</p>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="setting-btn primary" onclick="exportCookies()">Export</button>
+                        <button class="setting-btn" onclick="importCookies()">Import</button>
+                    </div>
+
+                    <input type="file" id="cookieFile" accept=".json" hidden>
+                </div>
+
+            </div>
+
+            <div class="settings-section">
+                <h2>Privacy</h2>
+
+                <div class="setting-card">
+                    <div>
+                        <h3>Advertisements</h3>
+                        <p>Choose if you want to see advertisements during your experience.</p>
+                    </div>
+
+                    <select id="adsToggle">
+                        <option value="on">On</option>
+                        <option value="off">Off</option>
+                    </select>
+                </div>
+
+                <div class="setting-card">
+                    <div>
+                        <h3>Analytics</h3>
+                        <p>Help improve PLEXILE ARCADE by sharing anonymous usage data.</p>
+                    </div>
+
+                    <select id="analyticsToggle">
+                        <option value="on">On</option>
+                        <option value="off">Off</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
 </div>
 
-</div>
-
-<!--Settings-->
 <script src="/assets/js/settings/backgroundeffects.js"></script>
 <script src="/assets/js/settings/analytics.js"></script>
 <script src="/assets/js/settings/ads.js"></script>
@@ -127,7 +195,6 @@
 <script src="/assets/js/settings/autocloak.js"></script>
 <script src="/assets/js/settings/refresh.js"></script>
 
-<script src="/assets/js/windowreplace.js"></script>
 <script src="/assets/js/settings.js"></script>
 <script src="/assets/js/highlight.js"></script>
 <script src="/assets/js/search.js"></script>
