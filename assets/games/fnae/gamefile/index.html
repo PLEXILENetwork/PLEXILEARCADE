@@ -1,120 +1,378 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" href="TemplateData/style.css">
-  </head>
-  <body>
-    <div id="unity-container">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
-      <div id="unity-loading-bar">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/geez-2/basicintro@main/intros/8/TemplateData/style.css"
+    >
+</head>
+
+<body>
+
+<div id="unity-container">
+
+    <canvas
+        id="unity-canvas"
+        width="960"
+        height="600"
+        tabindex="-1"
+    ></canvas>
+
+    <div id="unity-loading-bar">
+
         <div id="unity-logo"></div>
+
         <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
+
+            <div id="unity-progress-bar-full"></div>
+
         </div>
-      </div>
+
     </div>
-   <script>
-async function fetchWithProgress(url) {
-  const response = await fetch(url);
-  return await response.arrayBuffer();
+
+</div>
+
+
+<script>
+
+const CDN_BASE =
+    "https://cdn.jsdelivr.net/gh/geez-2/basicintro@main/intros/8/";
+
+
+async function fetchPart(url) {
+
+    const response =
+        await fetch(url);
+
+    if (!response.ok) {
+
+        throw new Error(
+            "Failed to load: " + url
+        );
+
+    }
+
+    return response.arrayBuffer();
+
 }
 
-async function mergeFiles(fileParts, cacheKey) {
-  const buffers = await Promise.all(
-    fileParts.map(part => fetchWithProgress(part))
-  );
-  const mergedBlob = new Blob(buffers);
-  return URL.createObjectURL(mergedBlob);
+
+async function mergeFiles(parts) {
+
+    const buffers =
+        await Promise.all(
+            parts.map(fetchPart)
+        );
+
+    return URL.createObjectURL(
+        new Blob(buffers)
+    );
+
 }
 
-function getParts(file, start, end) {
-  let parts = [];
-  for (let i = start; i <= end; i++) {
-    parts.push(file + ".part" + i);
-  }
-  return parts;
+
+function getParts(
+    path,
+    start,
+    end
+) {
+
+    const parts = [];
+
+    for (
+        let i = start;
+        i <= end;
+        i++
+    ) {
+
+        parts.push(
+            CDN_BASE +
+            path +
+            ".part" +
+            i
+        );
+
+    }
+
+    return parts;
+
 }
+
 
 (async () => {
-  const [dataUrl, wasmUrl, webm] = await Promise.all([
-    mergeFiles(getParts("Build/fnae.data", 1, 3), "fnae.data"),
-    mergeFiles(getParts("Build/fnae.wasm", 1, 3), "fnae.wasm"),
-    mergeFiles(getParts("StreamingAssets/202512191935.webm", 1, 3), "202512191935.webm"),
-  ]);
 
-  window.randomwebm = webm;
+    try {
 
-  const realSrc = Object.getOwnPropertyDescriptor(
-    HTMLMediaElement.prototype,
-    "src"
-  );
+        const [
+            dataUrl,
+            wasmUrl,
+            webmUrl
+        ] = await Promise.all([
 
-  Object.defineProperty(HTMLMediaElement.prototype, "src", {
-    set(value) {
-      if (
-        typeof value === "string" &&
-        (value.includes("202512191935.mp4") ||
-          value.includes("202512191935.webm"))
-      ) {
-        value = window.randomwebm;
-      }
-      return realSrc.set.call(this, value);
-    },
-    get() {
-      return realSrc.get.call(this);
+            mergeFiles(
+                getParts(
+                    "Build/fnae.data",
+                    1,
+                    3
+                )
+            ),
+
+            mergeFiles(
+                getParts(
+                    "Build/fnae.wasm",
+                    1,
+                    3
+                )
+            ),
+
+            mergeFiles(
+                getParts(
+                    "StreamingAssets/202512191935.webm",
+                    1,
+                    3
+                )
+            )
+
+        ]);
+
+
+        window.randomwebm =
+            webmUrl;
+
+
+        /*
+         * Replace the game's video
+         * with the merged CDN Blob.
+         */
+
+        const realSrc =
+            Object.getOwnPropertyDescriptor(
+                HTMLMediaElement.prototype,
+                "src"
+            );
+
+
+        Object.defineProperty(
+            HTMLMediaElement.prototype,
+            "src",
+            {
+
+                set(value) {
+
+                    if (
+                        typeof value === "string" &&
+                        (
+                            value.includes(
+                                "202512191935.mp4"
+                            ) ||
+                            value.includes(
+                                "202512191935.webm"
+                            )
+                        )
+                    ) {
+
+                        value =
+                            window.randomwebm;
+
+                    }
+
+                    return realSrc.set.call(
+                        this,
+                        value
+                    );
+
+                },
+
+                get() {
+
+                    return realSrc.get.call(
+                        this
+                    );
+
+                }
+
+            }
+        );
+
+
+        const container =
+            document.querySelector(
+                "#unity-container"
+            );
+
+
+        const canvas =
+            document.querySelector(
+                "#unity-canvas"
+            );
+
+
+        const loadingBar =
+            document.querySelector(
+                "#unity-loading-bar"
+            );
+
+
+        const progressBarFull =
+            document.querySelector(
+                "#unity-progress-bar-full"
+            );
+
+
+        function unityShowBanner(
+            msg,
+            type
+        ) {}
+
+
+        const buildUrl =
+            CDN_BASE + "Build";
+
+
+        const loaderUrl =
+            buildUrl +
+            "/fnae.loader.js";
+
+
+        const config = {
+
+            arguments: [],
+
+            dataUrl:
+                dataUrl,
+
+            frameworkUrl:
+                buildUrl +
+                "/fnae.framework.js",
+
+            codeUrl:
+                wasmUrl,
+
+            streamingAssetsUrl:
+                CDN_BASE +
+                "StreamingAssets",
+
+            companyName:
+                "DefaultCompany",
+
+            productName:
+                "fnae",
+
+            productVersion:
+                "1.0",
+
+            showBanner:
+                unityShowBanner
+
+        };
+
+
+        if (
+            /iPhone|iPad|iPod|Android/i.test(
+                navigator.userAgent
+            )
+        ) {
+
+            const meta =
+                document.createElement(
+                    "meta"
+                );
+
+            meta.name =
+                "viewport";
+
+            meta.content =
+                "width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes";
+
+            document
+                .getElementsByTagName(
+                    "head"
+                )[0]
+                .appendChild(meta);
+
+        }
+
+
+        loadingBar.style.display =
+            "block";
+
+
+        const script =
+            document.createElement(
+                "script"
+            );
+
+
+        script.src =
+            loaderUrl;
+
+
+        script.onload = () => {
+
+            createUnityInstance(
+                canvas,
+                config,
+                progress => {
+
+                    progressBarFull.style.width =
+                        100 * progress + "%";
+
+                }
+
+            )
+            .then(
+                unityInstance => {
+
+                    loadingBar.style.display =
+                        "none";
+
+                }
+            )
+            .catch(
+                message => {
+
+                    console.error(
+                        "Unity error:",
+                        message
+                    );
+
+                }
+            );
+
+        };
+
+
+        script.onerror = () => {
+
+            console.error(
+                "Failed to load Unity loader:",
+                loaderUrl
+            );
+
+        };
+
+
+        document.body.appendChild(
+            script
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Game loading error:",
+            error
+        );
+
     }
-  });
 
-  var container = document.querySelector("#unity-container");
-  var canvas = document.querySelector("#unity-canvas");
-  var loadingBar = document.querySelector("#unity-loading-bar");
-  var progressBarFull = document.querySelector("#unity-progress-bar-full");
-  var warningBanner = document.querySelector("#unity-warning");
-
-  function unityShowBanner(msg, type) {}
-
-  var buildUrl = "Build";
-  var loaderUrl = buildUrl + "/fnae.loader.js";
-
-  var config = {
-    arguments: [],
-    dataUrl: dataUrl,
-    frameworkUrl: buildUrl + "/fnae.framework.js",
-    codeUrl: wasmUrl,
-    streamingAssetsUrl: "StreamingAssets",
-    companyName: "DefaultCompany",
-    productName: "fnae",
-    productVersion: "1.0",
-    showBanner: unityShowBanner,
-  };
-
-  if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-    var meta = document.createElement("meta");
-    meta.name = "viewport";
-    meta.content =
-      "width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes";
-    document.getElementsByTagName("head")[0].appendChild(meta);
-  }
-
-  loadingBar.style.display = "block";
-
-  var script = document.createElement("script");
-  script.src = loaderUrl;
-
-  script.onload = () => {
-    createUnityInstance(canvas, config, (progress) => {
-      progressBarFull.style.width = 100 * progress + "%";
-    })
-      .then((unityInstance) => {
-        loadingBar.style.display = "none";
-      })
-      .catch((message) => {});
-  };
-
-  document.body.appendChild(script);
 })();
+
 </script>
-  </body>
+
+</body>
 </html>

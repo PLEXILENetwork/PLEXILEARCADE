@@ -1,398 +1,494 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0"
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    rel="stylesheet"
+>
 
 <style>
-html, body, #canvas {
-	margin: 0;
-	padding: 0;
-	border: 0;
+
+html,
+body,
+#canvas {
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 body {
-	color: white;
-	background-color: black;
-	overflow: hidden;
-	touch-action: none;
+    color: white;
+    background-color: black;
+    overflow: hidden;
+    touch-action: none;
 }
 
 #canvas {
-	display: block;
+    display: block;
 }
 
 #canvas:focus {
-	outline: none;
+    outline: none;
 }
 
-#status, #status-splash, #status-progress {
-	position: absolute;
-	left: 0;
-	right: 0;
+#status,
+#status-splash,
+#status-progress {
+    position: absolute;
+    left: 0;
+    right: 0;
 }
 
-#status, #status-splash {
-	top: 0;
-	bottom: 0;
+#status,
+#status-splash {
+    top: 0;
+    bottom: 0;
 }
 
 #status {
-	background-color: #242424;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	visibility: hidden;
+    background-color: #242424;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
 }
 
 #status-splash {
-	max-height: 100%;
-	max-width: 100%;
-	margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+    margin: auto;
 }
 
-#status-progress, #status-notice {
-	display: none;
+#status-progress,
+#status-notice {
+    display: none;
 }
 
 #status-progress {
-	bottom: 10%;
-	width: 50%;
-	margin: 0 auto;
+    bottom: 10%;
+    width: 50%;
+    margin: 0 auto;
 }
 
 #status-notice {
-	background-color: #5b3943;
-	border-radius: 0.5rem;
-	border: 1px solid #9b3943;
-	color: #e0e0e0;
-	font-family: Arial, sans-serif;
-	line-height: 1.3;
-	margin: 0 2rem;
-	overflow: hidden;
-	padding: 1rem;
-	text-align: center;
-	z-index: 1;
+    background-color: #5b3943;
+    border-radius: 0.5rem;
+    border: 1px solid #9b3943;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    line-height: 1.3;
+    margin: 0 2rem;
+    overflow: hidden;
+    padding: 1rem;
+    text-align: center;
+    z-index: 1;
 }
 
 #wasm {
-	position: fixed;
-	bottom: 10px;
-	right: 10px;
-	color: white;
-	font-family: "Press Start 2P", monospace;
-	font-size: 10px;
-	z-index: 9999;
-	pointer-events: none;
-	display: none;
-	opacity: 0;
-	transition: opacity 0.9s ease;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    font-family: "Press Start 2P", monospace;
+    font-size: 10px;
+    z-index: 9999;
+    pointer-events: none;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.9s ease;
 }
+
 </style>
 
-<link rel="icon" type="image/png" href="index.icon.png">
-<link rel="apple-touch-icon" href="index.apple-touch-icon.png">
+<link
+    rel="icon"
+    type="image/png"
+    href="https://cdn.jsdelivr.net/gh/geez-2/basicintro@main/intros/7/index.png"
+>
+
+<link
+    rel="apple-touch-icon"
+    href="https://cdn.jsdelivr.net/gh/geez-2/basicintro@main/intros/7/index.png"
+>
 
 </head>
 
 <body>
 
 <canvas id="canvas">
-	Your browser does not support the canvas tag.
+    Your browser does not support the canvas tag.
 </canvas>
 
 <noscript>
-	Your browser does not support JavaScript.
+    Your browser does not support JavaScript.
 </noscript>
-
 
 <div id="status">
 
-<img id="status-splash" src="index.png" alt="">
+    <img
+        id="status-splash"
+        src="https://cdn.jsdelivr.net/gh/geez-2/basicintro@main/intros/7/index.png"
+        alt=""
+    >
 
-<progress id="status-progress"></progress>
+    <progress id="status-progress"></progress>
 
-<div id="status-notice"></div>
+    <div id="status-notice"></div>
 
 </div>
 
 <div id="wasm">
-	Port by plexilearcade.net
+    Port by plexilearcade.net
 </div>
-
-<script src="index.js"></script>
-
 
 <script>
 
-async function combineFile(parts) {
+const CDN_BASE =
+    "https://cdn.jsdelivr.net/gh/geez-2/basicintro@main/intros/7/";
 
-	const buffers = [];
+const originalFetch =
+    window.fetch.bind(window);
 
-	for (const part of parts) {
+let pckURL = null;
+let wasmURL = null;
 
-		const response = await fetch(part);
+let pckPromise = null;
+let wasmPromise = null;
 
-		if (!response.ok) {
-			throw new Error("Missing file: " + part);
-		}
 
-		buffers.push(await response.arrayBuffer());
+async function mergeFiles(parts) {
 
-	}
+    const buffers = [];
 
-	return new Blob(buffers);
+    for (const part of parts) {
+
+        const response =
+            await originalFetch(
+                CDN_BASE + part
+            );
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Failed to load CDN file: " +
+                part
+            );
+
+        }
+
+        buffers.push(
+            await response.arrayBuffer()
+        );
+
+    }
+
+    return new Blob(buffers);
 
 }
 
 
+function getPCK() {
 
-(async function(){
+    if (!pckPromise) {
 
+        pckPromise =
+            mergeFiles([
+                "index.part1.pck",
+                "index.part2.pck",
+                "index.part3.pck",
+                "index.part4.pck"
+            ])
+            .then(blob => {
 
-	try {
+                pckURL =
+                    URL.createObjectURL(blob);
 
+                return pckURL;
 
-		const pckBlob = await combineFile([
-			"index.part1.pck",
-			"index.part2.pck",
-			"index.part3.pck",
-			"index.part4.pck"
-		]);
+            });
 
+    }
 
-		const wasmBlob = await combineFile([
-			"index.part1.wasm",
-			"index.part2.wasm"
-		]);
+    return pckPromise;
 
+}
 
 
-		const pckURL = URL.createObjectURL(pckBlob);
+function getWASM() {
 
-		const wasmURL = URL.createObjectURL(wasmBlob);
+    if (!wasmPromise) {
 
+        wasmPromise =
+            mergeFiles([
+                "index.part1.wasm",
+                "index.part2.wasm"
+            ])
+            .then(blob => {
 
+                wasmURL =
+                    URL.createObjectURL(blob);
 
-		const oldFetch = window.fetch;
+                return wasmURL;
 
+            });
 
+    }
 
-		window.fetch = function(url, options) {
+    return wasmPromise;
 
+}
 
-			if (url.toString().endsWith("index.pck")) {
 
-				return oldFetch(pckURL);
+window.fetch = async function(input, options) {
 
-			}
+    const url =
+        typeof input === "string"
+            ? input
+            : input instanceof Request
+                ? input.url
+                : String(input);
 
 
-			if (url.toString().endsWith("index.wasm")) {
+    if (
+        /(?:^|\/)index\.pck(?:\?.*)?$/.test(url)
+    ) {
 
-				return oldFetch(wasmURL);
+        const mergedURL =
+            await getPCK();
 
-			}
+        return originalFetch(
+            mergedURL,
+            options
+        );
 
+    }
 
-			return oldFetch(url, options);
 
-		};
+    if (
+        /(?:^|\/)index\.wasm(?:\?.*)?$/.test(url)
+    ) {
 
+        const mergedURL =
+            await getWASM();
 
+        return originalFetch(
+            mergedURL,
+            options
+        );
 
+    }
 
 
-		const GODOT_CONFIG = {
+    return originalFetch(
+        input,
+        options
+    );
 
-			args: [],
+};
 
-			canvasResizePolicy: 2,
+</script>
 
-			ensureCrossOriginIsolationHeaders: true,
 
-			executable: "index",
+<script
+    src="https://cdn.jsdelivr.net/gh/geez-2/basicintro@main/intros/7/index.js"
+></script>
 
-			experimentalVK: false,
 
-			fileSizes: {
-				"index.pck": 73101440,
-				"index.wasm": 35376909
-			},
+<script>
 
-			focusCanvas: true,
+const GODOT_CONFIG = {
 
-			gdextensionLibs: []
+    args: [],
 
-		};
+    canvasResizePolicy: 2,
 
+    ensureCrossOriginIsolationHeaders: true,
 
+    executable: "index",
 
-		const GODOT_THREADS_ENABLED = false;
+    experimentalVK: false,
 
+    fileSizes: {
+        "index.pck": 73101440,
+        "index.wasm": 35376909
+    },
 
-		const engine = new Engine(GODOT_CONFIG);
+    focusCanvas: true,
 
+    gdextensionLibs: []
 
+};
 
 
-		const statusOverlay = document.getElementById('status');
+const GODOT_THREADS_ENABLED = false;
 
-		const statusProgress = document.getElementById('status-progress');
 
-		const statusNotice = document.getElementById('status-notice');
+const engine =
+    new Engine(GODOT_CONFIG);
 
 
-		let initializing = true;
+const statusOverlay =
+    document.getElementById("status");
 
-		let statusMode = "";
+const statusProgress =
+    document.getElementById("status-progress");
 
+const statusNotice =
+    document.getElementById("status-notice");
 
 
-		function setStatusMode(mode) {
+let initializing = true;
 
+let statusMode = "";
 
-			if (statusMode === mode || !initializing) {
-				return;
-			}
 
+function setStatusMode(mode) {
 
-			if (mode === "hidden") {
+    if (
+        statusMode === mode ||
+        !initializing
+    ) {
+        return;
+    }
 
-				statusOverlay.remove();
 
-				initializing = false;
+    if (mode === "hidden") {
 
-				return;
+        statusOverlay.remove();
 
-			}
+        initializing = false;
 
+        return;
 
-			statusOverlay.style.visibility = "visible";
+    }
 
 
-			statusProgress.style.display =
-				mode === "progress" ? "block" : "none";
+    statusOverlay.style.visibility =
+        "visible";
 
+    statusProgress.style.display =
+        mode === "progress"
+            ? "block"
+            : "none";
 
-			statusNotice.style.display =
-				mode === "notice" ? "block" : "none";
+    statusNotice.style.display =
+        mode === "notice"
+            ? "block"
+            : "none";
 
+    statusMode =
+        mode;
 
-			statusMode = mode;
+}
 
 
-		}
+function setStatusNotice(text) {
 
+    statusNotice.textContent =
+        text;
 
+}
 
 
+function displayFailureNotice(err) {
 
-		function setStatusNotice(text) {
+    console.error(err);
 
-			statusNotice.textContent = text;
+    setStatusNotice(
+        err && err.message
+            ? err.message
+            : String(err)
+    );
 
-		}
+    setStatusMode("notice");
 
+    initializing = false;
 
+}
 
 
-		function displayFailureNotice(err) {
+const missing =
+    Engine.getMissingFeatures({
+        threads:
+            GODOT_THREADS_ENABLED
+    });
 
-			console.error(err);
 
-			setStatusNotice(err.message || err);
+if (missing.length !== 0) {
 
-			setStatusMode("notice");
+    displayFailureNotice(
+        "The following features are missing:\n" +
+        missing.join("\n")
+    );
 
-			initializing = false;
+} else {
 
-		}
+    setStatusMode("progress");
 
 
+    engine.startGame({
 
+        onProgress:
+            function(current, total) {
 
-		const missing = Engine.getMissingFeatures({
+                if (
+                    current > 0 &&
+                    total > 0
+                ) {
 
-			threads: GODOT_THREADS_ENABLED
+                    statusProgress.value =
+                        current;
 
-		});
+                    statusProgress.max =
+                        total;
 
+                }
 
+            }
 
+    }).then(
 
-		if (missing.length !== 0) {
+        function() {
 
+            setStatusMode("hidden");
 
-			displayFailureNotice(
-				"The following features are missing:\n" +
-				missing.join("\n")
-			);
 
+            setTimeout(function() {
 
-		} else {
+                const credit =
+                    document.getElementById(
+                        "wasm"
+                    );
 
+                credit.style.display =
+                    "block";
 
-			setStatusMode("progress");
 
+                setTimeout(function() {
 
+                    credit.style.opacity =
+                        "1";
 
-engine.startGame({
+                }, 50);
 
-	'onProgress': function(current, total){
+            }, 700);
 
-		if(current > 0 && total > 0){
+        },
 
-			statusProgress.value = current;
+        displayFailureNotice
 
-			statusProgress.max = total;
+    );
 
-		}
-
-	}
-
-}).then(()=>{
-
-	setStatusMode("hidden");
-
-	setTimeout(()=>{
-
-		const credit = document.getElementById("wasm");
-
-credit.style.display = "block";
-
-setTimeout(() => {
-	credit.style.opacity = "1";
-}, 50);
-
-	}, 700);
-
-
-}, displayFailureNotice);
-
-
-
-		}
-
-
-
-	} catch(err) {
-
-
-		console.error(err);
-
-		document.getElementById("status-notice").textContent = err.message;
-
-		document.getElementById("status").style.visibility = "visible";
-
-
-	}
-
-
-
-})();
+}
 
 </script>
 

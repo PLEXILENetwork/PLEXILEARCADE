@@ -123,7 +123,6 @@ const code = `
 <script src="/assets/js/settings/ads.js"></script>
 <script src="/assets/js/settings/panickey.js"></script>
 <script src="/assets/js/settings/savefile.js"></script>
-<script src="/assets/js/settings/autocloak.js"></script>
 
 <script src="/assets/js/settings.js"></script>
 <script src="/assets/js/highlight.js"></script>

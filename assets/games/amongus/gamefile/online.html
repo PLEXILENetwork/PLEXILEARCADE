@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <style>
 *{
     margin:0;
@@ -14,7 +15,7 @@ body{
     justify-content:center;
     align-items:center;
     height:100vh;
-    background:#111;
+    background:#000;
     font-family:Inter,Arial,sans-serif;
 }
 
@@ -30,7 +31,9 @@ body{
     font-size:0.9rem;
 }
 </style>
+
 </head>
+
 <body>
 
 <div id="app">
@@ -42,43 +45,34 @@ body{
 
 <script>
 
-var mergeStatus =
+const CDN_BASE =
+"https://cdn.jsdelivr.net/gh/geez-2/basicintro@main/intros/9/";
+
+const mergeStatus =
 document.getElementById("merge-status");
 
-
-var mergeMessages = [
-
+const mergeMessages = [
     "[Merging online-part1.html...]",
-
     "[Merging online-part2.html...]",
-
     "[Merging online-part3.html...]",
-
     "[Checking files...]",
-
     "[Loading webpage...]"
-
 ];
 
+let mergeIndex = -1;
 
-var mergeIndex = -1;
-
-
-var mergeInterval = setInterval(function(){
+const mergeInterval = setInterval(function(){
 
     mergeIndex++;
 
     if(mergeIndex < mergeMessages.length){
 
-        mergeStatus.innerHTML =
-        mergeMessages[mergeIndex];
+        mergeStatus.textContent =
+            mergeMessages[mergeIndex];
 
         if(mergeIndex === mergeMessages.length - 1){
-
             clearInterval(mergeInterval);
-
         }
-
     }
 
 },1000);
@@ -86,55 +80,75 @@ var mergeInterval = setInterval(function(){
 
 (async () => {
 
-try{
+    try{
 
-const [part1, part2, part3] = await Promise.all([
+        const [part1, part2, part3] = await Promise.all([
 
-    fetch("online-part1.html")
-    .then(r => r.text()),
+            fetch(CDN_BASE + "online-part1.html")
+                .then(response => {
+                    if(!response.ok)
+                        throw new Error(
+                            "Failed to load online-part1.html"
+                        );
+                    return response.text();
+                }),
 
-    fetch("online-part2.html")
-    .then(r => r.text()),
+            fetch(CDN_BASE + "online-part2.html")
+                .then(response => {
+                    if(!response.ok)
+                        throw new Error(
+                            "Failed to load online-part2.html"
+                        );
+                    return response.text();
+                }),
 
-    fetch("online-part3.html")
-    .then(r => r.text())
+            fetch(CDN_BASE + "online-part3.html")
+                .then(response => {
+                    if(!response.ok)
+                        throw new Error(
+                            "Failed to load online-part3.html"
+                        );
+                    return response.text();
+                })
 
-]);
-
-
-while(mergeIndex < mergeMessages.length - 1){
-
-    await new Promise(resolve =>
-        setTimeout(resolve,50)
-    );
-
-}
-
-
-document.open();
-
-document.write(
-    part1 + part2 + part3
-);
-
-document.close();
+        ]);
 
 
-}
+        while(
+            mergeIndex < mergeMessages.length - 1
+        ){
 
-catch(error){
+            await new Promise(resolve =>
+                setTimeout(resolve,50)
+            );
 
-clearInterval(mergeInterval);
+        }
 
-mergeStatus.innerHTML =
-"[Merge Failed...]";
 
-console.error(
-"Merge failed:",
-error
-);
+        document.open();
 
-}
+        document.write(
+            part1 +
+            part2 +
+            part3
+        );
+
+        document.close();
+
+
+    }catch(error){
+
+        clearInterval(mergeInterval);
+
+        mergeStatus.textContent =
+            "[Merge Failed...]";
+
+        console.error(
+            "Merge failed:",
+            error
+        );
+
+    }
 
 })();
 

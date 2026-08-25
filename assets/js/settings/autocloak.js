@@ -1,5 +1,4 @@
-const url = "/";
-let win;
+let win = null;
 
 const autoCloakSelect = document.getElementById("autoCloakSelect");
 
@@ -9,52 +8,86 @@ function openWindow() {
         return;
     }
 
-    win = window.open("", "_blank");
+    const currentUrl = window.location.href;
 
-    if (!win) return;
+    win = window.open("about:blank", "_blank");
 
-    win.document.body.style.margin = "0";
-    win.document.body.style.height = "100vh";
+    if (!win) {
+        return;
+    }
 
-    const iframe = win.document.createElement("iframe");
-    iframe.style.border = "none";
-    iframe.style.width = "100%";
-    iframe.style.height = "100%";
-    iframe.src = url;
+    win.document.open();
+    win.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title></title>
+            <style>
+                html, body {
+                    margin: 0;
+                    padding: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                }
 
-    win.document.body.appendChild(iframe);
+                iframe {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    border: 0;
+                }
+            </style>
+        </head>
+        <body>
+            <iframe src="${currentUrl.replace(/"/g, "&quot;")}"></iframe>
+        </body>
+        </html>
+    `);
+    win.document.close();
+
+    win.focus();
 }
 
 function runAutoCloak() {
-
     if (window.top !== window.self) {
         return;
     }
 
     const enabled = localStorage.getItem("autoCloakEnabled") === "true";
 
-    if (enabled) {
-        openWindow();
-        window.location.href = "https://www.google.com/";
+    if (!enabled) {
+        return;
     }
+
+    openWindow();
+
+    window.location.replace("https://www.google.com/");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const savedSetting = localStorage.getItem("autoCloakEnabled");
+    let savedSetting = localStorage.getItem("autoCloakEnabled");
 
     if (savedSetting === null) {
+        savedSetting = "false";
         localStorage.setItem("autoCloakEnabled", "false");
     }
 
     if (autoCloakSelect) {
         autoCloakSelect.value =
-            localStorage.getItem("autoCloakEnabled") === "true" ? "on" : "off";
+            savedSetting === "true" ? "on" : "off";
 
         autoCloakSelect.addEventListener("change", () => {
+            const enabled = autoCloakSelect.value === "on";
+
             localStorage.setItem(
                 "autoCloakEnabled",
-                autoCloakSelect.value === "on"
+                enabled ? "true" : "false"
             );
+
+            if (enabled) {
+                runAutoCloak();
+            }
         });
     }
 
